@@ -106,7 +106,7 @@ h1 em{font-style:italic;color:#2d6a4f}
 .page.active{display:block}
 
 /* RESEARCH PAGE */
-.rp{display:flex;height:calc(100vh - 52px);overflow:hidden}
+.rp{display:flex;height:calc(100vh - 52px - 65px);overflow:hidden}
 .rp-sidebar{width:280px;flex-shrink:0;border-right:1px solid #e8e3db;overflow-y:auto;background:#f8f7f4}
 .rp-sidebar::-webkit-scrollbar{width:3px}
 .rp-sidebar::-webkit-scrollbar-thumb{background:#ccc6bc}
@@ -179,6 +179,12 @@ h1 em{font-style:italic;color:#2d6a4f}
 .rd-citations-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#9a9288;margin-bottom:12px}
 .rd-citations-list{display:flex;flex-direction:column;gap:8px}
 .rd-cite{font-family:'DM Mono',monospace;font-size:11px;color:#6a6460;line-height:1.5;padding:8px 12px;background:#f8f7f4;border-left:2px solid #e8e3db}
+
+.rp-thesis-bar{background:#f8f7f4;border-bottom:1px solid #e8e3db;padding:16px 48px;display:flex;align-items:flex-start;gap:16px}
+.rp-thesis-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#2d6a4f;white-space:nowrap;padding-top:3px;flex-shrink:0}
+.rp-thesis-text{font-size:13px;line-height:1.7;color:#6a6460;font-style:italic;max-width:900px}
+.rp-thesis-text strong{color:#4a4540;font-style:normal;font-weight:500}
+@media(max-width:768px){.rp-thesis-bar{padding:14px 22px;flex-direction:column;gap:8px}}
 </style>
 </head>
 <body>
@@ -243,6 +249,10 @@ h1 em{font-style:italic;color:#2d6a4f}
 
 <!-- PAGE: RESEARCH -->
 <div class="page" id="page-research">
+  <div class="rp-thesis-bar">
+    <span class="rp-thesis-label">Thesis</span>
+    <p class="rp-thesis-text">The United States government&#8217;s own primary sources &#8212; statutes, treaties, cartographic records, and court rulings &#8212; document that <strong>American Indians</strong> (classified under colonial reclassification as <strong>Negroes, Moors, Mullattoes, and Indians</strong>) existed on this land before U.S. formation, were reclassified without consent through instruments void under basic contract law, and retain an original political status that was never lawfully extinguished.</p>
+  </div>
   <div class="rp">
 
     <div class="rp-sidebar">
