@@ -185,19 +185,954 @@ h1 em{font-style:italic;color:#2d6a4f}
 .rp-thesis-text{font-size:13px;line-height:1.7;color:#6a6460;font-style:italic;max-width:900px}
 .rp-thesis-text strong{color:#4a4540;font-style:normal;font-weight:500}
 @media(max-width:768px){.rp-thesis-bar{padding:14px 22px;flex-direction:column;gap:8px}}
+
+/* ============================================
+   THE PATTERN PAGE
+   ============================================ */
+
+/* NAV update for 3 tabs */
+.nav-brand{font-family:'DM Serif Display',serif;font-size:17px;font-weight:400;color:#18160f;letter-spacing:-0.3px}
+.nav-brand em{color:#2d6a4f;font-style:italic}
+
+/* SHARED PATTERN PAGE */
+.pt-section{padding:80px 48px}
+.pt-section-in{max-width:960px;margin:0 auto}
+.pt-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3.5px;color:#9a9288;text-transform:uppercase;margin-bottom:20px;display:block}
+.pt-section-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#9a9288;display:block;margin-bottom:16px}
+.pt-section-h{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,44px);font-weight:400;line-height:1.1;letter-spacing:-0.5px;color:#18160f;margin-bottom:16px}
+.pt-section-h em{color:#2d6a4f;font-style:italic}
+.pt-section-sub{font-size:15px;color:#9a9288;margin-bottom:40px;font-style:italic}
+.pt-body{font-size:15px;line-height:1.85;color:#4a4540;font-weight:300;max-width:680px}
+.pt-body-lg{font-size:17px;line-height:1.9;color:#4a4540;font-weight:300;margin-bottom:18px;max-width:640px}
+.pt-em{color:#18160f;font-weight:500;font-style:italic}
+
+/* HERO */
+.pt-hero{padding:72px 48px 64px;position:relative;background:#fff;border-bottom:1px solid #e8e3db}
+.pt-hero-in{max-width:780px;margin:0 auto}
+.pt-h1{font-family:'DM Serif Display',serif;font-size:clamp(42px,7vw,78px);font-weight:400;line-height:1.0;letter-spacing:-1.5px;color:#18160f;margin-bottom:32px}
+.pt-h1 em{color:#2d6a4f;font-style:italic}
+.pt-sub{font-size:16px;line-height:1.85;color:#4a4540;font-weight:300;max-width:600px;margin-bottom:40px}
+.pt-sub strong{color:#18160f;font-weight:500}
+.pt-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.pt-cta-primary{background:#18160f;color:#fff;border:none;padding:13px 28px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:0.3px;cursor:pointer;border-radius:4px;transition:background .2s}
+.pt-cta-primary:hover{background:#2d6a4f}
+.pt-cta-secondary{background:transparent;color:#18160f;border:1.5px solid #ccc6bc;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;cursor:pointer;border-radius:4px;transition:all .2s}
+.pt-cta-secondary:hover{border-color:#18160f}
+.pt-hero-line{width:60px;height:2px;background:#2d6a4f;margin-top:52px}
+
+/* ABOUT */
+.pt-about{background:#f8f7f4;border-bottom:1px solid #e8e3db}
+.pt-about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:8px}
+
+/* THEN VS NOW */
+.pt-tnow{background:#fff;border-bottom:1px solid #e8e3db}
+.pt-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+.pt-card{background:#f8f7f4;border:1px solid #e8e3db;border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:0}
+.pt-card-header{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.pt-card-icon{color:#2d6a4f;font-size:10px}
+.pt-card-title{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#18160f;font-weight:500}
+.pt-card-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
+.pt-card-col{display:flex;flex-direction:column;gap:6px}
+.pt-col-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#9a9288}
+.pt-card-col p{font-size:13px;line-height:1.7;color:#4a4540;font-weight:300}
+.pt-reflection{font-size:13px;line-height:1.65;color:#18160f;font-style:italic;border-left:2px solid #2d6a4f;padding-left:14px;margin-bottom:16px}
+.pt-card-link{background:none;border:none;color:#2d6a4f;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;cursor:pointer;text-align:left;padding:0;transition:color .15s}
+.pt-card-link:hover{color:#18160f}
+
+/* CONSCIOUSNESS */
+.pt-conscious{background:#18160f;border-bottom:1px solid #2e2a20}
+.pt-conscious .pt-section-label{color:#5a5040}
+.pt-conscious .pt-section-h{color:#f0e6cc}
+.pt-conscious .pt-section-h em{color:#c9a84c}
+.pt-conscious .pt-body-lg{color:#8a8070}
+.pt-conscious .pt-em{color:#f0e6cc}
+.pt-keywords{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.pt-kw{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#5a5040;border:1px solid #2e2a20;padding:7px 16px;border-radius:100px}
+
+/* ACTIONS */
+.pt-actions{background:#f8f7f4;border-bottom:1px solid #e8e3db}
+.pt-actions-intro{margin-bottom:48px}
+.pt-actions-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:20px}
+.pt-action{background:#fff;border:1px solid #e8e3db;border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.pt-action-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:#ccc6bc}
+.pt-action-title{font-size:14px;font-weight:500;color:#18160f;line-height:1.3}
+.pt-action-body{font-size:13px;line-height:1.7;color:#6a6460;font-weight:300}
+
+/* FOLLOW */
+.pt-follow{background:#fff;border-bottom:1px solid #e8e3db}
+.pt-follow-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+
+/* FOOTER */
+.pt-footer{background:#f8f7f4;border-top:1px solid #e8e3db;padding:36px 48px;max-width:none}
+.pt-footer-copy{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:#9a9288;margin-bottom:10px}
+.pt-footer-license{font-size:12px;color:#9a9288;line-height:1.6;max-width:640px}
+.pt-footer-license a{color:#2d6a4f;text-decoration:none}
+.pt-footer-license a:hover{text-decoration:underline}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .pt-actions-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .pt-hero{padding:48px 22px 44px}
+  .pt-section{padding:56px 22px}
+  .pt-about-grid{grid-template-columns:1fr}
+  .pt-cards{grid-template-columns:1fr}
+  .pt-card-cols{grid-template-columns:1fr}
+  .pt-actions-grid{grid-template-columns:1fr 1fr}
+  .pt-footer{padding:28px 22px}
+}
+@media(max-width:500px){
+  .pt-actions-grid{grid-template-columns:1fr}
+}
+
+
+
+/* ═══════════════════════════════════════════
+   PATTERN PAGE — COMPLETE CSS
+═══════════════════════════════════════════ */
+.nav-brand{font-family:'DM Serif Display',serif;font-size:17px;font-weight:400;color:#18160f;letter-spacing:-0.3px}
+.nav-brand em{color:#2d6a4f;font-style:italic}
+
+/* SHARED */
+.pt-section{padding:72px 48px}
+.pt-section-in{max-width:960px;margin:0 auto}
+.pt-eyebrow,.pt-section-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#9a9288;display:block;margin-bottom:16px}
+.pt-section-h{font-family:'DM Serif Display',serif;font-size:clamp(26px,4vw,44px);font-weight:400;line-height:1.1;letter-spacing:-0.5px;color:#18160f;margin-bottom:14px}
+.pt-section-h em{color:#2d6a4f;font-style:italic}
+.pt-section-sub{font-size:15px;color:#9a9288;margin-bottom:40px;font-style:italic}
+.pt-body{font-size:15px;line-height:1.85;color:#4a4540;font-weight:300;max-width:680px}
+.pt-body-lg{font-size:17px;line-height:1.9;color:#6a6460;font-weight:300;margin-bottom:16px;max-width:640px}
+
+/* EXPAND TOGGLE */
+.pt-expand-wrap{margin-top:20px}
+.pt-expand-btn{display:flex;align-items:center;gap:10px;background:none;border:1.5px solid #e8e3db;border-radius:4px;padding:9px 16px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9a9288;cursor:pointer;transition:all .2s;width:auto}
+.pt-expand-btn:hover{border-color:#2d6a4f;color:#2d6a4f}
+.pt-expand-btn.open{border-color:#2d6a4f;color:#2d6a4f}
+.pt-expand-btn.open .pt-expand-icon{transform:rotate(45deg)}
+.pt-expand-btn--sm{padding:7px 13px;font-size:9px}
+.pt-expand-icon{font-size:16px;line-height:1;transition:transform .2s;font-weight:300}
+.pt-expand-content{display:none;margin-top:16px;padding:20px 24px;background:#f8f7f4;border-left:3px solid #2d6a4f;border-radius:0 8px 8px 0}
+.pt-expand-content.open{display:block}
+.pt-deep-body{font-size:13.5px;line-height:1.85;color:#4a4540;font-weight:300;margin-bottom:14px;max-width:720px}
+.pt-deep-body:last-child{margin-bottom:0}
+
+/* HERO */
+.pt-hero{padding:76px 48px 64px;background:#fff;border-bottom:1px solid #e8e3db}
+.pt-hero-in{max-width:780px;margin:0 auto}
+.pt-h1{font-family:'DM Serif Display',serif;font-size:clamp(40px,6.5vw,74px);font-weight:400;line-height:1.0;letter-spacing:-1.5px;color:#18160f;margin-bottom:28px}
+.pt-h1 em{color:#2d6a4f;font-style:italic}
+.pt-sub{font-size:16px;line-height:1.85;color:#4a4540;font-weight:300;max-width:620px;margin-bottom:36px}
+.pt-sub strong{color:#18160f;font-weight:500}
+.pt-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.pt-cta-primary{background:#18160f;color:#fff;border:none;padding:13px 26px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;border-radius:4px;transition:background .2s}
+.pt-cta-primary:hover{background:#2d6a4f}
+.pt-cta-secondary{background:transparent;color:#18160f;border:1.5px solid #ccc6bc;padding:12px 26px;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;border-radius:4px;transition:all .2s}
+.pt-cta-secondary:hover{border-color:#18160f}
+.pt-hero-line{width:48px;height:2px;background:#2d6a4f;margin-top:48px}
+
+/* DECISION */
+.pt-decision{background:#f8f7f4;border-bottom:1px solid #e8e3db}
+.pt-decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.pt-decision-item{background:#fff;border:1px solid #e8e3db;border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.pt-decision-item--cta{background:#18160f;border-color:#18160f;justify-content:space-between}
+.pt-di-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:#ccc6bc}
+.pt-decision-item--cta .pt-di-num{color:#5a5040}
+.pt-di-title{font-size:14px;font-weight:500;color:#18160f;line-height:1.3}
+.pt-di-body{font-size:13px;line-height:1.75;color:#6a6460;font-weight:300}
+.pt-di-cta-text{font-size:14px;line-height:1.7;color:#9a9288;font-weight:300}
+
+/* THEN VS NOW */
+.pt-tnow{background:#fff;border-bottom:1px solid #e8e3db}
+.pt-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px}
+.pt-card{background:#f8f7f4;border:1px solid #e8e3db;border-radius:12px;padding:26px;display:flex;flex-direction:column;gap:0}
+.pt-card-header{display:flex;align-items:center;gap:9px;margin-bottom:18px}
+.pt-card-icon{color:#2d6a4f;font-size:9px}
+.pt-card-title{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#18160f;font-weight:500}
+.pt-card-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.pt-card-col{display:flex;flex-direction:column;gap:5px}
+.pt-col-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#9a9288}
+.pt-card-col p{font-size:13px;line-height:1.75;color:#4a4540;font-weight:300}
+.pt-hidden-connection{font-size:13px;line-height:1.65;color:#18160f;background:#fff;border-left:3px solid #b5451b;padding:12px 14px;margin-bottom:14px;border-radius:0 6px 6px 0}
+.pt-hc-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#b5451b;display:block;margin-bottom:6px}
+.pt-reflection{font-size:13px;line-height:1.6;color:#18160f;font-style:italic;border-left:2px solid #2d6a4f;padding-left:13px;margin-bottom:14px}
+
+/* HOW SYSTEMS DOUBLE DOWN */
+.pt-double{background:#f8f7f4;border-bottom:1px solid #e8e3db}
+.pt-steps{display:flex;flex-direction:column;gap:0;margin-top:8px;max-width:760px}
+.pt-step{display:flex;gap:20px;align-items:flex-start;background:#fff;border:1px solid #e8e3db;border-radius:10px;padding:22px}
+.pt-step--final{background:#18160f;border-color:#18160f}
+.pt-step--final .pt-step-title{color:#f0e6cc}
+.pt-step--final .pt-step-text{color:#8a8070}
+.pt-step--final .pt-step-text strong{color:#f0e6cc}
+.pt-step--final .pt-step-num{background:#2e2a20;color:#c9a84c;border-color:#2e2a20}
+.pt-step-arrow{text-align:center;font-size:20px;color:#ccc6bc;padding:4px 0;margin-left:31px}
+.pt-step-num{width:36px;height:36px;border-radius:50%;border:1.5px solid #e8e3db;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:11px;color:#9a9288;flex-shrink:0;margin-top:2px}
+.pt-step-body{flex:1}
+.pt-step-title{font-size:14px;font-weight:500;color:#18160f;margin-bottom:8px}
+.pt-step-text{font-size:13px;line-height:1.75;color:#6a6460;font-weight:300}
+
+/* UNBROKEN CHAIN */
+.pt-chain{background:#18160f;border-bottom:1px solid #2e2a20}
+.pt-chain .pt-section-label{color:#5a5040}
+.pt-chain .pt-section-h{color:#f0e6cc}
+.pt-chain .pt-section-h em{color:#c9a84c}
+.pt-chain .pt-section-sub{color:#5a5040}
+.pt-chain-list{display:flex;flex-direction:column;gap:0;margin-top:8px;position:relative}
+.pt-chain-item{display:flex;gap:0;align-items:stretch;position:relative}
+.pt-chain-year{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;color:#5a5040;width:80px;flex-shrink:0;padding:18px 0;display:flex;align-items:flex-start;padding-top:22px}
+.pt-chain-connector{width:2px;background:#2e2a20;flex-shrink:0;margin:0 20px;position:relative}
+.pt-chain-connector::before{content:'';position:absolute;top:22px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:#2e2a20;border:2px solid #5a5040}
+.pt-chain-item--alert .pt-chain-connector::before{border-color:#c9a84c;background:#18160f}
+.pt-chain-item--now .pt-chain-connector::before{border-color:#2d6a4f;background:#2d6a4f}
+.pt-chain-content{flex:1;padding:16px 0 20px;border-bottom:1px solid #2e2a20}
+.pt-chain-item:last-child .pt-chain-content{border-bottom:none}
+.pt-chain-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:8px}
+.pt-badge-statute{background:#3a1a0a;color:#b5451b}
+.pt-badge-law{background:#0e1f35;color:#4a7ab5}
+.pt-badge-now{background:#0e2218;color:#2d6a4f}
+.pt-chain-text{font-size:13px;line-height:1.75;color:#6a6460;font-weight:300}
+.pt-chain-text strong{color:#f0e6cc}
+.pt-chain-item--alert .pt-chain-year{color:#c9a84c}
+.pt-chain-item--now .pt-chain-year{color:#2d6a4f}
+.pt-chain .pt-expand-btn{border-color:#2e2a20;color:#5a5040}
+.pt-chain .pt-expand-btn:hover,.pt-chain .pt-expand-btn.open{border-color:#c9a84c;color:#c9a84c}
+.pt-chain .pt-expand-content{background:#0e0d0b;border-left-color:#c9a84c}
+.pt-chain .pt-deep-body{color:#6a6460}
+
+/* THIS IS HAPPENING NOW */
+.pt-now{background:#fff;border-bottom:1px solid #e8e3db}
+.pt-now-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-top:8px}
+.pt-now-item{background:#f8f7f4;border:1px solid #e8e3db;border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:12px}
+.pt-now-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:100px;display:inline-block;align-self:flex-start}
+.pt-now-tag--global{background:#e4eef8;color:#1d4e89}
+.pt-now-tag--us{background:#fdeee6;color:#b5451b}
+.pt-now-tag--culture{background:#ede8f7;color:#5c3d8f}
+.pt-now-title{font-size:14px;font-weight:500;color:#18160f;line-height:1.3}
+.pt-now-body{font-size:13px;line-height:1.75;color:#4a4540;font-weight:300;flex:1}
+
+/* THE PEN */
+.pt-pen{background:#f8f7f4;border-bottom:1px solid #e8e3db}
+.pt-pen-lead{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#18160f;line-height:1.2;margin-bottom:24px;font-style:italic}
+.pt-pen-body{display:flex;flex-direction:column;gap:16px;margin-top:4px}
+.pt-pen-body .pt-body{max-width:720px}
+.pt-pen-timeline{display:flex;flex-direction:column;gap:0;margin:28px 0;max-width:720px}
+.pt-pt-item{display:flex;gap:20px;align-items:flex-start;padding:16px 0;border-bottom:1px solid #e8e3db}
+.pt-pt-item:last-child{border-bottom:none}
+.pt-pt-era{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#9a9288;width:90px;flex-shrink:0;padding-top:2px}
+.pt-pt-text{font-size:13.5px;line-height:1.8;color:#4a4540;font-weight:300;flex:1}
+.pt-pen-insight{background:#18160f;border-radius:12px;padding:36px 40px;margin-top:8px;max-width:720px}
+.pt-pen-insight-text{font-family:'DM Serif Display',serif;font-size:clamp(17px,2.5vw,22px);color:#f0e6cc;line-height:1.5;font-style:italic;margin-bottom:16px}
+.pt-pen-insight-sub{font-size:14px;color:#c9a84c;font-weight:400}
+
+/* ACTIONS */
+.pt-actions{background:#fff;border-bottom:1px solid #e8e3db}
+.pt-actions-intro{margin-bottom:40px}
+.pt-actions-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pt-action{background:#f8f7f4;border:1px solid #e8e3db;border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:9px}
+.pt-action-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:#ccc6bc}
+.pt-action-title{font-size:13.5px;font-weight:500;color:#18160f;line-height:1.3}
+.pt-action-body{font-size:12.5px;line-height:1.7;color:#6a6460;font-weight:300}
+
+/* FOLLOW */
+.pt-follow{background:#f8f7f4;border-bottom:1px solid #e8e3db}
+.pt-follow-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* FOOTER */
+.pt-footer{background:#18160f;padding:36px 48px}
+.pt-footer-copy{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;color:#5a5040;margin-bottom:10px}
+.pt-footer-license{font-size:12px;color:#5a5040;line-height:1.6;max-width:640px}
+.pt-footer-license a{color:#c9a84c;text-decoration:none}
+.pt-footer-license a:hover{text-decoration:underline}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .pt-now-grid{grid-template-columns:1fr 1fr}
+  .pt-decision-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:900px){
+  .pt-actions-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .pt-hero{padding:44px 22px 40px}
+  .pt-section{padding:52px 22px}
+  .pt-cards{grid-template-columns:1fr}
+  .pt-card-cols{grid-template-columns:1fr}
+  .pt-decision-grid{grid-template-columns:1fr}
+  .pt-now-grid{grid-template-columns:1fr}
+  .pt-actions-grid{grid-template-columns:1fr 1fr}
+  .pt-pen-insight{padding:24px}
+  .pt-footer{padding:28px 22px}
+  .pt-chain-year{font-size:10px;width:64px}
+}
+@media(max-width:480px){
+  .pt-actions-grid{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <span class="nav-brand">The Record <em>They Left Behind</em></span>
-  <button class="nav-tab active" id="tab-timeline" onclick="showPage('timeline')">Timeline</button>
+  <span class="nav-brand">The <em>Pattern</em></span>
+  <button class="nav-tab active" id="tab-pattern" onclick="showPage('pattern')">The Pattern</button>
+  <button class="nav-tab" id="tab-timeline" onclick="showPage('timeline')">Timeline</button>
   <button class="nav-tab" id="tab-research" onclick="showPage('research')">Research</button>
 </nav>
 
+<!-- PAGE: PATTERN (HOME) -->
+<div class="page active" id="page-pattern">
+
+<!-- ═══ HERO ═══ -->
+<section class="pt-hero">
+  <div class="pt-hero-in">
+    <p class="pt-eyebrow">Morgan T. Ellwood &mdash; An Independent Research Project</p>
+    <h1 class="pt-h1">Before you could choose,<br><em>the choice was made.</em></h1>
+    <p class="pt-sub">Before you were born, powerful people wrote documents that still shape your life today. What language you think in. What history you were taught. What your name means legally. What neighborhood you grew up in. What counts as proof of who you are.<br><br>You didn&rsquo;t choose any of it. It was written before you arrived. <strong>The records still exist. The dates are known. The names are on the paper.</strong></p>
+    <div class="pt-ctas">
+      <button class="pt-cta-primary" onclick="showPage('timeline')">Explore the Evidence &#8594;</button>
+      <button class="pt-cta-secondary" onclick="showPage('research')">Open Research Archive</button>
+    </div>
+    <div class="pt-hero-line"></div>
+  </div>
+</section>
+
+<!-- ═══ DECISION YOU NEVER GOT TO MAKE ═══ -->
+<section class="pt-section pt-decision">
+  <div class="pt-section-in">
+    <p class="pt-section-label">The Starting Point</p>
+    <h2 class="pt-section-h">The Decision You Never Got to Make</h2>
+    <div class="pt-decision-grid">
+      <div class="pt-decision-item">
+        <span class="pt-di-num">01</span>
+        <h3 class="pt-di-title">Your Language</h3>
+        <p class="pt-di-body">Language is not neutral. The words you think in shape what feels natural, what feels possible, and what feels wrong. Indigenous boarding schools were official U.S. policy from the 1870s through the 1970s — specifically designed to replace Indigenous languages with English. It was not just about words. It was about replacing an entire way of understanding the world.</p>
+      </div>
+      <div class="pt-decision-item">
+        <span class="pt-di-num">02</span>
+        <h3 class="pt-di-title">Your History</h3>
+        <p class="pt-di-body">The curriculum you received was written by people with interests. Only 11 states require Native American history in public school curriculum. McGirt v. Oklahoma — a 2020 Supreme Court ruling affecting jurisdiction over roughly half of Oklahoma — is not in most U.S. history textbooks. What you were never taught shapes what you believe is possible.</p>
+      </div>
+      <div class="pt-decision-item">
+        <span class="pt-di-num">03</span>
+        <h3 class="pt-di-title">Your Legal Category</h3>
+        <p class="pt-di-body">The U.S. Census has changed its racial categories 11 times since 1790. Virginia&rsquo;s Walter Plecker retroactively altered birth certificates back to the 1850s — physically changing records that said &ldquo;Indian&rdquo; to &ldquo;colored.&rdquo; You were born into legal definitions you did not choose. Those definitions have legal consequences that follow you.</p>
+      </div>
+      <div class="pt-decision-item">
+        <span class="pt-di-num">04</span>
+        <h3 class="pt-di-title">Your Zip Code</h3>
+        <p class="pt-di-body">Redlining — the federal policy that denied mortgages and investment to Black neighborhoods — was official practice from the 1930s through 1968. The neighborhoods it created persist. A child born in a redlined neighborhood in 1940 has grandchildren whose school quality, credit score, and environmental toxin exposure are still shaped by that original pen stroke.</p>
+      </div>
+      <div class="pt-decision-item">
+        <span class="pt-di-num">05</span>
+        <h3 class="pt-di-title">What Counts as Proof</h3>
+        <p class="pt-di-body">The establishment decides what forms of knowing count. Oral history doesn&rsquo;t count in federal court. Genetic ancestry doesn&rsquo;t automatically confer political status. The enrollment system that determines whether your Indigenous ancestry is legally recognized was built on the same reclassification it was supposed to correct. The pen-holders decide what evidence is admissible.</p>
+      </div>
+      <div class="pt-decision-item pt-decision-item--cta">
+        <p class="pt-di-cta-text">These are not ancient problems. Every one of them has a documented instrument — a statute, a policy, a court ruling. The research archive shows the records.</p>
+        <button class="pt-cta-secondary" onclick="showPage('research')">See the Documents &#8594;</button>
+      </div>
+    </div>
+
+    <!-- Expandable deep layer -->
+    <div class="pt-expand-wrap">
+      <button class="pt-expand-btn" onclick="ptToggle(this)">
+        <span class="pt-expand-label">Go Deeper</span>
+        <span class="pt-expand-icon">+</span>
+      </button>
+      <div class="pt-expand-content">
+        <p class="pt-deep-body">By the time you are born, a decision architecture surrounds you. Language encodes assumptions about time, property, and individuality that feel natural because you learned them before you could question them. The Haudenosaunee languages organize reality around relationships and processes rather than objects and ownership &mdash; a cognitive architecture incompatible with colonial property law, which is precisely why English-language boarding schools were mandatory policy from the 1870s through the 1970s. You were not just taught English. You were prevented from thinking in a framework that would have made certain arguments about land and sovereignty self-evident rather than radical.</p>
+        <p class="pt-deep-body">The curriculum you received was written by people with interests. The 18 states that passed legislation after 2019 restricting how slavery&rsquo;s legacy can be taught did so because they understood that narrative is infrastructure. The child who learns that history was an unfortunate accident rather than a series of documented choices grows into an adult who cannot see the chain &mdash; because the chain was removed from the curriculum before they arrived.</p>
+        <p class="pt-deep-body">Your zip code was written by federal policy. A child born in a redlined neighborhood in 1940 has grandchildren whose credit score, school quality, environmental toxin exposure, and carceral risk are still shaped by a pen stroke made before their grandparent was born. The original document is still producing outcomes. The pen is still writing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THEN VS NOW ═══ -->
+<section class="pt-section pt-tnow">
+  <div class="pt-section-in">
+    <p class="pt-section-label">Then vs. Now</p>
+    <h2 class="pt-section-h">The Pattern Did Not Disappear</h2>
+    <p class="pt-section-sub">The mechanism changed. The outcome did not.</p>
+    <div class="pt-cards">
+
+      <!-- IDENTITY -->
+      <div class="pt-card">
+        <div class="pt-card-header"><span class="pt-card-icon">&#9670;</span><span class="pt-card-title">Identity</span></div>
+        <div class="pt-card-cols">
+          <div class="pt-card-col">
+            <span class="pt-col-label">Then</span>
+            <p>In 1682, Virginia wrote a law putting Moors, Indians, Negroes, and Mullattoes into one legal category — without asking any of them. In 1924, Walter Plecker physically changed birth certificates that said &ldquo;Indian&rdquo; to &ldquo;colored&rdquo; — going back to the 1850s. He didn&rsquo;t just reclassify living people. He reclassified their ancestors in the records.</p>
+          </div>
+          <div class="pt-card-col">
+            <span class="pt-col-label">Now</span>
+            <p>The U.S. Census has changed racial categories 11 times since 1790. Databases, algorithms, and government forms classify people before they speak. Your credit tier, risk score, and income bracket are assigned and used to make decisions about housing, employment, and insurance before you walk in the door.</p>
+          </div>
+        </div>
+        <p class="pt-hidden-connection"><span class="pt-hc-label">The Hidden Connection</span>The 1848 South Carolina Negro Law &mdash; written by a sitting judge &mdash; explicitly stated that by the law&rsquo;s own definitions, Moors were not legally in the Negro category. The legal system&rsquo;s own record acknowledged the category was being applied to people it didn&rsquo;t legally cover. It kept going for 17 more years anyway. The system knew it was wrong by its own rules. It continued regardless.</p>
+        <p class="pt-reflection">&#8220;Who decided what category you belong to &mdash; and what does that category cost you today?&#8221;</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The Virginia Racial Integrity Act of 1924 is documented by the National Park Service as paper genocide. Plecker&rsquo;s stated goal was to eliminate Indigenous identity from the documentary record specifically to prevent future claims to political status and land. He understood that the pen was the instrument of sovereignty &mdash; that retroactive documentation was more powerful than prospective classification because it eliminated the evidentiary foundation future generations would need to assert their identity. This was not bureaucratic error. It was a targeted epistemological attack.</p>
+            <p class="pt-deep-body">The modern parallel: algorithmic systems used by insurers, employers, and lenders use zip code, purchase history, and social network connections as proxies for race &mdash; producing discriminatory outcomes without naming race. The Consumer Financial Protection Bureau documented this in 2022. The ACLU documented facial recognition misidentification rates of 35% for darker-skinned women versus 1% for lighter-skinned men in government-deployed systems. The classification is automatic. The consequences are material. The mechanism is the same. The name is different.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LABOR -->
+      <div class="pt-card">
+        <div class="pt-card-header"><span class="pt-card-icon">&#9670;</span><span class="pt-card-title">Labor</span></div>
+        <div class="pt-card-cols">
+          <div class="pt-card-col">
+            <span class="pt-col-label">Then</span>
+            <p>In 1662, Virginia invented a rule that a child&rsquo;s legal status followed the mother. If your mother was enslaved, you were enslaved &mdash; no matter what. This was not inherited from English law. It was invented specifically to make slavery grow itself automatically. Children were born into it. The system could expand without anyone doing anything new.</p>
+          </div>
+          <div class="pt-card-col">
+            <span class="pt-col-label">Now</span>
+            <p>The 13th Amendment abolished slavery &mdash; &ldquo;except as a punishment for a crime.&rdquo; That exception is not an accident. U.S. prison labor generates an estimated $11 billion annually. Incarcerated workers in many states are paid between $0.13 and $0.52 per hour &mdash; or nothing. Private prison companies are publicly traded. Their stock price depends on occupancy rates.</p>
+          </div>
+        </div>
+        <p class="pt-hidden-connection"><span class="pt-hc-label">The Hidden Connection</span>The U.S. has 5% of the world&rsquo;s population and 25% of its prisoners. Black Americans are incarcerated at 5 times the rate of white Americans. The populations most targeted by the 1662 and 1682 statutes are the most overrepresented in the carceral system today. The 13th Amendment&rsquo;s exception was not an oversight. It was a continuation written into the document that appeared to end the system.</p>
+        <p class="pt-reflection">&#8220;If the system that replaced slavery produces the same outcomes for the same populations &mdash; what actually changed?&#8221;</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">Jennifer Morgan&rsquo;s scholarship on partus sequitur ventrem establishes that the 1662 act was a deliberate legal construction with no precedent in English common law. It switched status transmission from the paternal line to the maternal line specifically to commodify reproduction &mdash; so that the exploitation of enslaved women would automatically expand the enslaved labor force. The mechanism was not inherited tradition. It was an engineered growth algorithm for human property.</p>
+            <p class="pt-deep-body">Ruth Wilson Gilmore&rsquo;s work documents that prison expansion in the U.S. from the 1970s onward was a solution to four surpluses simultaneously: surplus finance capital needing investment, surplus rural land, surplus labor from deindustrialization, and surplus criminalized population from deliberate urban disinvestment. The prison was not a response to crime. It was an economic instrument that required criminalization to function. The 1662 act engineered human property as capital. The Prison Industrial Complex engineers criminalization as capital. The structure is identical.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOVEMENT -->
+      <div class="pt-card">
+        <div class="pt-card-header"><span class="pt-card-icon">&#9670;</span><span class="pt-card-title">Movement</span></div>
+        <div class="pt-card-cols">
+          <div class="pt-card-col">
+            <span class="pt-col-label">Then</span>
+            <p>Under colonial slave codes, enslaved people needed written passes to move anywhere. Without a pass, you could be stopped, detained, or returned. The Indian Removal Act of 1830 forcibly relocated entire nations. The Trail of Tears killed an estimated 4,000 to 15,000 Cherokee people. Movement required permission &mdash; or it was punished.</p>
+          </div>
+          <div class="pt-card-col">
+            <span class="pt-col-label">Now</span>
+            <p>Stop and frisk in New York City peaked at 685,000 stops in 2011 &mdash; 88% were Black or Latino, 88% were innocent. ICE interior checkpoints demand documentation miles from any border. In 2023, the CBP One app became the only legal pathway for asylum seekers &mdash; requiring a smartphone, internet, and literacy in English or Spanish. Movement still requires documents. Whose movement requires documents hasn&rsquo;t changed.</p>
+          </div>
+        </div>
+        <p class="pt-hidden-connection"><span class="pt-hc-label">The Hidden Connection</span>McGirt v. Oklahoma confirmed in 2020 that Oklahoma had been exercising jurisdiction over Muscogee Creek land without lawful authority for 111 years. One hundred and eleven years of courts, checkpoints, property records, and criminal prosecutions &mdash; all operating on a jurisdictional assumption the Supreme Court ultimately ruled was never valid. Movement was controlled on land that didn&rsquo;t legally belong to the entity controlling it. For over a century. Most people still don&rsquo;t know it happened.</p>
+        <p class="pt-reflection">&#8220;Who moves freely &mdash; and who needs permission? Has that actually changed, or has the paperwork changed?&#8221;</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The Rohingya in Myanmar lost citizenship through the 1982 Citizenship Law, which reclassified them as non-indigenous and therefore stateless. Statelessness is the ultimate movement restriction &mdash; no document, no legal existence in any country&rsquo;s framework, no right to be anywhere. The International Court of Justice is currently adjudicating genocide claims against Myanmar. The legal argument is structurally identical to the reclassification chain: a statute, applied through records, stripped a population of political status without consent, without legitimate jurisdictional authority, and without lawful extinguishment of their prior status.</p>
+            <p class="pt-deep-body">The Palestinian ID system issues four different categories of document &mdash; Israeli citizen, East Jerusalem resident, West Bank resident, Gaza resident &mdash; each with different movement rights, different legal systems, different access to resources. The pass system the Then/Now card references abstractly is operating in explicit documented form in the present tense, documented by Human Rights Watch, Amnesty International, and the United Nations.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- NARRATIVE -->
+      <div class="pt-card">
+        <div class="pt-card-header"><span class="pt-card-icon">&#9670;</span><span class="pt-card-title">Narrative</span></div>
+        <div class="pt-card-cols">
+          <div class="pt-card-col">
+            <span class="pt-col-label">Then</span>
+            <p>In 1924, Virginia&rsquo;s Walter Plecker went back through historical records and physically changed documents &mdash; birth certificates, marriage records, death records &mdash; erasing Indigenous identity from the archive. The National Park Service calls this paper genocide. Six of Virginia&rsquo;s eight state-recognized tribes could not gain federal recognition for decades because Plecker had destroyed the records they needed to prove continuous identity.</p>
+          </div>
+          <div class="pt-card-col">
+            <span class="pt-col-label">Now</span>
+            <p>Only 11 states require Native American history in school curriculum. The 1619 Project &mdash; which argued slavery is central to American history &mdash; triggered legislation in 18 states restricting how it can be taught. Facebook&rsquo;s own research showed their algorithm amplified outrage because it drove engagement. TikTok&rsquo;s internal documents showed suppression of content from users deemed &ldquo;too ugly, poor, or disabled.&rdquo; The narrative is still being managed. The tools changed.</p>
+          </div>
+        </div>
+        <p class="pt-hidden-connection"><span class="pt-hc-label">The Hidden Connection</span>Plecker&rsquo;s paper genocide worked by attacking the evidentiary record &mdash; the documents future generations would need. Algorithmic suppression works by attacking discoverability &mdash; the likelihood that certain information surfaces when someone searches. The mechanism is different. The effect on cultural memory is structurally similar. Both make certain histories harder to access. Both operate through systems that appear neutral. Both are deniable as process rather than intent.</p>
+        <p class="pt-reflection">&#8220;What history were you never taught &mdash; and who decided you didn&rsquo;t need to know it?&#8221;</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">Beyonc&eacute;&rsquo;s Cowboy Carter (2024) explicitly argued through music that country music has Black roots the industry systematically obscured. The Grammy nominations, the industry resistance, and the debate about whether it &ldquo;counted&rdquo; as country &mdash; all of it demonstrated in real time that who gets to define a cultural category is not settled. The pen that wrote Black artists out of country music&rsquo;s commercial history is being challenged by an artist with the cultural power to make the challenge visible to 100 million people.</p>
+            <p class="pt-deep-body">Kendrick Lamar&rsquo;s 2025 Super Bowl halftime performance drew 127 million viewers and centered a diss track fundamentally about who controls the narrative of Blackness and who profits from it. The establishment&rsquo;s response &mdash; legal threats, industry pressure, the debate about whether the performance was &ldquo;appropriate&rdquo; &mdash; demonstrated the infrastructure that forms around narrative control when someone with sufficient reach challenges the pen-holder&rsquo;s authority. 23andMe filed for bankruptcy in March 2025. The genetic ancestry records of 15 million people became a corporate asset in bankruptcy proceedings. The question of who owns the documentary record of your ancestry is now before a bankruptcy court.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMUNITY -->
+      <div class="pt-card">
+        <div class="pt-card-header"><span class="pt-card-icon">&#9670;</span><span class="pt-card-title">Community</span></div>
+        <div class="pt-card-cols">
+          <div class="pt-card-col">
+            <span class="pt-col-label">Then</span>
+            <p>The Dawes Act of 1887 took communally held Indigenous land and broke it into individual allotments. This didn&rsquo;t just redistribute land &mdash; it dismantled the social architecture that the land sustained. By 1934, Indigenous peoples had lost approximately 90 million of the 138 million acres they held in 1887. Two thirds of it gone in 47 years through a system that appeared to be giving individual property rights.</p>
+          </div>
+          <div class="pt-card-col">
+            <span class="pt-col-label">Now</span>
+            <p>Social media platforms optimize for engagement. Engagement peaks with outrage and tribal conflict. Facebook&rsquo;s own internal research &mdash; revealed in the 2021 Frances Haugen documents &mdash; showed the algorithm amplified divisive political content because it outperformed neutral content on engagement metrics. The platform knew it was accelerating social fragmentation. The financial incentive to maintain that fragmentation was built into the business model.</p>
+          </div>
+        </div>
+        <p class="pt-hidden-connection"><span class="pt-hc-label">The Hidden Connection</span>The Dawes Act used property law to isolate people from each other &mdash; breaking collective land into individual holdings, creating economic dependency and social fragmentation simultaneously. The attention economy uses personalization to isolate people from each other &mdash; each person seeing a different version of reality, optimized for their particular emotional triggers. The infrastructure of separation looks completely different. The outcome &mdash; fragmented communities unable to act collectively &mdash; is the same.</p>
+        <p class="pt-reflection">&#8220;What would it take to see your community clearly &mdash; and what systems benefit when you can&rsquo;t?&#8221;</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The ICC issued an arrest warrant for Israeli Prime Minister Netanyahu in November 2024 for war crimes. The U.S. Congress responded by passing legislation threatening sanctions against ICC officials &mdash; a system designed to hold power accountable being met with legislation designed to protect power from accountability. The pen that writes the law also writes the exception to the law. This is the establishment doubling down on itself in real time, documented, in the present tense.</p>
+            <p class="pt-deep-body">The Wet&rsquo;suwet&rsquo;en pipeline case in Canada &mdash; where hereditary chiefs operating under Indigenous governance that predates Canadian law are asserting land rights over territory granted to a pipeline company &mdash; is the McGirt principle being litigated on a different continent. Sovereign status requires explicit lawful extinguishment. Assumption of jurisdiction is not extinguishment. The argument is not American. It is a documented global pattern.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONSENT -->
+      <div class="pt-card">
+        <div class="pt-card-header"><span class="pt-card-icon">&#9670;</span><span class="pt-card-title">Consent</span></div>
+        <div class="pt-card-cols">
+          <div class="pt-card-col">
+            <span class="pt-col-label">Then</span>
+            <p>The Northwest Ordinance of 1787 &mdash; written by the U.S. government &mdash; explicitly stated that Indian land would not be taken without consent. Forty-three years later, the Indian Removal Act of 1830 was passed to override that requirement. The government wrote the right. Then the government wrote the override. The violation was documented before it occurred.</p>
+          </div>
+          <div class="pt-card-col">
+            <span class="pt-col-label">Now</span>
+            <p>The average American encounters over 1,500 terms of service agreements per year. Reading all of them would take 76 work days annually. They govern data collection, biometric capture, behavioral tracking, and content rights. Consent is a checkbox most people never read. The data is used to predict and influence future decisions &mdash; purchasing, political affiliation, emotional state. The checkbox is the pass system.</p>
+          </div>
+        </div>
+        <p class="pt-hidden-connection"><span class="pt-hc-label">The Hidden Connection</span>The 2012 National Defense Authorization Act authorized indefinite military detention of U.S. citizens without trial &mdash; without charge, without court review, without a defined endpoint. The Bill of Rights acknowledged due process. The NDAA wrote the override into law. Government acknowledges the right. Government passes the legislation overriding the right. The violation is in the government&rsquo;s own record before it occurs. The pen writes the right and the exception. Both strokes are in the same hand.</p>
+        <p class="pt-reflection">&#8220;When did you last read what you agreed to &mdash; and who benefits from the fact that you didn&rsquo;t?&#8221;</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">Shoshana Zuboff&rsquo;s The Age of Surveillance Capitalism documents that the core product of companies like Google, Facebook, and Amazon is not the service they appear to provide. The core product is behavioral prediction &mdash; the ability to sell advertisers not just access to audiences but the ability to predict and modify audience behavior. The raw material for behavioral prediction is the data trail of human experience. The consent framework &mdash; terms of service, cookie acceptance, location permissions &mdash; converts human experience into extractable raw material. It is the 1662 act applied to attention and behavior: whatever you generate on their infrastructure belongs to them and their assigns forever.</p>
+            <p class="pt-deep-body">The 1982 Myanmar Citizenship Law was passed through a military government with no democratic mandate from the Rohingya population it stripped of citizenship. The ICJ case &mdash; ruling in 2020 that Myanmar has a plausible obligation to prevent genocide &mdash; found the mechanism that produced the atrocity was a statute passed without consent that reclassified a population&rsquo;s legal status retroactively. The pen that writes the atrocity also writes the challenge to the court that would judge it.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW SYSTEMS DOUBLE DOWN ═══ -->
+<section class="pt-section pt-double">
+  <div class="pt-section-in">
+    <p class="pt-section-label">The Mechanism</p>
+    <h2 class="pt-section-h">How Systems Make Themselves Permanent</h2>
+    <p class="pt-section-sub">No one has to decide to keep the system going. The system keeps itself going.</p>
+    <div class="pt-steps">
+      <div class="pt-step">
+        <div class="pt-step-num">1</div>
+        <div class="pt-step-body">
+          <h3 class="pt-step-title">The Pen Writes the Category</h3>
+          <p class="pt-step-text">Someone with power writes a document. Virginia 1682: these people are now this category. Before the document, the category didn&rsquo;t legally exist. After the document, it does. The writing was the act of power &mdash; not a description of it.</p>
+        </div>
+      </div>
+      <div class="pt-step-arrow">&#8595;</div>
+      <div class="pt-step">
+        <div class="pt-step-num">2</div>
+        <div class="pt-step-body">
+          <h3 class="pt-step-title">The Category Builds Infrastructure</h3>
+          <p class="pt-step-text">Now that the category exists, systems grow around it. Courts to enforce it. Records to track it. Separate schools, separate laws, separate passes. People get jobs enforcing the category. Budgets depend on it. The infrastructure has momentum now &mdash; separate from whoever originally held the pen.</p>
+        </div>
+      </div>
+      <div class="pt-step-arrow">&#8595;</div>
+      <div class="pt-step">
+        <div class="pt-step-num">3</div>
+        <div class="pt-step-body">
+          <h3 class="pt-step-title">Infrastructure Makes the Category Feel Normal</h3>
+          <p class="pt-step-text">Children grow up inside a world where the category is in every document, every court record, every school, every form. It stops looking like a choice someone made. It starts looking like how things are. Most people never see the original document. They only see the world it created.</p>
+        </div>
+      </div>
+      <div class="pt-step-arrow">&#8595;</div>
+      <div class="pt-step">
+        <div class="pt-step-num">4</div>
+        <div class="pt-step-body">
+          <h3 class="pt-step-title">People Organize Their Identity Around the Category</h3>
+          <p class="pt-step-text">When a category surrounds you completely, adapting to it is rational. But the effect is that the original imposition fades and the identity feels chosen. The pen&rsquo;s deepest work is done when people defend the category as their own &mdash; when the system no longer needs to enforce itself from the outside.</p>
+        </div>
+      </div>
+      <div class="pt-step-arrow">&#8595;</div>
+      <div class="pt-step pt-step--final">
+        <div class="pt-step-num">5</div>
+        <div class="pt-step-body">
+          <h3 class="pt-step-title">The Outcomes Justify the Original Category</h3>
+          <p class="pt-step-text">Once a population has been restricted, underfunded, and limited for generations &mdash; the results of those restrictions become visible. Those results get cited as proof that the original classification was accurate. Poverty becomes proof of inferiority. Incarceration becomes proof of criminality. The infrastructure produced the outcomes. The outcomes are used to justify the infrastructure. <strong>The loop closes. No argument is required. The system has doubled down on itself.</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="pt-expand-wrap" style="margin-top:32px">
+      <button class="pt-expand-btn" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+      <div class="pt-expand-content">
+        <p class="pt-deep-body">Sociologists call this a self-sealing system &mdash; a structure that uses its own outputs as inputs to justify its continued operation. Robert Merton named this mechanism the self-fulfilling prophecy in 1948. W.E.B. Du Bois documented it in The Philadelphia Negro in 1899 &mdash; the first systematic sociological study of an American urban community, which showed that the conditions attributed to Black character were products of deliberate policy, not inherent traits. Du Bois&rsquo;s work was systematically ignored by mainstream sociology for 50 years. The pen that held academic authority decided that his documentation did not count as documentation.</p>
+        <p class="pt-deep-body">The modern form is the predictive algorithm. A credit score algorithm trained on historical data encodes the outcomes of discriminatory lending as predictive variables &mdash; then uses those variables to make new lending decisions, reproducing the discriminatory outcome while appearing neutral. ProPublica&rsquo;s 2016 investigation of COMPAS &mdash; a recidivism prediction algorithm used by courts to set bail and sentencing &mdash; found it was twice as likely to falsely flag Black defendants as future criminals. The pen that wrote the training data wrote the verdict.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ UNBROKEN CHAIN ═══ -->
+<section class="pt-section pt-chain">
+  <div class="pt-section-in">
+    <p class="pt-section-label">The Unbroken Chain</p>
+    <h2 class="pt-section-h">362 Years.<br><em>One Continuous Line.</em></h2>
+    <p class="pt-section-sub">Every link is a documented instrument. There is no break.</p>
+    <div class="pt-chain-list">
+      <div class="pt-chain-item">
+        <span class="pt-chain-year">1662</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-statute">Colonial Statute</span>
+          <p class="pt-chain-text">Virginia invents partus sequitur ventrem &mdash; child follows the mother&rsquo;s condition. Reclassification can now grow itself automatically across generations.</p>
+        </div>
+      </div>
+      <div class="pt-chain-item">
+        <span class="pt-chain-year">1682</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-statute">Colonial Statute</span>
+          <p class="pt-chain-text">Virginia names Moors, Indians, Negroes, and Mullattoes as a permanent enslaved class. The pen names the people. The category is now in the official record.</p>
+        </div>
+      </div>
+      <div class="pt-chain-item">
+        <span class="pt-chain-year">1740</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-statute">Colonial Statute</span>
+          <p class="pt-chain-text">South Carolina enacts the same system independently. Two separate colonial legislatures. Same language. Same populations. Same mechanism. This confirms it is coordinated architecture, not local accident.</p>
+        </div>
+      </div>
+      <div class="pt-chain-item pt-chain-item--alert">
+        <span class="pt-chain-year">1848</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-law">Judicial Record</span>
+          <p class="pt-chain-text"><strong>The system knew it was wrong.</strong> SC&rsquo;s own sitting judge writes that by the law&rsquo;s definitions, Moors are not legally in the Negro category. The self-contradiction is documented in the official record. The system continues for 17 more years anyway.</p>
+        </div>
+      </div>
+      <div class="pt-chain-item">
+        <span class="pt-chain-year">1868</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-statute">Constitutional Amendment</span>
+          <p class="pt-chain-text">14th Amendment creates federal citizenship &mdash; without restoring original political status. A new classification is imposed. The original suppression compounds under a new name.</p>
+        </div>
+      </div>
+      <div class="pt-chain-item">
+        <span class="pt-chain-year">1887&ndash;1907</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-statute">Federal Policy</span>
+          <p class="pt-chain-text">Dawes Act and Rolls re-encode the 1682 reclassification into tribal enrollment. People with documented Indigenous ancestry enrolled as Freedmen &mdash; &ldquo;no blood relation to the tribe&rdquo; &mdash; based on their prior classification status. The suppression instrument becomes the recognition gateway.</p>
+        </div>
+      </div>
+      <div class="pt-chain-item pt-chain-item--alert">
+        <span class="pt-chain-year">1924</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-statute">State Law</span>
+          <p class="pt-chain-text"><strong>Paper genocide.</strong> Walter Plecker retroactively alters birth certificates going back to the 1850s. The past is rewritten. The evidentiary record future generations need to prove their identity is destroyed. The NPS documents this. Virginia does not formally repeal the Act until <strong>2020</strong>.</p>
+        </div>
+      </div>
+      <div class="pt-chain-item">
+        <span class="pt-chain-year">1968</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-law">Federal Law</span>
+          <p class="pt-chain-text">Fair Housing Act prohibits redlining. The neighborhoods it created remain. The wealth gap it generated continues compounding. The law addressed the visible mechanism. The structural outcomes persisted.</p>
+        </div>
+      </div>
+      <div class="pt-chain-item">
+        <span class="pt-chain-year">2020</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-law">Supreme Court</span>
+          <p class="pt-chain-text">McGirt v. Oklahoma: 111 years of assumed jurisdiction ruled invalid. The assumption was never lawful. Courts, taxes, property records, criminal prosecutions &mdash; all built on a foundation the Supreme Court confirmed never existed.</p>
+        </div>
+      </div>
+      <div class="pt-chain-item pt-chain-item--now">
+        <span class="pt-chain-year">Today</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-now">Present</span>
+          <p class="pt-chain-text">The Dawes Rolls remain the primary federal gateway to Indigenous political status. Algorithmic systems reproduce discriminatory outcomes through neutral-appearing variables. The 1619 Project legislative restrictions are active law in 18 states. <strong>The chain has no break.</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="pt-expand-wrap" style="margin-top:32px">
+      <button class="pt-expand-btn" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+      <div class="pt-expand-content">
+        <p class="pt-deep-body">The chain is not a metaphor. Each link is a documented instrument. The chain runs 362 years without a single break. There is no point where the original suppression was formally acknowledged, legally corrected, and affected populations restored to their prior status with their full evidentiary record intact. The Civil War ended chattel slavery &mdash; it did not restore original political status. The Civil Rights Act prohibited explicit discrimination &mdash; it did not address 300 years of structural outcomes. The Voting Rights Act protected voting access &mdash; it did not address the Dawes Roll enrollment trap. Each intervention addressed a specific visible mechanism while leaving the underlying architecture intact. The architecture is still producing outcomes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THIS IS HAPPENING NOW ═══ -->
+<section class="pt-section pt-now">
+  <div class="pt-section-in">
+    <p class="pt-section-label">This Is Happening Now</p>
+    <h2 class="pt-section-h">The Pattern in the Present Tense</h2>
+    <p class="pt-section-sub">Not history. Not metaphor. Documented and active.</p>
+    <div class="pt-now-grid">
+
+      <div class="pt-now-item">
+        <span class="pt-now-tag pt-now-tag--global">Global</span>
+        <h3 class="pt-now-title">Rohingya, Myanmar</h3>
+        <p class="pt-now-body">In 1982, Myanmar&rsquo;s military government passed a citizenship law removing the Rohingya from the list of recognized national races. Overnight an entire population became stateless &mdash; same mechanism as Virginia 1682. In 2017, over 700,000 Rohingya were forced into Bangladesh. The International Court of Justice is currently adjudicating a genocide case. The legal argument is structurally identical to what this research documents: a statute, passed without consent, reclassified a population&rsquo;s political status without lawful authority.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The ICJ ruling in January 2020 found that Myanmar has a plausible obligation under the Genocide Convention to protect the Rohingya &mdash; and ordered provisional measures. Myanmar&rsquo;s defense was that the Rohingya are not a protected group because they are not recognized as citizens. The argument that non-recognition confers non-protection is the precise inversion of the argument that reclassification without consent does not extinguish prior status. The same legal logic. Applied from opposite directions. By the same type of institution.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-now-item">
+        <span class="pt-now-tag pt-now-tag--global">Global</span>
+        <h3 class="pt-now-title">Palestine &amp; the ID System</h3>
+        <p class="pt-now-body">The Israeli government issues four different identity documents with different legal rights, movement permissions, and access to courts. Israeli citizen. East Jerusalem resident. West Bank resident. Gaza resident. Each category carries different consequences under different legal systems simultaneously. The pass system referenced as historical is documented as present and active by Human Rights Watch, Amnesty International, and the UN. The ICC issued arrest warrants for Israeli leaders in November 2024. The U.S. responded with legislation threatening sanctions against ICC officials.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The U.S. response to the ICC warrants &mdash; the Illegitimate Court Counteraction Act &mdash; is the establishment doubling down on itself in documented real time. A system designed to hold power accountable for atrocities is met with legislation designed to protect power from accountability. The pen writes the law. The pen writes the exception. Both strokes by the same hand. This is step 2 of the How Systems Double Down framework in present tense: the infrastructure that formed around the original categories now protects the categories from accountability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-now-item">
+        <span class="pt-now-tag pt-now-tag--us">U.S.</span>
+        <h3 class="pt-now-title">Algorithmic Redlining</h3>
+        <p class="pt-now-body">The Fair Housing Act of 1968 prohibited racial discrimination in lending. In 2023, the DOJ settled a case against Trident Mortgage for using an algorithm that produced discriminatory lending outcomes for Black and Hispanic applicants &mdash; without ever mentioning race. The algorithm used variables that correlated with race, producing discrimination through a neutral-appearing mathematical process. This is not one case. The ACLU, NAACP, and academic researchers have documented the same pattern in insurance pricing, criminal risk scores, hiring software, and targeted advertising.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">ProPublica&rsquo;s 2016 investigation of COMPAS &mdash; a recidivism prediction algorithm used by courts to set bail and sentencing &mdash; found it was twice as likely to falsely flag Black defendants as future criminals. The algorithm was trained on historical data that encoded decades of discriminatory policing. It then used that data to predict future behavior &mdash; reproducing the discriminatory outcome as a forward-looking prediction. The training data was the original pen stroke. The algorithm is the infrastructure. The false predictions are the outcomes used to justify the infrastructure. All five steps of the doubling-down mechanism, automated.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-now-item">
+        <span class="pt-now-tag pt-now-tag--us">U.S.</span>
+        <h3 class="pt-now-title">The 1619 Project &amp; Curriculum Laws</h3>
+        <p class="pt-now-body">In 2019, The New York Times published the 1619 Project arguing that 1619 &mdash; when the first enslaved Africans arrived &mdash; is a more accurate foundational date for American history than 1776. It won a Pulitzer Prize. Within two years, 18 states passed legislation restricting how slavery&rsquo;s legacy can be taught. A documented historical argument was met with laws restricting the argument&rsquo;s circulation in schools. The paper genocide mechanism applied to living scholarship. The pattern: produce the narrative, restrict the counter-narrative, control what the next generation learns.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The legislative response to the 1619 Project is a textbook demonstration of step 3 of the doubling-down mechanism: normalizing the existing category by restricting the visibility of the counter-narrative. The children who grow up in those 18 states under those curriculum restrictions will experience the post-1619 world as the normal world &mdash; in which the connections this research documents feel like controversial claims rather than documented history. The restriction of the narrative is the mechanism by which the infrastructure reproduces itself into the next generation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-now-item">
+        <span class="pt-now-tag pt-now-tag--culture">Culture</span>
+        <h3 class="pt-now-title">23andMe &amp; the Enrollment Trap</h3>
+        <p class="pt-now-body">Over 30 million people have submitted genetic data to ancestry companies. Many discovered Indigenous ancestry. Under U.S. federal law, genetic ancestry does not automatically confer tribal citizenship. The gateway to Indigenous recognition is still the Dawes Rolls &mdash; the enrollment system built on the 1682 reclassification. The instrument of suppression is the instrument of recognition. In March 2025, 23andMe filed for bankruptcy. The genetic ancestry records of 15 million people became a corporate asset in bankruptcy proceedings. Who owns the documentary record of your biological ancestry is now a question for a bankruptcy court.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The Dawes Roll circular trap in present tense: genetic testing confirms Indigenous ancestry &rarr; federal law requires Dawes Roll enrollment for political status &rarr; Dawes Rolls enrolled Indigenous-ancestry people as Freedmen based on their 1682 reclassification status &rarr; Freedmen enrollment indicates &ldquo;no blood relation to the tribe&rdquo; &rarr; federal recognition denied despite genetic confirmation &rarr; the instrument of the original suppression determines whether the suppression can be corrected. The 23andMe bankruptcy adds a new layer: the genetic data that could document ancestry is now a commercial asset. The pen that holds the data determines what the data is allowed to mean.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-now-item">
+        <span class="pt-now-tag pt-now-tag--culture">Culture</span>
+        <h3 class="pt-now-title">Kendrick, Beyonc&eacute; &amp; Who Holds the Pen</h3>
+        <p class="pt-now-body">Beyonc&eacute;&rsquo;s Cowboy Carter (2024) argued through music that country music has Black roots the industry systematically obscured. The Grammy nominations and industry resistance demonstrated in real time that who defines a cultural category is not settled. Kendrick Lamar&rsquo;s 2025 Super Bowl performance drew 127 million viewers and centered a question about who controls the narrative of Blackness and who profits from it. Both artists &mdash; with sufficient reach to challenge the pen-holders &mdash; triggered the infrastructure of narrative control in response: legal threats, industry pressure, the debate about what &ldquo;counts.&rdquo;</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The Drake-Kendrick conflict &mdash; which produced &ldquo;Not Like Us&rdquo; &mdash; was on one level a rap beef. On another level it was a public adjudication of who gets to define authentic Blackness in commercial culture, who profits from Black cultural production, and what happens when those with sufficient reach challenge the commercial infrastructure built around Black creative work. The establishment&rsquo;s response &mdash; Drake&rsquo;s lawsuit against Universal Music Group alleging they amplified the diss track using bots &mdash; is precisely the doubling-down mechanism: the infrastructure formed around cultural narrative control being deployed against a challenge to that control. The pen that writes the charts also writes the legal challenge to whoever questions the charts.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE PEN ═══ -->
+<section class="pt-section pt-pen">
+  <div class="pt-section-in">
+    <p class="pt-section-label">The Deepest Layer</p>
+    <h2 class="pt-section-h">The Pen</h2>
+    <div class="pt-pen-body">
+      <p class="pt-pen-lead">Every system on this page began with someone writing something down.</p>
+      <p class="pt-body">The first person to write the rule gets to define what the rule means. The first person to name a category gets to decide who belongs in it. The first person to draw the map gets to decide where the borders are.</p>
+      <p class="pt-body">This is not a theory. It is a documented pattern across every civilization that kept written records.</p>
+      <div class="pt-pen-timeline">
+        <div class="pt-pt-item">
+          <span class="pt-pt-era">Ancient</span>
+          <p class="pt-pt-text">The earliest cuneiform tablets in Mesopotamia record grain inventories and debt obligations &mdash; not poetry, not philosophy. The pen and the ledger appeared at the same moment. Documentation and resource control have never been separate instruments.</p>
+        </div>
+        <div class="pt-pt-item">
+          <span class="pt-pt-era">Medieval</span>
+          <p class="pt-pt-text">The Catholic Church held the pen for 1,000 years in Europe. The documents it controlled determined what knowledge existed, what counted as legitimate, and who had the authority to speak. When the printing press broke the Church&rsquo;s monopoly on written communication, the Reformation followed within decades. The pen had been distributed. The authority that depended on controlling it fractured.</p>
+        </div>
+        <div class="pt-pt-item">
+          <span class="pt-pt-era">Colonial Era</span>
+          <p class="pt-pt-text">Colonial administrations held the pen when they arrived in the Americas, Africa, and Asia. The maps they drew defined territories. The names they assigned replaced existing names. The records they kept became the official history. Oral traditions, Indigenous maps, pre-colonial governance structures &mdash; none of it was written in a form the colonial legal system recognized as evidence. It was rendered legally invisible. Not destroyed in all cases. Made inadmissible.</p>
+        </div>
+        <div class="pt-pt-item">
+          <span class="pt-pt-era">Industrial Era</span>
+          <p class="pt-pt-text">Industrialization replaced craft knowledge with standardization. The sacred geometric traditions embedded in cathedral construction, in Indigenous land management, in pre-industrial agricultural knowledge &mdash; the pen-holders inherited these systems, absorbed them, and then standardized them into forms they could manage and profit from. The knowledge that couldn&rsquo;t be standardized was classified as primitive, superstitious, or irrelevant.</p>
+        </div>
+        <div class="pt-pt-item">
+          <span class="pt-pt-era">Today</span>
+          <p class="pt-pt-text">The pen is an algorithm. The platforms that determine what information reaches whom &mdash; what gets amplified, what gets buried, what gets recommended &mdash; are the contemporary pen-holders. They do not hold a quill. They hold the architecture that determines whose voice travels and whose doesn&rsquo;t. Google&rsquo;s search algorithm determines academic credibility through citation count &mdash; a metric that structurally advantages already-credentialed institutions over emerging scholarship, Indigenous knowledge systems, and oral traditions.</p>
+        </div>
+      </div>
+      <div class="pt-pen-insight">
+        <p class="pt-pen-insight-text">What you believe is possible is shaped by what you have been allowed to see. What you have been allowed to see is shaped by who controls what reaches you. What controls what reaches you was decided before you were born.</p>
+        <p class="pt-pen-insight-sub">Understanding who holds the pen is the beginning of holding it yourself.</p>
+      </div>
+    </div>
+    <div class="pt-expand-wrap" style="margin-top:32px">
+      <button class="pt-expand-btn" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+      <div class="pt-expand-content">
+        <p class="pt-deep-body">The argument that first documented writing and first institutional resource control emerged simultaneously is supported by the archaeological record &mdash; Mesopotamian cuneiform tablets record agricultural surplus management and debt before they record religious or artistic expression. The pen and the ledger appeared together. This is not coincidence. Documentation is a technology of power &mdash; it converts physical control into durable, transferable, enforceable claims.</p>
+        <p class="pt-deep-body">The 1682 Virginia statute did not just suppress political status. It suppressed epistemological authority. When you classify a people as legally nonpersons, you simultaneously classify their knowledge systems as legally invisible. Their maps don&rsquo;t count. Their governance records don&rsquo;t count. Their oral history of the land doesn&rsquo;t count. The people named in that statute were stripped of both political status and the right to be believed &mdash; the right to hold the pen. The reclassification was not just about labor. It was about who gets to define what&rsquo;s real.</p>
+        <p class="pt-deep-body">The modern algorithmic pen-holder operates through a mechanism the Catholic Church would recognize: the authority to determine what counts as knowledge, who counts as an expert, what gets cited, and what gets ignored. The algorithm doesn&rsquo;t suppress marginalized voices through explicit censorship. It ranks them below the voices already ranked above them. The pen writes the ranking. The ranking determines the pen. The loop is self-sealing &mdash; and it was designed that way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT CAN I DO ═══ -->
+<section class="pt-section pt-actions">
+  <div class="pt-section-in">
+    <p class="pt-section-label">Application</p>
+    <h2 class="pt-section-h">Remove Your Energy.<br>Build Your Own.</h2>
+    <p class="pt-section-sub">The system runs on your participation. That participation was never inevitable. It was just the default.</p>
+    <p class="pt-body pt-actions-intro">Every system on this page depends on your involvement to function. Your debt. Your data. Your labor. Your purchases. Your attention. Your children&rsquo;s enrollment. No one has to do any of this. But every choice has a consequence &mdash; and understanding what your choices fund, feed, and reinforce is the beginning of choosing differently.</p>
+    <div class="pt-actions-grid">
+
+      <div class="pt-action">
+        <span class="pt-action-num">01</span>
+        <h3 class="pt-action-title">Pay Cash. Find Local.</h3>
+        <p class="pt-action-body">Every dollar you spend at a corporate retailer funds the system that manipulates you. Find local vendors, farmers markets, community sellers, and small producers. Pay cash when you can. Cash doesn&rsquo;t generate a data trail, feed an algorithm, or build a behavioral profile. It stays in the community.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The shift from local to corporate retail was not natural market evolution &mdash; it was policy. Zoning laws designed around the automobile made walkable commercial districts illegal in most American municipalities from the 1950s onward. The highway system subsidized by federal dollars made national distribution chains cheaper than local ones. Tax structures allowed big box retailers to depreciate construction costs faster than small businesses could, creating a structural advantage that had nothing to do with quality or community value. The playing field was tilted by policy. Your dollar is a vote on which direction it tilts.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-action">
+        <span class="pt-action-num">02</span>
+        <h3 class="pt-action-title">Create Third Spaces.</h3>
+        <p class="pt-action-body">Third spaces are places that are neither home nor work &mdash; where community forms without a commercial transaction required. Libraries. Parks. Community gardens. Most American communities were deliberately designed without them. Retail replaced the town square, and retail requires purchase for presence. If the third space doesn&rsquo;t exist in your community, create it. A consistent gathering at a public park is a third space.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">Ray Oldenburg&rsquo;s 1989 work The Great Good Place documented the systematic disappearance of third spaces from American life as a function of suburban design and commercial zoning. Communities without third spaces have lower civic participation, higher political polarization, and weaker mutual aid networks. The Dawes Act dismantled communal land as a governance structure. Suburban zoning dismantled communal space as a social structure. Both instruments produced the same outcome: people who cannot easily find each other, organize, or act collectively. The third space is not a luxury. It is infrastructure for collective power.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-action">
+        <span class="pt-action-num">03</span>
+        <h3 class="pt-action-title">Teach Your Children the Truth.</h3>
+        <p class="pt-action-body">The curriculum your children receive was written by people with interests. 18 states have restricted how slavery&rsquo;s history can be taught. McGirt v. Oklahoma &mdash; establishing Indigenous sovereignty over half of Oklahoma &mdash; is not in most textbooks. What your child learns shapes what they believe is possible. You don&rsquo;t have to replace the school entirely &mdash; but supplement it. Teach primary documents. Show them the maps. Let them read the statutes.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The compulsory public school system was formalized in the late 19th century &mdash; the same period as the Dawes Act and the Indian boarding school system. The boarding school system used education as explicit reclassification: &ldquo;Kill the Indian, save the man&rdquo; was the stated philosophy of Richard Pratt, founder of Carlisle Indian School. John Taylor Gatto&rsquo;s 30-year examination of New York City schools documented that the core function of compulsory schooling is not education but compliance training &mdash; habituation to bells, authority, and the separation of knowledge into discrete subjects with no connection to lived experience.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-action">
+        <span class="pt-action-num">04</span>
+        <h3 class="pt-action-title">Home School Together.</h3>
+        <p class="pt-action-body">Home schooling alone is isolating. Home schooling in community is powerful. Find families who share the understanding that the standard curriculum is incomplete. Pool resources. Share expertise. One parent teaches math, another teaches history from primary sources, another teaches practical skills. Children learn alongside each other. For Black families building this, <a href="https://www.nbhe.net" target="_blank" rel="noopener" style="color:#2d6a4f;font-weight:500">nbhe.net</a> is a documented national network doing exactly this.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">Universal compulsory education standardizes what the next generation knows, believes, and considers normal. Home school communities operating outside that standardization preserve epistemic diversity &mdash; different ways of knowing, different bodies of knowledge, different frameworks for understanding reality. That diversity is exactly what the standardization system works to eliminate. It is also exactly what allows communities to see the chain. This is not a fringe idea. It is how humans educated children for most of recorded history &mdash; in community, with shared investment in the outcome.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-action">
+        <span class="pt-action-num">05</span>
+        <h3 class="pt-action-title">Build a Local Economy.</h3>
+        <p class="pt-action-body">An economy that doesn&rsquo;t depend on corporate supply chains or platform intermediaries is not a fantasy &mdash; it is how most of human history organized exchange. Skill trades. Barter networks. Community supported agriculture. Tool libraries. Time banks where an hour of carpentry trades for an hour of cooking. The model exists. The system that seemed inevitable was only inevitable because enough people did it that way.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The history of Black Wall Street &mdash; the Greenwood District of Tulsa, Oklahoma, which built a self-sufficient Black economic community in the early 20th century &mdash; and its destruction in the 1921 Tulsa Race Massacre is a documented case study in what happens when a community successfully removes itself from financial dependency on the dominant system. The destruction was not random violence. It was targeted at the economic infrastructure of a self-sufficient community. When communities build financial independence, the system does not compete. It responds.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-action">
+        <span class="pt-action-num">06</span>
+        <h3 class="pt-action-title">Your Choices Shape Your Life.</h3>
+        <p class="pt-action-body">No one has to do any of this. But every choice has a consequence. If you choose to live online, on social media, inside apps &mdash; you may be feeding a system that profits from your presence. You can use those tools. But learn to navigate them consciously. The goal is to curate your own life instead of accepting what corporations supply and calling that &ldquo;what&rsquo;s available.&rdquo; That acceptance is conformity. The system counts on it.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">Using Spotify, Netflix, Instagram, or Amazon is not a moral failure. But understanding what those platforms take in exchange for what they give is the beginning of a conscious relationship rather than a dependent one. Practical steps if you choose to reduce your exposure: partner with someone who can install a network-level tracker blocker in your home &mdash; Pi-hole is a free, documented tool that blocks tracking requests before they leave your network. Use a browser with uBlock Origin installed. Turn off app location tracking in your phone settings. Use Signal instead of SMS for sensitive conversations. Pay cash for purchases you don&rsquo;t want attached to your profile.</p>
+            <p class="pt-deep-body">The deeper principle: the system was built by people who understood that consent could be manufactured through default settings &mdash; by making one path easy and every other path difficult. The terms of service you didn&rsquo;t read, the location tracking you didn&rsquo;t turn off, the loyalty card you signed up for &mdash; these are the modern version of the Northwest Ordinance consent checkbox. The government wrote that it needed consent to take Indigenous land. Then it passed the Indian Removal Act to override that requirement. The app asked for your consent. Then it used that consent in ways you never intended. The mechanism is the same. The awareness that breaks it is the same: read what you&rsquo;re agreeing to. Then decide consciously.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-action">
+        <span class="pt-action-num">07</span>
+        <h3 class="pt-action-title">Leave the System. Leave Its Consequences.</h3>
+        <p class="pt-action-body">If you choose to leave the system, the system&rsquo;s consequences lose their grip. Debt inside a system you&rsquo;re no longer participating in is a different thing than debt inside a system you depend on. Options like bankruptcy exist. They are legal tools &mdash; not failures. Make sure your immediate needs are covered and you are stable first. Then consider: if you cannot afford the debt, start fresh. Try something outside of what you have always known. The truth is that you will live. You will make it out the other side one way or another.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">The true cost of freedom is the cost of convenience. The system is not held together by force alone &mdash; it is held together by the comfort of the familiar and the fear of the unfamiliar. Student loan debt, credit card debt, and mortgage debt are real. They are also instruments designed to make leaving feel more dangerous than staying. Bankruptcy is not the end. It is a legal reset written into the system by people who understood that financial failure is often the product of structural conditions, not personal character. Chapter 7 eliminates most unsecured debt. Chapter 13 restructures it. These are options that exist. Using them is not defeat. It is navigating the system on your own terms.</p>
+            <p class="pt-deep-body">The Freedmen&rsquo;s Bureau Bank &mdash; established after the Civil War to provide banking services to formerly enslaved people &mdash; was raided by Congress, which redirected its assets and collapsed the savings of over 61,000 Black depositors. When communities build financial independence, the system does not compete &mdash; it responds. Understanding that history means understanding both the power of financial independence and the resistance it generates. Build it anyway. The inconvenience is temporary. The freedom on the other side is yours.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-action">
+        <span class="pt-action-num">08</span>
+        <h3 class="pt-action-title">Redirect Your Curiosity.</h3>
+        <p class="pt-action-body">The true fuel for the system is your curiosity. Everything stems from how you process what you want to explore. Do you buy this thing? Do you try this food? Is it worth the cost? That same curiosity &mdash; redirected &mdash; asks: can I build this myself? Can I grow this? Can I learn this without buying it? Redirect it. Try. Stick with it. You will surprise yourself. This is how our ancestors lived before they were invaded and occupied. It was a simpler life because it kept things straightforward.</p>
+        <div class="pt-expand-wrap">
+          <button class="pt-expand-btn pt-expand-btn--sm" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
+          <div class="pt-expand-content">
+            <p class="pt-deep-body">Consumer capitalism does not manufacture products. It manufactures desire. The multi-billion dollar advertising industry exists for one purpose: to intercept your curiosity before it becomes self-directed and redirect it toward a purchase. The moment you feel the impulse to explore something &mdash; a new food, a new skill, a new experience &mdash; there is an entire infrastructure designed to convert that impulse into a transaction before you have time to ask whether you could produce it yourself. That infrastructure is not neutral. It is the most sophisticated behavior-shaping system ever built. And its raw material is your natural human curiosity.</p>
+            <p class="pt-deep-body">The pre-colonial communities documented on the maps in this research &mdash; the nations named on the Homann 1720 map, the governance structures acknowledged in the Marshall Trilogy, the peoples the 1682 statute worked to suppress &mdash; organized their material lives around production, not consumption. The knowledge of how to grow food, build shelter, heal illness, and transmit culture was held collectively and passed communally. That knowledge was not primitive. It was sophisticated, contextually adapted, and resilient in ways that supply-chain dependent systems are not. The boarding schools didn&rsquo;t just suppress language. They suppressed the transmission of practical self-sufficiency &mdash; because self-sufficient people are harder to convert into consumers. Your curiosity directed inward, toward building, growing, and making &mdash; is a form of sovereignty. It was suppressed deliberately. Reclaiming it is a political act.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOLLOW THE EVIDENCE ═══ -->
+<section class="pt-section pt-follow">
+  <div class="pt-section-in">
+    <p class="pt-section-label">Follow the Evidence</p>
+    <h2 class="pt-section-h">The Evidence Was Left Behind.<br><em>It Is Still There.</em></h2>
+    <p class="pt-body">This page introduces the pattern. The timeline shows 32 documented historical moments connected to it. The research archive shows the full primary sources, scholarship, and case law behind each one.</p>
+    <div class="pt-follow-btns">
+      <button class="pt-cta-primary" onclick="showPage('timeline')">View the Timeline &#8594;</button>
+      <button class="pt-cta-secondary" onclick="showPage('research')">Open Research Archive</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="pt-footer">
+  <p class="pt-footer-copy">&copy; 2025 Morgan T. Ellwood. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
+  <p class="pt-footer-license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>. You may share this research with attribution to Morgan T. Ellwood. Commercial use and derivative works are prohibited without written permission.</p>
+</footer>
+
+</div><!-- end page-pattern -->
+
+
 <!-- PAGE: TIMELINE -->
-<div class="page active" id="page-timeline">
+<div class="page" id="page-timeline">
 
 <header class="hdr">
   <div class="hdr-in">
@@ -865,6 +1800,21 @@ function openMapFromDetail(shortYear) {
   lnk.textContent = 'View full source →';
   document.getElementById('mapModal').classList.add('open');
   document.body.style.overflow = 'hidden';
+}
+
+
+function ptToggle(btn) {
+  var content = btn.nextElementSibling;
+  var isOpen = btn.classList.contains('open');
+  if (isOpen) {
+    btn.classList.remove('open');
+    content.classList.remove('open');
+    btn.querySelector('.pt-expand-label').textContent = 'Go Deeper';
+  } else {
+    btn.classList.add('open');
+    content.classList.add('open');
+    btn.querySelector('.pt-expand-label').textContent = 'Close';
+  }
 }
 
 buildResearchSidebar();
