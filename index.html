@@ -47,7 +47,7 @@ h1 em{font-style:italic;color:#2d6a4f}
 .nst{font-size:13.5px;line-height:1.75;color:#4a4540;font-weight:300}
 .nft{padding:14px 30px 22px;display:flex;flex-wrap:wrap;gap:7px}
 .tg{font-family:'DM Mono',monospace;font-size:10px;padding:4px 12px;border-radius:100px;background:#f0ede8;color:#9a9288;border:1px solid #e8e3db}
-.tls{background:#f8f7f4;border-top:1px solid #e8e3db;position:sticky;bottom:0}
+.tls{background:#f8f7f4;border-top:1px solid #e8e3db;bottom:0}
 .tlh{text-align:center;padding:11px 20px 0;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#9a9288;text-transform:uppercase}
 .tlsc{overflow-x:auto;padding:18px 48px 26px;-webkit-overflow-scrolling:touch}
 .tlsc::-webkit-scrollbar{height:3px}
@@ -94,16 +94,16 @@ h1 em{font-style:italic;color:#2d6a4f}
 .map-modal-link{display:block;text-align:center;padding:8px;font-size:11px;color:#2d6a4f;font-family:"DM Mono",monospace;letter-spacing:1px}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:500;background:#fff;border-bottom:1px solid #e8e3db;display:flex;align-items:center;padding:0 48px;height:52px;gap:0}
+.nav{position:sticky;top:0;z-index:500;background:#fff;border-bottom:1px solid #e8e3db;display:flex;align-items:center;padding:0 48px;height:52px;gap:0;overflow:hidden}
 .nav-brand{font-family:'DM Serif Display',serif;font-size:15px;font-weight:400;color:#18160f;letter-spacing:-0.3px;margin-right:auto}
 .nav-brand em{font-style:italic;color:#2d6a4f}
-.nav-tab{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9a9288;padding:0 20px;height:52px;display:flex;align-items:center;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none}
+.nav-tab{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#9a9288;padding:0 16px;height:52px;display:flex;align-items:center;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;white-space:nowrap;flex-shrink:0}
 .nav-tab:hover{color:#18160f}
 .nav-tab.active{color:#2d6a4f;border-bottom-color:#2d6a4f}
 
 /* PAGES */
-.page{display:none}
-.page.active{display:block}
+.page{display:none !important;overflow:hidden;height:0;visibility:hidden}
+.page.active{display:block !important;height:auto;visibility:visible}
 
 /* RESEARCH PAGE */
 .rp{display:flex;height:calc(100vh - 52px - 65px);overflow:hidden}
@@ -156,7 +156,9 @@ h1 em{font-style:italic;color:#2d6a4f}
 .rd-map-btn:hover{background:#2d6a4f;color:#fff}
 
 @media(max-width:768px){
-.nav{padding:0 22px}
+.nav{padding:0 16px}
+.nav-brand{font-size:14px}
+.nav-tab{padding:0 12px;font-size:9px;letter-spacing:1px}
 .rp-sidebar{width:220px}
 .rd{padding:28px 22px}
 }
@@ -191,9 +193,6 @@ h1 em{font-style:italic;color:#2d6a4f}
    ============================================ */
 
 /* NAV update for 3 tabs */
-.nav-brand{font-family:'DM Serif Display',serif;font-size:17px;font-weight:400;color:#18160f;letter-spacing:-0.3px}
-.nav-brand em{color:#2d6a4f;font-style:italic}
-
 /* SHARED PATTERN PAGE */
 .pt-section{padding:80px 48px}
 .pt-section-in{max-width:960px;margin:0 auto}
@@ -291,8 +290,7 @@ h1 em{font-style:italic;color:#2d6a4f}
 /* ═══════════════════════════════════════════
    PATTERN PAGE — COMPLETE CSS
 ═══════════════════════════════════════════ */
-.nav-brand{font-family:'DM Serif Display',serif;font-size:17px;font-weight:400;color:#18160f;letter-spacing:-0.3px}
-.nav-brand em{color:#2d6a4f;font-style:italic}
+
 
 /* SHARED */
 .pt-section{padding:72px 48px}
@@ -1103,12 +1101,6 @@ h1 em{font-style:italic;color:#2d6a4f}
   </div>
 </section>
 
-</div>
-
-    </div>
-  </div>
-</section>
-
 <!-- ═══ FOLLOW THE EVIDENCE ═══ -->
 <section class="pt-section pt-follow">
   <div class="pt-section-in">
@@ -1123,11 +1115,6 @@ h1 em{font-style:italic;color:#2d6a4f}
 </section>
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="pt-footer">
-  <p class="pt-footer-copy">&copy; 2025 Morgan T. Ellwood. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
-  <p class="pt-footer-license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>. You may share this research with attribution to Morgan T. Ellwood. Commercial use and derivative works are prohibited without written permission.</p>
-</footer>
-
 </div><!-- end page-pattern -->
 
 
@@ -1180,6 +1167,11 @@ h1 em{font-style:italic;color:#2d6a4f}
   <div class="tlsc"><div class="tli" id="tli"><div class="tll"></div></div></div>
 </div>
 
+
+<footer class="pt-footer">
+  <p class="pt-footer-copy">&copy; 2025 Morgan T. Ellwood. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
+  <p class="pt-footer-license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>. You may share this research with attribution to Morgan T. Ellwood. Commercial use and derivative works are prohibited without written permission.</p>
+</footer>
 </div><!-- end page-timeline -->
 
 <!-- PAGE: RESEARCH -->
@@ -1206,6 +1198,11 @@ h1 em{font-style:italic;color:#2d6a4f}
     </div>
 
   </div>
+
+<footer class="pt-footer">
+  <p class="pt-footer-copy">&copy; 2025 Morgan T. Ellwood. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
+  <p class="pt-footer-license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>. You may share this research with attribution to Morgan T. Ellwood. Commercial use and derivative works are prohibited without written permission.</p>
+</footer>
 </div><!-- end page-research -->
 
 <!-- MAP MODAL -->
@@ -1216,6 +1213,12 @@ h1 em{font-style:italic;color:#2d6a4f}
     <div class="map-modal-caption" id="mapModalCaption"></div>
     <a class="map-modal-link" id="mapModalLink" href="" target="_blank" rel="noopener"></a>
   </div>
+
+<footer class="pt-footer">
+  <p class="pt-footer-copy">&copy; 2025 Morgan T. Ellwood. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
+  <p class="pt-footer-license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>. You may share this research with attribution to Morgan T. Ellwood. Commercial use and derivative works are prohibited without written permission.</p>
+</footer>
+
 </div>
 
 <script>var RD = {
