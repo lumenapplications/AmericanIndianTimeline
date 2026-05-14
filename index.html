@@ -206,7 +206,7 @@ h1 em{font-style:italic;color:#2d6a4f}
 .pt-em{color:#18160f;font-weight:500;font-style:italic}
 
 /* HERO */
-.pt-hero{padding:72px 48px 64px;position:relative;background:#fff;border-bottom:1px solid #e8e3db}
+.pt-hero{padding:72px 48px 64px;position:relative;background:#f4f8f5;border-bottom:1px solid #c8ddd0;border-top:4px solid #2d6a4f}
 .pt-hero-in{max-width:780px;margin:0 auto}
 .pt-h1{font-family:'DM Serif Display',serif;font-size:clamp(42px,7vw,78px);font-weight:400;line-height:1.0;letter-spacing:-1.5px;color:#18160f;margin-bottom:32px}
 .pt-h1 em{color:#2d6a4f;font-style:italic}
@@ -217,7 +217,7 @@ h1 em{font-style:italic;color:#2d6a4f}
 .pt-cta-primary:hover{background:#2d6a4f}
 .pt-cta-secondary{background:transparent;color:#18160f;border:1.5px solid #ccc6bc;padding:12px 28px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:400;cursor:pointer;border-radius:4px;transition:all .2s}
 .pt-cta-secondary:hover{border-color:#18160f}
-.pt-hero-line{width:60px;height:2px;background:#2d6a4f;margin-top:52px}
+
 
 /* ABOUT */
 .pt-about{background:#f8f7f4;border-bottom:1px solid #e8e3db}
@@ -327,7 +327,7 @@ h1 em{font-style:italic;color:#2d6a4f}
 .pt-cta-primary:hover{background:#2d6a4f}
 .pt-cta-secondary{background:transparent;color:#18160f;border:1.5px solid #ccc6bc;padding:12px 26px;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;border-radius:4px;transition:all .2s}
 .pt-cta-secondary:hover{border-color:#18160f}
-.pt-hero-line{width:48px;height:2px;background:#2d6a4f;margin-top:48px}
+.pt-hero-line{width:64px;height:3px;background:#2d6a4f;margin-top:48px;border-radius:2px}
 
 /* DECISION */
 .pt-decision{background:#f8f7f4;border-bottom:1px solid #e8e3db}
@@ -467,6 +467,27 @@ h1 em{font-style:italic;color:#2d6a4f}
   .pt-actions-grid{grid-template-columns:1fr}
 }
 
+
+/* Hero rewrite */
+.pt-hero-text{display:flex;flex-direction:column;gap:0;margin-bottom:36px;max-width:640px}
+.pt-hero-opener{font-family:'DM Serif Display',serif;font-size:clamp(28px,4vw,42px);font-weight:400;color:#2d6a4f;line-height:1.1;margin-bottom:22px;letter-spacing:-0.5px}
+.pt-hero-body{font-size:16px;line-height:1.85;color:#4a4540;font-weight:300;margin-bottom:14px}
+.pt-hero-body:last-of-type{margin-bottom:0}
+.pt-hero-close{color:#18160f;font-weight:500;border-left:3px solid #2d6a4f;padding-left:16px;margin-top:8px}
+
+/* Closing frame */
+.pt-closing-body{display:flex;flex-direction:column;gap:0;max-width:660px;margin-bottom:48px}
+.pt-closing-line{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#18160f;line-height:1.2;margin-bottom:24px;font-style:italic}
+.pt-closing-text{font-size:15px;line-height:1.9;color:#4a4540;font-weight:300;margin-bottom:16px}
+.pt-closing-emphasis{color:#18160f;font-weight:500;font-size:16px;margin-bottom:20px}
+.pt-closing-final{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,30px);color:#2d6a4f;line-height:1.2;margin-top:12px;font-style:italic}
+
+
+.pt-hero .pt-eyebrow{color:#2d6a4f;opacity:.7}
+.pt-hero-body-wrap{max-width:640px;margin-bottom:36px}
+.pt-hero-body-wrap .pt-sub{font-size:17px;line-height:1.9;color:#4a4540;font-weight:300;margin-bottom:18px;max-width:none}
+.pt-hero-body-wrap .pt-sub strong{color:#18160f;font-weight:500}
+.pt-sub-close{color:#18160f !important;font-weight:500 !important}
 </style>
 </head>
 <body>
@@ -486,8 +507,16 @@ h1 em{font-style:italic;color:#2d6a4f}
 <section class="pt-hero">
   <div class="pt-hero-in">
     <p class="pt-eyebrow">Morgan T. Ellwood &mdash; An Independent Research Project</p>
-    <h1 class="pt-h1">Before you could choose,<br><em>the choice was made.</em></h1>
-    <p class="pt-sub">Before you were born, powerful people wrote documents that still shape your life today. What language you think in. What history you were taught. What your name means legally. What neighborhood you grew up in. What counts as proof of who you are.<br><br>You didn&rsquo;t choose any of it. It was written before you arrived. <strong>The records still exist. The dates are known. The names are on the paper.</strong></p>
+    <h1 class="pt-h1">Something has<br>always felt <em>off.</em></h1>
+    <div class="pt-hero-body-wrap">
+      <p class="pt-sub">The debt was there before you understood what debt was. The neighborhood was already what it was. The school taught what it taught.</p>
+      <p class="pt-sub">You didn&rsquo;t set any of that up.</p>
+      <p class="pt-sub">And here&rsquo;s the thing &mdash; neither did the people before you. They walked into it too. Each generation handed the next a world that was already arranged. Already labeled. Already running.</p>
+      <p class="pt-sub">That&rsquo;s not an accident. That&rsquo;s a system.</p>
+      <p class="pt-sub">The people who built it wrote things down. Signed their names to it. Passed the laws. Drew the maps. Filed the records and moved on.</p>
+      <p class="pt-sub">This project is those records. Not an argument. Not a theory. <strong>The actual documents.</strong></p>
+      <p class="pt-sub pt-sub-close">You are reading their work. And when you&rsquo;re done &mdash; you&rsquo;ll understand why so much of your life felt like it was already decided. Because it was. Just not by you.</p>
+    </div>
     <div class="pt-ctas">
       <button class="pt-cta-primary" onclick="showPage('timeline')">Explore the Evidence &#8594;</button>
       <button class="pt-cta-secondary" onclick="showPage('research')">Open Research Archive</button>
@@ -1104,9 +1133,23 @@ h1 em{font-style:italic;color:#2d6a4f}
 <!-- ═══ FOLLOW THE EVIDENCE ═══ -->
 <section class="pt-section pt-follow">
   <div class="pt-section-in">
-    <p class="pt-section-label">Follow the Evidence</p>
-    <h2 class="pt-section-h">The Evidence Was Left Behind.<br><em>It Is Still There.</em></h2>
-    <p class="pt-body">This page introduces the pattern. The timeline shows 32 documented historical moments connected to it. The research archive shows the full primary sources, scholarship, and case law behind each one.</p>
+    <p class="pt-section-label">The World Ahead</p>
+    <h2 class="pt-section-h">You Are the Key</h2>
+
+    <div class="pt-closing-body">
+      <p class="pt-closing-line">Here&rsquo;s what doesn&rsquo;t get said enough:</p>
+      <p class="pt-closing-text">The systems on this page are not permanent. They were built. By people. In rooms. With pens.</p>
+      <p class="pt-closing-text">That matters because anything built can be built differently.</p>
+      <p class="pt-closing-text">The Homann map from 1720 shows a continent full of sovereign communities &mdash; growing food, governing land, teaching children, trading directly with each other. That wasn&rsquo;t primitive. That was working. It was targeted and dismantled because self-sufficient people are very hard to turn into consumers. Into debtors. Into subjects.</p>
+      <p class="pt-closing-text">So that&rsquo;s the actual situation.</p>
+      <p class="pt-closing-text">You are not a demographic. You are not a data point. You are not the sum of your credit score and your browsing history. You are a person who now has context that most people around you don&rsquo;t have.</p>
+      <p class="pt-closing-text pt-closing-emphasis">What you do with that is yours.</p>
+      <p class="pt-closing-text">But here is what we know: the system needs specific things from you to keep running. Your attention. Your labor. Your debt. Your fear. Your children sitting in classrooms being taught a version of history that ends before the part that explains their lives.</p>
+      <p class="pt-closing-text">Pull any one of those back. Redirect it toward something that actually serves you &mdash; your community, your kids, your own hands. The system that looked permanent starts to show its edges.</p>
+      <p class="pt-closing-text">It only looked inevitable because enough people went along with it.</p>
+      <p class="pt-closing-final">You don&rsquo;t have to be the last one who stops.</p>
+    </div>
+
     <div class="pt-follow-btns">
       <button class="pt-cta-primary" onclick="showPage('timeline')">View the Timeline &#8594;</button>
       <button class="pt-cta-secondary" onclick="showPage('research')">Open Research Archive</button>
