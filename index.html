@@ -94,10 +94,10 @@ h1 em{font-style:italic;color:#2d6a4f}
 .map-modal-link{display:block;text-align:center;padding:8px;font-size:11px;color:#2d6a4f;font-family:"DM Mono",monospace;letter-spacing:1px}
 
 /* NAV */
-.nav{position:sticky;top:0;z-index:500;background:#fff;border-bottom:1px solid #e8e3db;display:flex;align-items:center;padding:0 48px;height:52px;gap:0;overflow:hidden}
-.nav-brand{font-family:'DM Serif Display',serif;font-size:15px;font-weight:400;color:#18160f;letter-spacing:-0.3px;margin-right:auto}
+.nav{position:sticky;top:0;z-index:500;background:#fff;border-bottom:1px solid #e8e3db;display:flex;align-items:center;padding:0 32px;height:52px;gap:0;overflow:visible}
+.nav-brand{font-family:'DM Serif Display',serif;font-size:14px;font-weight:400;color:#18160f;letter-spacing:-0.3px;margin-right:auto}
 .nav-brand em{font-style:italic;color:#2d6a4f}
-.nav-tab{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#9a9288;padding:0 16px;height:52px;display:flex;align-items:center;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;white-space:nowrap;flex-shrink:0}
+.nav-tab{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:1.2px;text-transform:uppercase;color:#9a9288;padding:0 13px;height:52px;display:flex;align-items:center;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;background:none;border-top:none;border-left:none;border-right:none;white-space:nowrap;flex-shrink:0}
 .nav-tab:hover{color:#18160f}
 .nav-tab.active{color:#2d6a4f;border-bottom-color:#2d6a4f}
 
@@ -488,6 +488,168 @@ h1 em{font-style:italic;color:#2d6a4f}
 .pt-hero-body-wrap .pt-sub{font-size:17px;line-height:1.9;color:#4a4540;font-weight:300;margin-bottom:18px;max-width:none}
 .pt-hero-body-wrap .pt-sub strong{color:#18160f;font-weight:500}
 .pt-sub-close{color:#18160f !important;font-weight:500 !important}
+
+/* ═══ VIEW TOGGLE ═══ */
+.vt-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 48px;background:#fff;border-bottom:1px solid #e8e3db;flex-wrap:wrap;gap:12px;position:sticky;top:52px;z-index:100}
+.vt-group{display:flex;gap:6px}
+.vt-btn{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;border:1.5px solid #e8e3db;background:#fff;color:#9a9288;cursor:pointer;border-radius:4px;transition:all .2s;display:flex;align-items:center;gap:7px}
+.vt-btn.vt-active{background:#18160f;color:#fff;border-color:#18160f}
+.vt-btn:hover:not(.vt-active){border-color:#18160f;color:#18160f}
+.vt-icon{font-size:9px}
+.vt-legend{display:flex;gap:16px;flex-wrap:wrap}
+.vt-li{display:flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:#9a9288}
+.vt-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
+/* ═══ WEB VIEW ═══ */
+.tl-view{width:100%}
+.web-outer{display:flex;width:100%;height:calc(100vh - 160px);min-height:500px;overflow:hidden}
+.web-wrap{position:relative;flex:1;min-width:0;background:#fafaf8}
+#webCanvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+#webNodes{position:absolute;top:0;left:0;width:100%;height:100%}
+.wn{position:absolute;transform:translate(-50%,-50%);cursor:pointer;z-index:10}
+.wn-dot{width:14px;height:14px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 1px 6px rgba(0,0,0,.15);transition:transform .2s,box-shadow .2s;position:relative;z-index:2}
+.wn:hover .wn-dot,.wn.active .wn-dot{transform:scale(1.6);box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.wn.active .wn-dot{border-width:3px}
+.wn-label{position:absolute;top:18px;left:50%;transform:translateX(-50%);font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1px;color:#6a6460;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s;background:rgba(250,250,248,.9);padding:2px 5px;border-radius:2px}
+.wn:hover .wn-label,.wn.active .wn-label{opacity:1}
+.wn-year{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);font-family:'DM Mono',monospace;font-size:7px;letter-spacing:0.5px;color:#9a9288;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s}
+.wn:hover .wn-year,.wn.active .wn-year{opacity:1}
+
+/* connected nodes highlight */
+.wn.connected .wn-dot{opacity:1}
+.wn.dimmed .wn-dot{opacity:0.2}
+.wn.dimmed .wn-label{opacity:0}
+
+/* WEB PANEL */
+.web-panel{width:360px;flex-shrink:0;background:#fff;border-left:1px solid #e8e3db;overflow-y:auto;z-index:20}
+.web-panel-empty{padding:40px 28px;text-align:center;color:#9a9288;font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.7}
+.web-panel-sub{font-size:12px;margin-top:12px;color:#ccc6bc}
+.web-panel-close{position:absolute;top:14px;right:14px;background:none;border:none;font-size:16px;color:#9a9288;cursor:pointer;padding:4px 8px;z-index:5}
+.web-panel-close:hover{color:#18160f}
+.web-panel-detail{padding:24px 24px 32px;position:relative}
+
+/* Connection type pills */
+.wpc-connections{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+.wpc-conn{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:100px;cursor:pointer;transition:opacity .15s}
+.wpc-conn:hover{opacity:.7}
+
+@media(max-width:768px){
+  .web-outer{flex-direction:column}
+  .web-panel{width:100%;border-left:none;border-top:1px solid #e8e3db;max-height:45vh}
+  .web-wrap{height:45vh}
+  .vt-bar{padding:10px 18px}
+  .vt-legend{display:none}
+}
+
+
+.vt-bar-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.vt-desc{padding:8px 0 4px;font-size:12px;line-height:1.6;color:#9a9288;border-top:1px solid #f0ece6;margin-top:8px;max-width:900px}
+.vt-desc-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#4a4540;margin-right:6px}
+
+
+/* ═══ GLOSSARY ═══ */
+.gloss-btn{position:fixed;bottom:28px;left:28px;z-index:800;background:#18160f;color:#f0e6cc;border:none;border-radius:100px;padding:10px 18px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:all .2s}
+.gloss-btn:hover{background:#2d6a4f}
+.gloss-btn-icon{font-size:14px;line-height:1}
+.gloss-overlay{position:fixed;inset:0;z-index:900;background:rgba(24,22,15,.5);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .25s}
+.gloss-overlay.open{opacity:1;pointer-events:all}
+.gloss-drawer{position:absolute;top:0;right:0;width:560px;max-width:95vw;height:100%;background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .28s cubic-bezier(.4,0,.2,1)}
+.gloss-overlay.open .gloss-drawer{transform:translateX(0)}
+.gloss-header{display:flex;align-items:flex-start;justify-content:space-between;padding:32px 32px 16px;border-bottom:1px solid #e8e3db;flex-shrink:0}
+.gloss-eyebrow{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:#9a9288;margin-bottom:6px}
+.gloss-title{font-family:'DM Serif Display',serif;font-size:24px;color:#18160f;line-height:1.1;margin-bottom:6px}
+.gloss-sub{font-size:12px;color:#9a9288;line-height:1.5;max-width:380px}
+.gloss-close{background:none;border:none;font-size:18px;color:#9a9288;cursor:pointer;padding:4px 8px;flex-shrink:0;margin-top:-4px}
+.gloss-close:hover{color:#18160f}
+.gloss-search-wrap{padding:14px 32px;border-bottom:1px solid #e8e3db;flex-shrink:0}
+.gloss-search{width:100%;border:1.5px solid #e8e3db;border-radius:6px;padding:9px 14px;font-family:'DM Sans',sans-serif;font-size:13px;color:#18160f;background:#f8f7f4;outline:none;box-sizing:border-box}
+.gloss-search:focus{border-color:#2d6a4f;background:#fff}
+.gloss-body{flex:1;overflow-y:auto;padding:8px 32px 48px}
+.gloss-section{margin-top:24px}
+.gloss-section-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#2d6a4f;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #e8e3db}
+.gloss-entry{padding:16px 0;border-bottom:1px solid #f0ece6}
+.gloss-entry:last-child{border-bottom:none}
+.gloss-entry.hidden{display:none}
+.gloss-term{font-family:'DM Serif Display',serif;font-size:16px;color:#18160f;margin-bottom:7px;line-height:1.2}
+.gloss-def{font-size:13px;line-height:1.8;color:#4a4540;font-weight:300;margin-bottom:8px}
+.gloss-ref{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:#9a9288;display:block}
+@media(max-width:600px){
+  .gloss-drawer{width:100%}
+  .gloss-btn{bottom:20px;left:20px;padding:9px 14px}
+}
+
+
+/* ═══════════════════════════════════════
+   ESSAY PAGE
+═══════════════════════════════════════ */
+/* Header */
+.es-header{padding:72px 48px 56px;background:#18160f;border-bottom:1px solid #2e2a20}
+.es-header-in{max-width:820px;margin:0 auto}
+.es-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#5a5040;display:block;margin-bottom:20px}
+.es-title{font-family:'DM Serif Display',serif;font-size:clamp(40px,6vw,72px);font-weight:400;color:#f0e6cc;line-height:1.0;letter-spacing:-1.5px;margin-bottom:18px}
+.es-subtitle{font-size:16px;line-height:1.85;color:#6a6460;font-weight:300;max-width:580px}
+
+/* Index */
+.es-index{padding:64px 48px;background:#f8f7f4;min-height:calc(100vh - 200px)}
+.es-index-in{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.es-card{background:#fff;border:1px solid #e8e3db;border-radius:12px;padding:0;display:flex;cursor:pointer;transition:all .2s;overflow:hidden}
+.es-card:hover{border-color:#2d6a4f;box-shadow:0 4px 24px rgba(45,106,79,.08);transform:translateY(-2px)}
+.es-card-num{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;color:#ccc6bc;writing-mode:vertical-rl;text-orientation:mixed;padding:32px 20px;border-right:1px solid #e8e3db;flex-shrink:0;display:flex;align-items:center;background:#fafaf8}
+.es-card-body{padding:32px 36px;flex:1}
+.es-card-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#2d6a4f;display:block;margin-bottom:10px}
+.es-card-title{font-family:'DM Serif Display',serif;font-size:clamp(18px,2.5vw,26px);font-weight:400;color:#18160f;line-height:1.2;letter-spacing:-0.3px;margin-bottom:14px}
+.es-card-desc{font-size:14px;line-height:1.8;color:#6a6460;font-weight:300;margin-bottom:18px;max-width:580px}
+.es-card-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.es-card-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#9a9288;background:#f8f7f4;border:1px solid #e8e3db;padding:4px 10px;border-radius:100px}
+.es-card-cta{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2d6a4f;font-weight:500}
+.es-card:hover .es-card-cta{color:#18160f}
+
+/* Reader */
+.es-reader{background:#fff;min-height:100vh}
+.es-reader-nav{position:sticky;top:52px;z-index:50;background:#fff;border-bottom:1px solid #e8e3db;padding:14px 48px;display:flex;align-items:center;gap:24px}
+.es-back-btn{background:none;border:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9a9288;cursor:pointer;padding:0;transition:color .15s;flex-shrink:0}
+.es-back-btn:hover{color:#18160f}
+.es-reader-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#ccc6bc;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.es-reader-body{max-width:680px;margin:0 auto;padding:64px 48px 80px}
+
+/* Essay typography */
+.es-essay-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#9a9288;display:block;margin-bottom:20px}
+.es-essay-title{font-family:'DM Serif Display',serif;font-size:clamp(32px,5vw,56px);font-weight:400;color:#18160f;line-height:1.0;letter-spacing:-1px;margin-bottom:10px}
+.es-essay-subtitle{font-size:15px;line-height:1.75;color:#9a9288;font-style:italic;margin-bottom:48px;padding-bottom:32px;border-bottom:2px solid #2d6a4f}
+.es-essay-body p{font-size:16px;line-height:1.95;color:#4a4540;font-weight:300;margin-bottom:22px}
+.es-essay-body p.es-p-open{font-family:'DM Serif Display',serif;font-size:clamp(20px,3vw,28px);color:#18160f;line-height:1.3;font-weight:400;letter-spacing:-0.3px;margin-bottom:28px}
+.es-essay-body p.es-p-punch{font-size:17px;color:#18160f;font-weight:400;margin-bottom:22px}
+.es-essay-body p.es-p-slow{font-size:15px;line-height:2;color:#6a6460;font-style:italic;margin-bottom:22px}
+.es-essay-body hr{border:none;border-top:1px solid #e8e3db;margin:40px 0}
+.es-essay-body blockquote{border-left:3px solid #2d6a4f;padding-left:20px;margin:28px 0;font-family:'DM Serif Display',serif;font-size:18px;color:#18160f;line-height:1.5;font-style:italic}
+
+/* Citations */
+.es-citations{margin-top:56px;padding-top:32px;border-top:2px solid #e8e3db}
+.es-citations-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#9a9288;margin-bottom:20px;display:block}
+.es-cite-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid #f0ece6;align-items:flex-start}
+.es-cite-item:last-child{border-bottom:none}
+.es-cite-num{font-family:'DM Mono',monospace;font-size:9px;color:#ccc6bc;flex-shrink:0;padding-top:2px;width:20px}
+.es-cite-text{font-family:'DM Mono',monospace;font-size:10px;line-height:1.6;color:#9a9288}
+.es-cite-text a{color:#2d6a4f;text-decoration:none}
+.es-cite-text a:hover{text-decoration:underline}
+
+/* Footer */
+.es-reader-footer{padding:24px 48px;border-top:1px solid #e8e3db;display:flex;align-items:center;justify-content:space-between;background:#f8f7f4;flex-wrap:wrap;gap:12px}
+.es-back-btn-bottom{background:none;border:none;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#9a9288;cursor:pointer;padding:0;transition:color .15s}
+.es-back-btn-bottom:hover{color:#18160f}
+.es-reader-copy{font-family:'DM Mono',monospace;font-size:9px;color:#ccc6bc;letter-spacing:1px}
+
+@media(max-width:768px){
+  .es-header{padding:44px 22px 40px}
+  .es-index{padding:40px 22px}
+  .es-card{flex-direction:column}
+  .es-card-num{writing-mode:horizontal-tb;padding:16px 22px 0;border-right:none;border-bottom:none;background:none}
+  .es-card-body{padding:16px 22px 24px}
+  .es-reader-nav{padding:12px 22px}
+  .es-reader-body{padding:40px 22px 60px}
+  .es-reader-footer{padding:20px 22px}
+}
+
 </style>
 </head>
 <body>
@@ -496,9 +658,79 @@ h1 em{font-style:italic;color:#2d6a4f}
 <nav class="nav">
   <span class="nav-brand">The <em>Pattern</em></span>
   <button class="nav-tab active" id="tab-pattern" onclick="showPage('pattern')">The Pattern</button>
+  <button class="nav-tab" id="tab-essays" onclick="showPage('essays')">Essays</button>
   <button class="nav-tab" id="tab-timeline" onclick="showPage('timeline')">Timeline</button>
   <button class="nav-tab" id="tab-research" onclick="showPage('research')">Research</button>
 </nav>
+
+
+<!-- PAGE: ESSAYS -->
+<div class="page" id="page-essays">
+
+<header class="es-header">
+  <div class="es-header-in">
+    <p class="es-eyebrow">Morgan T. Ellwood &mdash; Extended Essays</p>
+    <h1 class="es-title">The Deeper Frame</h1>
+    <p class="es-subtitle">Two frameworks that explain not just what happened &mdash; but why it keeps happening, and what it means at a scale larger than any single statute.</p>
+  </div>
+</header>
+
+<!-- ESSAY INDEX -->
+<div class="es-index" id="esIndex">
+  <div class="es-index-in">
+
+    <div class="es-card" onclick="openEssay('pen')">
+      <div class="es-card-num">01</div>
+      <div class="es-card-body">
+        <p class="es-card-label">The Pen and the Institution</p>
+        <h2 class="es-card-title">How the first act of writing became the first act of control &mdash; and why it never stopped</h2>
+        <p class="es-card-desc">From the grain inventories of Uruk to the search algorithm, whoever holds the pen decides what exists. This essay traces the knowledge monopoly from its oldest documented form through the colonial pen that rendered Indigenous sovereignty legally invisible &mdash; and into the architecture of the present.</p>
+        <div class="es-card-meta">
+          <span class="es-card-tag">Knowledge &amp; Power</span>
+          <span class="es-card-tag">Colonial History</span>
+          <span class="es-card-tag">Information Systems</span>
+        </div>
+        <span class="es-card-cta">Read Essay &#8594;</span>
+      </div>
+    </div>
+
+    <div class="es-card" onclick="openEssay('scale')">
+      <div class="es-card-num">02</div>
+      <div class="es-card-body">
+        <p class="es-card-label">The Way of Scale</p>
+        <h2 class="es-card-title">What was lost and why it matters</h2>
+        <p class="es-card-desc">The suppression of sovereign peoples was not just political. It was a disruption of something operating at a scale larger than colonial administration understood. This essay argues that the Dawes Act, the boarding schools, and the algorithm are all expressions of the same compression &mdash; the imposition of a shorter time horizon onto peoples who built knowledge systems for centuries.</p>
+        <div class="es-card-meta">
+          <span class="es-card-tag">Fractal Time</span>
+          <span class="es-card-tag">Indigenous Knowledge</span>
+          <span class="es-card-tag">Systems Thinking</span>
+        </div>
+        <span class="es-card-cta">Read Essay &#8594;</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ESSAY READER -->
+<div class="es-reader" id="esReader" style="display:none">
+  <div class="es-reader-nav">
+    <button class="es-back-btn" onclick="closeEssay()">&#8592; Back to Essays</button>
+    <span class="es-reader-title" id="esReaderTitle"></span>
+  </div>
+  <div class="es-reader-body" id="esReaderBody"></div>
+  <div class="es-reader-footer">
+    <button class="es-back-btn-bottom" onclick="closeEssay()">&#8592; Back to Essays</button>
+    <p class="es-reader-copy">&copy; 2025 Morgan T. Ellwood &mdash; CC BY-NC-ND 4.0</p>
+  </div>
+</div>
+
+<footer class="pt-footer">
+  <p class="pt-footer-copy">&copy; 2025 Morgan T. Ellwood. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
+  <p class="pt-footer-license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>. You may share this research with attribution to Morgan T. Ellwood. Commercial use and derivative works are prohibited without written permission.</p>
+</footer>
+
+</div><!-- end page-essays -->
 
 <!-- PAGE: PATTERN (HOME) -->
 <div class="page active" id="page-pattern">
@@ -1178,38 +1410,85 @@ h1 em{font-style:italic;color:#2d6a4f}
   </div>
 </header>
 
-<div class="lgd">
-  <span class="ll">Key</span>
-  <div class="li"><div class="ld" style="background:#2d6a4f"></div>Historical Event</div>
-  <div class="li"><div class="ld" style="background:#1d4e89"></div>Treaty / Proclamation</div>
-  <div class="li"><div class="ld" style="background:#b5451b"></div>Colonial Statute</div>
-  <div class="li"><div class="ld" style="background:#5c3d8f"></div>Case Law</div>
-</div>
-
-<div class="pa">
-  <div class="ph" id="ph">
-    <div class="ph-a">&#8595;</div>
-    <p>Select any point on the timeline to explore the record</p>
-  </div>
-  <div class="np" id="np">
-    <div class="nh">
-      <div class="nhl">
-        <div class="nbg" id="nbg"></div>
-        <h2 class="ntt" id="ntt"></h2>
-      </div>
-      <button class="ncl" onclick="cls()">Close &#10005;</button>
+<!-- VIEW TOGGLE -->
+<div class="vt-bar">
+  <div class="vt-bar-top">
+    <div class="vt-group">
+      <button class="vt-btn vt-active" id="vt-web" onclick="switchView('web')">
+        <span class="vt-icon">&#9632;</span> Pattern Web
+      </button>
+      <button class="vt-btn" id="vt-linear" onclick="switchView('linear')">
+        <span class="vt-icon">&#9472;</span> Timeline
+      </button>
     </div>
-    <div class="nbd" id="nbd"></div>
-    <div class="nft" id="nft"></div>
-    <div id="mapBtnContainer" style="padding:0 30px 20px;display:none;"></div>
+    <div class="vt-legend" id="vt-legend">
+    <div class="vt-li"><div class="vt-dot" style="background:#e05a3a"></div>Reclassification Chain</div>
+    <div class="vt-li"><div class="vt-dot" style="background:#2d6a4f"></div>Sovereignty Acknowledgment</div>
+    <div class="vt-li"><div class="vt-dot" style="background:#c9a84c"></div>Override Pattern</div>
+    <div class="vt-li"><div class="vt-dot" style="background:#1d4e89"></div>Cartographic Record</div>
+    <div class="vt-li"><div class="vt-dot" style="background:#5c3d8f"></div>Echo / Recurrence</div>
+    </div>
+  </div>
+  <div class="vt-desc" id="vt-desc-web">
+    <span class="vt-desc-label">Pattern Web</span> — nodes are positioned by their documented connections, not by date. Click any node to see what it links to and why. The lines show recurring mechanisms across centuries: the same reclassification technology, the same override pattern, the same pen writing the rule and the exception.
+  </div>
+  <div class="vt-desc" id="vt-desc-linear" style="display:none">
+    <span class="vt-desc-label">Timeline</span> — the same 32 nodes in chronological order. Use this view to orient yourself by date, then switch to the Pattern Web to see what the dates are actually connected to.
   </div>
 </div>
 
-<div class="tls">
-  <p class="tlh">Scroll timeline &middot; Click any node to explore</p>
-  <div class="tlsc"><div class="tli" id="tli"><div class="tll"></div></div></div>
+<!-- WEB VIEW -->
+<div class="tl-view" id="view-web">
+  <div class="web-outer">
+  <div class="web-wrap">
+    <canvas id="webCanvas"></canvas>
+    <div id="webNodes"></div>
+  </div>
+  <div class="web-panel" id="webPanel">
+    <div class="web-panel-empty" id="webPanelEmpty">
+      <p>Select any node to explore the record</p>
+      <p class="web-panel-sub">Lines show documented connections between events. Color indicates the type of connection.</p>
+    </div>
+    <div class="web-panel-detail" id="webPanelDetail" style="display:none">
+      <button class="web-panel-close" onclick="closeWebPanel()">&#10005;</button>
+      <div id="webPanelContent"></div>
+    </div>
+  </div>
+  </div><!-- end web-outer -->
 </div>
 
+<!-- LINEAR VIEW -->
+<div class="tl-view" id="view-linear" style="display:none">
+  <div class="lgd">
+    <span class="ll">Key</span>
+    <div class="li"><div class="ld" style="background:#2d6a4f"></div>Historical Event</div>
+    <div class="li"><div class="ld" style="background:#1d4e89"></div>Treaty / Proclamation</div>
+    <div class="li"><div class="ld" style="background:#b5451b"></div>Colonial Statute</div>
+    <div class="li"><div class="ld" style="background:#5c3d8f"></div>Case Law</div>
+  </div>
+  <div class="pa">
+    <div class="ph" id="ph">
+      <div class="ph-a">&#8595;</div>
+      <p>Select any point on the timeline to explore the record</p>
+    </div>
+    <div class="np" id="np">
+      <div class="nh">
+        <div class="nhl">
+          <div class="nbg" id="nbg"></div>
+          <h2 class="ntt" id="ntt"></h2>
+        </div>
+        <button class="ncl" onclick="cls()">Close &#10005;</button>
+      </div>
+      <div class="nbd" id="nbd"></div>
+      <div class="nft" id="nft"></div>
+      <div id="mapBtnContainer" style="padding:0 30px 20px;display:none;"></div>
+    </div>
+  </div>
+  <div class="tls">
+    <p class="tlh">Scroll timeline &middot; Click any node to explore</p>
+    <div class="tlsc"><div class="tli" id="tli"><div class="tll"></div></div></div>
+  </div>
+</div>
 
 <footer class="pt-footer">
   <p class="pt-footer-copy">&copy; 2025 Morgan T. Ellwood. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
@@ -1863,7 +2142,791 @@ function ptToggle(btn) {
   }
 }
 
+// ═══ CONNECTION DATA ═══
+// Connection map: [source_index, target_index, type]
+// Types: 'reclass' (red), 'sovereign' (green), 'override' (amber), 'cartographic' (blue), 'echo' (purple)
+var CONNECTIONS = [
+  // RECLASSIFICATION CHAIN — the pen
+  [4,7,'reclass'],   // Partus Act → Reclassification Act
+  [7,11,'reclass'],  // Reclassification Act → SC Slave Code
+  [11,22,'reclass'], // SC Slave Code → SC Negro Law (self-contradiction)
+  [22,23,'reclass'], // SC Negro Law → 14th Amendment (compounds)
+  [23,24,'reclass'], // 14th Amendment → Dawes Rolls
+  [24,25,'reclass'], // Dawes Rolls → Racial Integrity Act
+  [4,24,'reclass'],  // Partus Act → Dawes Rolls (same matrilineal mechanism)
+  [7,25,'reclass'],  // 1682 → Racial Integrity Act (same populations targeted)
+  [25,24,'reclass'], // Racial Integrity Act → Dawes Rolls (paper genocide feeds enrollment trap)
+
+  // SOVEREIGNTY ACKNOWLEDGMENT — the treaty
+  [0,8,'sovereign'],  // First Peoples → Great Peace
+  [8,13,'sovereign'], // Great Peace → Royal Proclamation
+  [13,15,'sovereign'],// Royal Proclamation → First U.S. Treaty
+  [15,16,'sovereign'],// First U.S. Treaty → Morocco Treaty
+  [16,17,'sovereign'],// Morocco Treaty → Northwest Ordinance
+  [17,20,'sovereign'],// Northwest Ordinance → Marshall Trilogy
+  [20,26,'sovereign'],// Marshall Trilogy → Mancari
+  [26,27,'sovereign'],// Mancari → Santa Clara
+  [27,28,'sovereign'],// Santa Clara → U.S. v. Bruce
+  [29,30,'sovereign'],// UNDRIP → McGirt
+  [2,16,'sovereign'], // Moors at Roanoke → Morocco Treaty
+
+  // OVERRIDE PATTERN — right written then removed
+  [17,19,'override'], // Northwest Ordinance → Removal Act (consent requirement overridden)
+  [13,19,'override'], // Royal Proclamation → Removal Act
+  [20,31,'override'], // Marshall Trilogy → Castro-Huerta (sovereignty limited)
+  [30,31,'override'], // McGirt → Castro-Huerta (immediate counter)
+  [23,31,'override'], // 14th Amendment → Castro-Huerta (equal protection weaponized)
+  [15,19,'override'], // First U.S. Treaty → Removal Act
+  [17,24,'override'], // Northwest Ordinance → Dawes Rolls
+
+  // CARTOGRAPHIC — the map documents what the statute erases
+  [0,9,'cartographic'],  // First Peoples → Homann Map
+  [0,10,'cartographic'], // First Peoples → Louisiana Map
+  [6,7,'cartographic'],  // Speed/Lamb Map → Reclassification Act (same jurisdiction same time)
+  [6,9,'cartographic'],  // Speed/Lamb → Homann
+  [9,10,'cartographic'], // Homann → Louisiana Map
+  [5,6,'cartographic'],  // Virginia Patents → Speed/Lamb Map
+
+  // ECHO — same mechanism different era
+  [4,23,'echo'],   // Partus Act → 14th Amendment (classification imposed)
+  [7,2,'echo'],    // Reclassification Act ← Moors at Roanoke (documented presence)
+  [12,25,'echo'],  // Renaming as Law → Racial Integrity Act
+  [24,28,'echo'],  // Dawes Rolls → U.S. v. Bruce (enrollment trap / Bruce workaround)
+  [21,30,'echo'],  // Seminole Wars → McGirt (resistance documented → sovereignty confirmed)
+  [18,20,'echo'],  // Aboriginal Title → Marshall Trilogy
+  [19,21,'echo'],  // Removal Act → Seminole Wars (removal resisted)
+  [1,3,'echo'],    // First Contact → Colonial Contact
+  [3,5,'echo'],    // Colonial Contact → Virginia Patents
+];
+
+
+// ═══ WEB VIEW ENGINE ═══
+var webActive = null;
+var webAnimFrame = null;
+var webNodes = [];
+var webW = 0, webH = 0;
+var webCanvas, webCtx, webContainer;
+
+var connColors = {
+  reclass:     '#e05a3a',
+  sovereign:   '#2d6a4f',
+  override:    '#c9a84c',
+  cartographic:'#1d4e89',
+  echo:        '#5c3d8f'
+};
+
+var connLabels = {
+  reclass:     'Reclassification Chain',
+  sovereign:   'Sovereignty Acknowledgment',
+  override:    'Override Pattern',
+  cartographic:'Cartographic Record',
+  echo:        'Echo / Recurrence'
+};
+
+// Node dot colors by category
+var webDotColors = {h:'#2d6a4f', t:'#1d4e89', s:'#b5451b', l:'#5c3d8f'};
+
+function initWeb() {
+  webCanvas = document.getElementById('webCanvas');
+  webContainer = document.getElementById('webNodes');
+  if (!webCanvas || !webContainer) return;
+  webCtx = webCanvas.getContext('2d');
+
+  // Size canvas
+  sizeWeb();
+  window.addEventListener('resize', sizeWeb);
+
+  // Create node DOM elements with physics positions
+  webNodes = D.map(function(n, i) {
+    // Start nodes in a tighter spiral from center
+    var angle = (i / D.length) * Math.PI * 2 * 2.5;
+    var r = 0.08 + (i / D.length) * 0.22;
+    var jitter = function() { return (Math.random() - 0.5) * 0.06; };
+    return {
+      i: i,
+      n: n,
+      x: 0.5 + Math.cos(angle) * r + jitter(),
+      y: 0.5 + Math.sin(angle) * r + jitter(),
+      vx: 0, vy: 0,
+      el: null
+    };
+  });
+
+  // Apply force layout
+  runForceLayout(function() {
+    buildWebDom();
+    drawCanvas();
+  });
+}
+
+function getEra(i) {
+  if (i <= 3) return 0;
+  if (i <= 7) return 1;
+  if (i <= 13) return 2;
+  if (i <= 18) return 3;
+  if (i <= 24) return 4;
+  return 5;
+}
+
+function sizeWeb() {
+  if (!webCanvas) return;
+  var wrap = document.querySelector('.web-wrap');
+  if (!wrap) return;
+  webW = wrap.clientWidth;
+  webH = wrap.clientHeight;
+  webCanvas.width = webW;
+  webCanvas.height = webH;
+  // Also size the webNodes container
+  var wn = document.getElementById('webNodes');
+  if (wn) { wn.style.width = webW + 'px'; wn.style.height = webH + 'px'; }
+  drawCanvas();
+}
+
+function runForceLayout(done) {
+  var iterations = 300;
+  var iter = 0;
+  var n = webNodes.length;
+  var padding = 0.10; // keep nodes away from edges
+
+  function step() {
+    // Repulsion — weaker, min distance enforced
+    for (var a = 0; a < n; a++) {
+      for (var b = a + 1; b < n; b++) {
+        var dx = webNodes[b].x - webNodes[a].x;
+        var dy = webNodes[b].y - webNodes[a].y;
+        var dist = Math.sqrt(dx*dx + dy*dy) || 0.001;
+        if (dist < 0.25) {
+          var force = 0.00018 / (dist * dist);
+          webNodes[a].vx -= dx * force;
+          webNodes[a].vy -= dy * force;
+          webNodes[b].vx += dx * force;
+          webNodes[b].vy += dy * force;
+        }
+      }
+    }
+    // Attraction along connections — pull toward ideal distance
+    CONNECTIONS.forEach(function(conn) {
+      var a = webNodes[conn[0]], b = webNodes[conn[1]];
+      var dx = b.x - a.x, dy = b.y - a.y;
+      var dist = Math.sqrt(dx*dx + dy*dy) || 0.001;
+      var ideal = 0.16;
+      var force = (dist - ideal) * 0.03;
+      a.vx += dx * force; a.vy += dy * force;
+      b.vx -= dx * force; b.vy -= dy * force;
+    });
+    // Strong center gravity — keeps everything pulled inward
+    webNodes.forEach(function(nd) {
+      var dx = 0.5 - nd.x, dy = 0.5 - nd.y;
+      var dist = Math.sqrt(dx*dx + dy*dy) || 0.001;
+      // Gravity increases with distance from center
+      var g = 0.012 + dist * 0.04;
+      nd.vx += dx * g;
+      nd.vy += dy * g;
+    });
+    // Apply velocity + damping + soft boundary
+    webNodes.forEach(function(nd) {
+      nd.x += nd.vx * 0.5;
+      nd.y += nd.vy * 0.5;
+      nd.vx *= 0.65; nd.vy *= 0.65;
+      // Soft boundary — push back toward safe zone
+      if (nd.x < padding) nd.vx += (padding - nd.x) * 0.3;
+      if (nd.x > 1-padding) nd.vx += (1-padding - nd.x) * 0.3;
+      if (nd.y < padding) nd.vy += (padding - nd.y) * 0.3;
+      if (nd.y > 1-padding) nd.vy += (1-padding - nd.y) * 0.3;
+      nd.x = Math.max(padding*0.5, Math.min(1-padding*0.5, nd.x));
+      nd.y = Math.max(padding*0.5, Math.min(1-padding*0.5, nd.y));
+    });
+    iter++;
+    if (iter < iterations) {
+      requestAnimationFrame(step);
+    } else {
+      done();
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function buildWebDom() {
+  webContainer.innerHTML = '';
+  webNodes.forEach(function(nd) {
+    var el = document.createElement('div');
+    el.className = 'wn';
+    el.dataset.i = nd.i;
+    el.style.left = (nd.x * 100) + '%';
+    el.style.top = (nd.y * 100) + '%';
+    var color = webDotColors[nd.n.c] || '#9a9288';
+    el.innerHTML = '<div class="wn-dot" style="background:' + color + '"></div>' +
+                   '<div class="wn-label">' + nd.n.l + '</div>' +
+                   '<div class="wn-year">' + nd.n.s + '</div>';
+    el.onclick = function() { selectWebNode(nd.i); };
+    nd.el = el;
+    webContainer.appendChild(el);
+  });
+}
+
+function drawCanvas(activeIdx) {
+  if (!webCtx || !webW) return;
+  webCtx.clearRect(0, 0, webW, webH);
+
+  CONNECTIONS.forEach(function(conn) {
+    var a = webNodes[conn[0]], b = webNodes[conn[1]];
+    if (!a || !b) return;
+    var color = connColors[conn[2]] || '#ccc';
+
+    var isActive = activeIdx !== undefined && (conn[0] === activeIdx || conn[1] === activeIdx);
+    var isDimmed = activeIdx !== undefined && !isActive;
+
+    webCtx.beginPath();
+    webCtx.moveTo(a.x * webW, a.y * webH);
+
+    // Slight deterministic curve based on indices
+    var offset = ((conn[0] * 7 + conn[1] * 13) % 20) - 10;
+    var mx = (a.x + b.x) / 2 * webW + offset;
+    var my = (a.y + b.y) / 2 * webH + offset * 0.5;
+    webCtx.quadraticCurveTo(mx, my, b.x * webW, b.y * webH);
+
+    webCtx.strokeStyle = isDimmed ? 'rgba(200,200,200,0.08)' :
+                         isActive ? color : hexToRgba(color, 0.22);
+    webCtx.lineWidth = isActive ? 2.5 : 1;
+    webCtx.stroke();
+
+    // Arrow on active connections
+    if (isActive) {
+      drawArrow(webCtx, a.x * webW, a.y * webH, b.x * webW, b.y * webH, color);
+    }
+  });
+}
+
+function drawArrow(ctx, x1, y1, x2, y2, color) {
+  var angle = Math.atan2(y2 - y1, x2 - x1);
+  var len = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+  var tx = x1 + Math.cos(angle) * len * 0.68;
+  var ty = y1 + Math.sin(angle) * len * 0.68;
+  ctx.beginPath();
+  ctx.moveTo(tx, ty);
+  ctx.lineTo(tx - 8 * Math.cos(angle - 0.4), ty - 8 * Math.sin(angle - 0.4));
+  ctx.lineTo(tx - 8 * Math.cos(angle + 0.4), ty - 8 * Math.sin(angle + 0.4));
+  ctx.closePath();
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+
+function hexToRgba(hex, alpha) {
+  var r = parseInt(hex.slice(1,3),16);
+  var g = parseInt(hex.slice(3,5),16);
+  var b = parseInt(hex.slice(5,7),16);
+  return 'rgba('+r+','+g+','+b+','+alpha+')';
+}
+
+function selectWebNode(idx) {
+  webActive = idx;
+
+  // Find connected nodes
+  var connected = {};
+  connected[idx] = true;
+  var activeConns = [];
+  CONNECTIONS.forEach(function(c) {
+    if (c[0] === idx || c[1] === idx) {
+      connected[c[0]] = true;
+      connected[c[1]] = true;
+      activeConns.push(c);
+    }
+  });
+
+  // Update node classes
+  webNodes.forEach(function(nd) {
+    if (!nd.el) return;
+    nd.el.classList.remove('active','connected','dimmed');
+    if (nd.i === idx) nd.el.classList.add('active');
+    else if (connected[nd.i]) nd.el.classList.add('connected');
+    else nd.el.classList.add('dimmed');
+  });
+
+  // Redraw canvas with active connections
+  drawCanvas(idx);
+
+  // Show panel
+  showWebPanel(idx, activeConns);
+}
+
+function showWebPanel(idx, activeConns) {
+  var n = D[idx];
+  var cl = catColors[n.c];
+  var detail = document.getElementById('webPanelDetail');
+  var empty  = document.getElementById('webPanelEmpty');
+  if (!detail || !empty) return;
+
+  // Build connection pills grouped by type
+  var byType = {};
+  activeConns.forEach(function(c) {
+    var otherIdx = c[0] === idx ? c[1] : c[0];
+    var t = c[2];
+    if (!byType[t]) byType[t] = [];
+    byType[t].push({i: otherIdx, label: D[otherIdx].l, year: D[otherIdx].s});
+  });
+
+  var connHtml = '';
+  Object.keys(byType).forEach(function(t) {
+    connHtml += '<div class="wpc-type-label" style="font-family:DM Mono,monospace;font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:' + connColors[t] + ';margin:10px 0 4px">' + connLabels[t] + '</div>';
+    connHtml += '<div class="wpc-connections">';
+    byType[t].forEach(function(nd) {
+      connHtml += '<span class="wpc-conn" style="background:' + hexToRgba(connColors[t], 0.12) + ';color:' + connColors[t] + '" onclick="selectWebNode(' + nd.i + ')">' + nd.year + ' &rarr; ' + nd.label + '</span>';
+    });
+    connHtml += '</div>';
+  });
+
+  // Sections
+  var sectHtml = n.sc.map(function(s) {
+    return '<div class="ns' + (s.f?' f':'') + '"><div class="nsl">' + s.l + '</div><div class="nst">' + s.x + '</div></div>';
+  }).join('');
+
+  var tagsHtml = n.tg.map(function(t) { return '<span class="tg">' + t + '</span>'; }).join('');
+
+  detail.innerHTML =
+    '<div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">' +
+      '<div style="background:' + cl.bg + ';color:' + cl.col + ';font-family:DM Mono,monospace;font-size:9px;letter-spacing:1.5px;padding:4px 10px;border-radius:3px">' + n.y + '</div>' +
+    '</div>' +
+    '<h2 style="font-family:DM Serif Display,serif;font-size:17px;color:#18160f;line-height:1.25;margin-bottom:12px">' + n.t + '</h2>' +
+    (connHtml ? '<div style="margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #e8e3db">' + connHtml + '</div>' : '') +
+    sectHtml +
+    '<div style="margin-top:12px">' + tagsHtml + '</div>';
+
+  empty.style.display = 'none';
+  detail.style.display = 'block';
+}
+
+function closeWebPanel() {
+  document.getElementById('webPanelEmpty').style.display = 'block';
+  document.getElementById('webPanelDetail').style.display = 'none';
+  webNodes.forEach(function(nd) {
+    if (nd.el) nd.el.classList.remove('active','connected','dimmed');
+  });
+  drawCanvas();
+  webActive = null;
+}
+
+function switchView(view) {
+  document.getElementById('view-web').style.display = view === 'web' ? 'block' : 'none';
+  document.getElementById('view-linear').style.display = view === 'linear' ? 'block' : 'none';
+  document.getElementById('vt-web').classList.toggle('vt-active', view === 'web');
+  document.getElementById('vt-linear').classList.toggle('vt-active', view === 'linear');
+  document.getElementById('vt-desc-web').style.display = view === 'web' ? 'block' : 'none';
+  document.getElementById('vt-desc-linear').style.display = view === 'linear' ? 'block' : 'none';
+  if (view === 'web') {
+    setTimeout(function() {
+      if (webNodes.length === 0) {
+        initWeb();
+      } else {
+        sizeWeb();
+        drawCanvas(webActive !== null ? webActive : undefined);
+      }
+    }, 30);
+  }
+}
+
+// Init web when timeline tab becomes active
+var _origShowPage = showPage;
+showPage = function(page) {
+  _origShowPage(page);
+  if (page === 'timeline') {
+    // Check which view is active
+    var webView = document.getElementById('view-web');
+    var isWebView = webView && webView.style.display !== 'none';
+    if (isWebView) {
+      setTimeout(function() {
+        if (webNodes.length === 0) {
+          initWeb();
+        } else {
+          sizeWeb();
+          drawCanvas(webActive !== null ? webActive : undefined);
+        }
+      }, 50);
+    }
+  }
+};
+
+function toggleGlossary() {
+  var overlay = document.getElementById('glossOverlay');
+  overlay.classList.toggle('open');
+  document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+  if (overlay.classList.contains('open')) {
+    setTimeout(function(){ document.getElementById('glossSearch').focus(); }, 300);
+  }
+}
+function closeGlossaryOutside(e) {
+  if (e.target === document.getElementById('glossOverlay')) toggleGlossary();
+}
+function filterGlossary(q) {
+  q = q.toLowerCase().trim();
+  document.querySelectorAll('.gloss-entry').forEach(function(entry) {
+    var text = (entry.querySelector('.gloss-term').textContent + ' ' +
+                entry.querySelector('.gloss-def').textContent + ' ' +
+                (entry.dataset.terms || '')).toLowerCase();
+    entry.classList.toggle('hidden', q.length > 0 && text.indexOf(q) === -1);
+  });
+  // Hide empty sections
+  document.querySelectorAll('.gloss-section').forEach(function(sec) {
+    var visible = sec.querySelectorAll('.gloss-entry:not(.hidden)').length > 0;
+    sec.style.display = visible ? 'block' : 'none';
+  });
+}
+
+// ═══ ESSAY DATA ═══
+var ESSAYS = {
+
+pen: {
+  title: 'The Pen and the Institution',
+  subtitle: 'How the first act of writing became the first act of control — and why it never stopped',
+  html: `
+<span class="es-essay-eyebrow">Essay One &mdash; Morgan T. Ellwood</span>
+<h1 class="es-essay-title">The Pen and<br>the Institution</h1>
+<p class="es-essay-subtitle">How the first act of writing became the first act of control — and why it never stopped</p>
+<div class="es-essay-body">
+
+<p class="es-p-open">The first thing humans wrote down was not a prayer.</p>
+<p>It was an inventory.</p>
+<p>Cuneiform writing was first developed around 3200 B.C. by Sumerian scribes in the ancient city-state of Uruk as a means of recording transactions.<sup>1</sup> The earliest tablets, dating to around 3300 B.C., record economic information using pictographs and numerals drawn in clay — most likely documenting grain distributed by a large temple.<sup>2</sup> Not poetry. Not philosophy. Not even law yet. Just: who has what, who owes what, and who gets to say so.</p>
+<p>That's where it started. And here's the thing — it never really moved from there. The form changed. The technology changed. The institution changed. But the function stayed the same: whoever holds the pen decides what exists.</p>
+
+<hr>
+
+<p>I want to be careful here because this is the part where people check out. They hear "knowledge monopoly" and they think conspiracy, secret societies, smoke-filled rooms. That's not what I'm describing. What I'm describing is simpler and in some ways worse — because it doesn't require anyone to be malicious. It just requires the pen to stay in certain hands long enough that everyone forgets there was ever a choice about that.</p>
+<p>Writing emerged in the context of temple bureaucracy in the cities of the southern Iraqi marshes some time in the late fourth millennium BC.<sup>3</sup> What the priests recorded existed legally. What they didn't record didn't. Land. Debt. Who was a person. Who wasn't. The writing was the act of power — not the description of it.</p>
+<p class="es-p-punch">That's the thing that gets missed. The pen doesn't just record. It creates.</p>
+
+<hr>
+
+<p>For roughly a thousand years in Europe, the Catholic Church held near-exclusive control over literacy, documentation, and the definition of what counted as legitimate knowledge. If the Church wrote it down, it was history. If the Church didn't write it down, it was heresy. Or superstition. Or it simply didn't happen.</p>
+<p>And then the printing press arrived.</p>
+<p>Within two weeks of posting his 95 Theses, they were printed without Luther's permission and distributed throughout Germany. Within a month they flooded Europe.<sup>4</sup> Luther himself was bewildered. He wrote to Pope Leo X six months later: "It is a mystery to me how my theses . . . spread to so many places. They were meant exclusively for our academic circle here."<sup>4</sup></p>
+<p>Within decades — not centuries — the Reformation followed. The monopoly on the written word broke, and the authority that depended on that monopoly fractured almost immediately.</p>
+<blockquote>Distribute the pen. The authority fractures.</blockquote>
+<p>This is important because it tells you something about what the pen actually is. It's not just a tool for recording things. It's infrastructure for authority. And authority built on controlling the record is always one printing press away from collapse — which is why the people holding the pen have always worked to control whatever the new printing press was.</p>
+<p class="es-p-slow">The pamphlet. The newspaper. The broadcast license. The search algorithm. Same problem. Different tool.</p>
+
+<hr>
+
+<p>Here's the part I think gets underplayed.</p>
+<p>The pen-holders didn't invent the knowledge they monopolized. In a number of cases they inherited it, absorbed it, and then over time lost or suppressed it as knowledge got standardized into forms that could be managed and extracted from.</p>
+<p>This argument is contested among scholars and I want to be honest about that. But there is documented evidence for at least one dimension of it. Otto von Simpson, in his 1956 work on Gothic architecture, wrote that the "Masters of Chartres, like the Platonists and Pythagoreans" were working within a geometric tradition that predated the Church's explicit doctrinal framework.<sup>5</sup> The wisdom school of Chartres made a conscious effort at reconciling the ancient Pythagorean/Platonic stream with Christian mystery teachings<sup>6</sup> — which is to say, they were absorbing and adapting a prior tradition, not originating one. Georges Duby, professor at the College de France, traces the origins of Gothic architecture to the striving of monks and scholars to "grasp the concealed order of the universe"<sup>7</sup> — a concealed order they understood themselves to be uncovering, not inventing.</p>
+<p>What's left, over time, is the structure without the full knowledge of how or why it was built.</p>
+<p>I think about this when I look at what happened to Indigenous governance systems after colonial contact. These weren't primitive administrative arrangements that got replaced by something more sophisticated. In many cases they were governance models tested and refined across centuries of actual inhabitation of specific territory — built for 500-year cycles, not quarterly returns. The colonial administration that displaced them had been in existence for decades.</p>
+
+<hr>
+
+<p>When colonial administrations arrived in the Americas, the first acts of power were cartographic and documentary. Draw the map. Name the territory. Issue the charter. Write the statute.</p>
+<p>The people already there had their own maps. Their own governance records. Their own oral documentation of who held what territory and under what agreements. None of it counted in the colonial legal system — not because it was wrong, but because it wasn't written in a form the pen-holders recognized as evidence.</p>
+<p class="es-p-punch">That's the move. That's always the move.</p>
+<p>It wasn't destroyed in all cases. It was rendered legally invisible. Which is a more complete form of erasure — because the thing still exists, the oral history, the land knowledge, the governance memory, but it has no legal surface. It can't be used. It can't defend itself. It just sits there, present and inadmissible.</p>
+<p>The Virginia 1682 statute is a clean example. The colonial legislature didn't just pass a law. It wrote a category into existence. Moors, Indians, Negroes, Mullattoes — suddenly a legal class with a fixed set of rules that the people placed inside it had no say in writing. Before the document, these were people with prior histories, prior political affiliations, prior claims. After the document, they were a category.</p>
+<p>The pen created a reality and then governed it.</p>
+
+<hr>
+
+<p>The algorithm is the contemporary version of this. And I think most people still don't see it that way.</p>
+<p>Google's search algorithm determines credibility largely through citation count — which structurally advantages already-credentialed institutions over emerging scholarship, Indigenous knowledge systems, and oral traditions. Not through censorship. Through ranking. The algorithm doesn't suppress those voices. It places them below the voices already ranked above them. The pen writes the ranking. The ranking determines the pen.</p>
+<p>Facebook's own internal research — documented in the 2021 Frances Haugen disclosures and Congressional testimony — showed the algorithm amplified divisive political content because it outperformed neutral content on engagement metrics. The platform knew it was accelerating social fragmentation. The financial incentive to maintain that fragmentation was built into the business model.</p>
+<p class="es-p-slow">Same function as the temple storehouse. Different scale.</p>
+
+<hr>
+
+<p>There's a line I keep coming back to.</p>
+<blockquote>The people with the written language get to define who the enemy is. And that definition becomes history.</blockquote>
+<p>It's not a new observation. But I don't think people sit with it long enough to feel what it actually means. It means that if you are the people being defined — if your political status, your ancestry, your identity, your history are being written by someone else, in categories you didn't create, in a language that may not be yours — you are not just politically disadvantaged.</p>
+<p>You are operating inside a reality that was constructed for someone else's purposes and handed to you as if it were natural.</p>
+<p class="es-p-punch">Understanding who holds the pen is the beginning of something. It's the beginning of seeing the frame. And you can't step outside a frame you can't see.</p>
+
+</div>
+
+<div class="es-citations">
+<span class="es-citations-title">Citations &amp; Sources</span>
+<div class="es-cite-item"><span class="es-cite-num">1</span><span class="es-cite-text"><em>Archaeology Magazine.</em> "The World's Oldest Writing." May/June 2016. <a href="https://archaeology.org/collection/the-worlds-oldest-writing/" target="_blank" rel="noopener">archaeology.org</a> — Cuneiform writing first developed around 3200 B.C. in Uruk as a means of recording transactions.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">2</span><span class="es-cite-text">Metropolitan Museum of Art. "Cuneiform tablet: administrative account with entries concerning malt and barley groats." Collection Object. <a href="https://www.metmuseum.org/art/collection/search/327385" target="_blank" rel="noopener">metmuseum.org</a> — Earliest tablets date to c. 3300 B.C. and record grain distribution from temple storehouses.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">3</span><span class="es-cite-text">History of Information. "Cuneiform Writing in Mesopotamia Begins at Uruk." <a href="https://www.historyofinformation.com/detail.php?id=1283" target="_blank" rel="noopener">historyofinformation.com</a> — "Writing emerged in the context of temple bureaucracy in the cities of the southern Iraqi marshes some time in the late fourth millennium BC."</span></div>
+<div class="es-cite-item"><span class="es-cite-num">4</span><span class="es-cite-text">Christian History Institute. "Preachers and Printers." <a href="https://christianhistoryinstitute.org/magazine/article/urban-reformation-preachers-and-printers" target="_blank" rel="noopener">christianhistoryinstitute.org</a> — Luther's 95 Theses spread throughout Germany within two weeks without his permission, flooded Europe within a month.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">5</span><span class="es-cite-text">Von Simpson, Otto. <em>The Gothic Cathedral: Origins of Gothic Architecture and the Medieval Concept of Order.</em> Princeton University Press, 1956. Referenced in Sacred Art of Geometry / chartres.geometrycode.com.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">6</span><span class="es-cite-text">Sacred Art of Geometry. "Chartres, Story and Sacred Geometry." <a href="https://www.sacredartofgeometry.com/chartres-course" target="_blank" rel="noopener">sacredartofgeometry.com</a> — The wisdom school of Chartres made a conscious effort at reconciling the ancient Pythagorean/Platonic stream with Christian mystery teachings.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">7</span><span class="es-cite-text">Duby, Georges. <em>The Age of the Cathedrals: Art and Society, 980&ndash;1420.</em> University of Chicago Press, 1981. Referenced in chartres.geometrycode.com — Duby traces Gothic origins to monks striving to "grasp the concealed order of the universe."</span></div>
+<div class="es-cite-item"><span class="es-cite-num">8</span><span class="es-cite-text">Virginia General Assembly. Act of 1682. Library of Virginia. Primary source — documented throughout this research. See: Timeline node 1682.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">9</span><span class="es-cite-text">Haugen, Frances. Facebook internal research disclosures. October 2021. Congressional testimony record. Reported by AP, Wall Street Journal, and The Guardian.</span></div>
+</div>
+`
+},
+
+scale: {
+  title: 'The Way of Scale',
+  subtitle: 'What was lost and why it matters',
+  html: `
+<span class="es-essay-eyebrow">Essay Two &mdash; Morgan T. Ellwood</span>
+<h1 class="es-essay-title">The Way<br>of Scale</h1>
+<p class="es-essay-subtitle">What was lost and why it matters</p>
+<div class="es-essay-body">
+
+<p class="es-p-open">I want to start somewhere that might feel strange.</p>
+<p>A mayfly lives 24 hours. A tree lives 500 years. We are to a tree what a mayfly is to us — which means: in the time it takes a tree to complete one life, roughly six human generations have come and gone. Six generations of memory, governance knowledge, land management, ecological understanding — all of it cycling through and starting over while the tree just keeps accumulating.</p>
+<p>Now extend that.</p>
+<p>The peoples documented in the earliest nodes of this research — the sovereign nations named on the Homann 1720 map, the communities the Speed/Lamb 1676 map shows governing specific territories in Virginia — had been on that land somewhere between 10,000 and 14,000 years. That is not a longer version of our time scale. It is a different kind of time entirely. The knowledge accumulated across that span — about land, water, governance, about what actually works across seasons and centuries and generations — is not comparable to knowledge accumulated across decades. It's not even the same category of thing.</p>
+<p class="es-p-punch">And here's what stays with me: the colonial administration that displaced those communities had been in existence for decades.</p>
+
+<hr>
+
+<p>I've been developing a framework called The Way of Scale for a few years now. The core observation is this: every system we can actually observe follows the same structural laws regardless of what scale it operates at. A cell is organized similarly to how a solar system is organized. A human lifetime follows the same arc as a civilization. What's true at one scale is structurally true at all scales — not identical, but rhyming. Self-similar.</p>
+<p>This is not mysticism. Benoît Mandelbrot coined the term "fractal" to describe a new class of mathematical shapes whose successively smaller copies of a pattern are nested inside each other so that the same intricate shapes appear repeatedly.<sup>1</sup> Fractal geometry made it possible to measure cloud formations, the contours of coastlines, the clustering of galaxies, even the folds of mammalian brains, in a rigorously quantitative fashion.<sup>1</sup> Studies have shown that the true rhythm of a healthy heart fluctuates in a distinctively fractal pattern — not the regular linear beat we assumed for millennia.<sup>1</sup></p>
+<p>What I'm adding — and I'll be honest that this moves beyond what Mandelbrot's mathematics formally claims — is that different organisms don't just have different lifespans. They perceive at different temporal frequencies. A mayfly and a tree are not just different sizes. They are tuned to different scales of time.</p>
+<p class="es-p-slow">A being operating at a 14,000-year scale perceives patterns that a being operating at an 84-year scale simply cannot access. Not because of intelligence. Because of time. The pattern isn't visible from inside a single human life.</p>
+
+<hr>
+
+<p>Here's where the two things connect.</p>
+<p>Captain Richard Henry Pratt delivered his speech "Kill the Indian in him, and save the man" at the National Conference of Charities and Correction in Denver, 1892.<sup>2</sup> His full words: "A great general has said that the only good Indian is a dead one. In a sense, I agree with the sentiment, but only in this: that all the Indian there is in the race should be dead. Kill the Indian in him and save the man."<sup>3</sup></p>
+<p>Pratt founded the Carlisle Indian Industrial School in 1879 in an abandoned army barracks in Carlisle, Pennsylvania — the first and most famous military-style Indian school, which became a model for institutions across the country.<sup>4</sup></p>
+<p>The man Pratt wanted to save was a wage laborer. A consumer. Someone whose time horizon was a paycheck, a mortgage, a career. Someone who could be absorbed into the industrial economy without friction.</p>
+<p>The Indian he wanted to kill was someone whose time horizon was their grandchildren's grandchildren. Whose land management practices were built for 500-year cycles. Whose governance systems had been tested against actual conditions — specific weather patterns, specific ecological relationships, specific inter-community dynamics — across centuries of continuous inhabitation of a specific place.</p>
+<p>That knowledge doesn't live in books. It lives in transmission — in the relationship between generations, in the language that encodes it, in the practice of living in a particular place over a long time. When you break the transmission — which is what boarding schools were designed to do — you don't just change the culture. You collapse the time horizon. You take a people operating at a longer scale and force them into a shorter one.</p>
+<p>And then you call the result assimilation.</p>
+
+<hr>
+
+<p>The Dawes Act of 1887 resulted in the loss of 90 million acres of Native lands by 1934 — approximately two-thirds of all tribal landholdings at the time.<sup>5</sup> Land owned by Native Americans decreased from 138 million acres in 1887 to 48 million acres in 1934.<sup>6</sup></p>
+<p>Most analysis of this focuses on the land — the numbers are staggering enough on their own. But I think about the governance system that the communal land structure sustained. Collective land ownership wasn't just an economic arrangement. It was the material basis for a longer time horizon. When land is held in common across generations, you are structurally forced to think in generations. The decision you make about this land today will be inherited by your grandchildren.</p>
+<blockquote>The Dawes Act "was the culmination of American attempts to destroy tribes and their governments and to open Indian lands to settlement by non-Indians." — Wikipedia citing scholarship<sup>6</sup></blockquote>
+<p>Convert communal land to individual allotments — to property you can sell, that can be seized for debt, that belongs to you and dies with you — and you have converted a 500-year governance instrument into an 84-year one. You've collapsed the time horizon into a single human life.</p>
+<p>I don't think the architects of the Dawes Act understood it in these terms. But the outcome is the same whether the mechanism was understood or not. You can disrupt a longer time layer's way of operating without understanding what you're disrupting.</p>
+
+<hr>
+
+<p>The same compression is happening right now.</p>
+<p>Social media algorithms measure time in seconds. Engagement metrics in hours. Corporate quarterly earnings in 90-day cycles. The entire economic and informational infrastructure we live inside is optimized for the shortest possible time horizon because the shortest possible time horizon generates the most extractable value in the moment.</p>
+<p>Fear works faster than trust. Outrage travels faster than understanding. A rumor moves faster than a correction. The architecture was built around this — not through conspiracy but through incentive. The platform that captures the most attention captures the most revenue. Capturing attention is easiest through fear, novelty, and conflict. So the architecture selects for all three.</p>
+<p>What this produces in a population over years and generations is a compression of the time horizon. People who would have thought in decades start thinking in weeks. People who would have thought in years start thinking in news cycles. The capacity for longer-scale pattern recognition atrophies because the information environment never requires it.</p>
+<p class="es-p-punch">This is not a metaphor for what the boarding schools did. It is the same mechanism at a different scale.</p>
+
+<hr>
+
+<p>I want to say something carefully because I think it's the part of this framework most easy to dismiss and also most important.</p>
+<p>The sovereign communities documented on the pre-1776 maps of this research weren't just politically self-sufficient. They were epistemically self-sufficient — they had knowledge systems, governance, ecology, medicine, architecture, that operated at time scales the colonial administration couldn't perceive, let alone evaluate.</p>
+<p>The colonial legal system couldn't recognize those systems as knowledge because it had no instrument for measuring anything beyond a human administrative lifetime.</p>
+<p class="es-p-punch">The pen-holder's time scale became the only admissible time scale.</p>
+<p>Oral history doesn't count in federal court. Generational land knowledge doesn't count as property title. The lived experience of a community's relationship to specific territory across centuries doesn't count as evidence. What counts is the document. The document operates at human administrative time. Everything that operates at a longer scale is inadmissible.</p>
+<p>This is what I mean when I say the suppression of sovereign peoples was not just political. It was the imposition of a shorter time layer's categories onto peoples operating at a different scale. And those categories were enforced by the pen — by the legal system's control over what counted as real.</p>
+
+<hr>
+
+<p>So where does that leave us.</p>
+<p>The systems this site documents are all optimized for short time horizons. The application section asks people to withdraw from those systems and build alternatives. To find local vendors. To home school in community. To create third spaces. To redirect curiosity toward building rather than consuming.</p>
+<p>That reorientation is uncomfortable. The short-horizon systems are convenient by design — the convenience is the architecture of your dependency.</p>
+<p>But here is what the framework suggests: when you extend your time horizon — when you start thinking in terms of what you're building for your children's children rather than what you're consuming this quarter — you start making different decisions. Not better in some abstract moral sense. Different in a practical sense. You plant things you won't harvest. You build relationships without immediate returns. You invest in community infrastructure that benefits people you haven't met yet.</p>
+<p class="es-p-slow">That's not sacrifice. That's operating at a different scale.</p>
+<p>The sovereign communities that existed on this continent before the colonial pen arrived were not more virtuous than us. They were operating at a longer time horizon. The knowledge accumulated at that horizon — about land, governance, what actually sustains a community across generations — is not lost. It was reclassified. Rendered inadmissible. Forced into a shorter time scale.</p>
+<p>It is still there. In the communities. In the land. In the people who never fully accepted the imposed categories.</p>
+<p>The world the Homann map shows is not recoverable exactly. That's not the point. The point is that it existed. That people lived that way. That it was working. And that the only thing that makes the current arrangement feel inevitable is the fact that the pen that writes the record is the same pen that writes the alternative out of existence.</p>
+<blockquote>When enough people hold the pen, that stops being true.</blockquote>
+
+</div>
+
+<div class="es-citations">
+<span class="es-citations-title">Citations &amp; Sources</span>
+<div class="es-cite-item"><span class="es-cite-num">1</span><span class="es-cite-text">IBM Research. "Benoît Mandelbrot." <a href="https://www.ibm.com/history/benoit-mandelbrot" target="_blank" rel="noopener">ibm.com/history/benoit-mandelbrot</a> — Mandelbrot coined "fractal"; fractal geometry measures coastlines, galaxies, and brain folds; healthy heart rhythm is fractal, not linear.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">2</span><span class="es-cite-text">Carlisle Indian School Digital Resource Center. "Kill the Indian in him, and save the man: R.H. Pratt on the Education of Native Americans." Dickinson College. <a href="https://carlisleindian.dickinson.edu/teach/kill-indian-him-and-save-man-r-h-pratt-education-native-americans" target="_blank" rel="noopener">carlisleindian.dickinson.edu</a> — Full text from 1892 National Conference of Charities and Correction, Denver, Colorado.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">3</span><span class="es-cite-text">Pratt, Richard Henry. Speech delivered at the National Conference of Charities and Correction, Denver, 1892. Full quote: "A great general has said that the only good Indian is a dead one. In a sense, I agree with the sentiment, but only in this: that all the Indian there is in the race should be dead. Kill the Indian in him, and save the man."</span></div>
+<div class="es-cite-item"><span class="es-cite-num">4</span><span class="es-cite-text">Indiana University. "Life Inside: How Boarding Schools Affected Native American Children." <a href="https://exhibits.library.indianapolis.iu.edu/boardingschools/life-inside" target="_blank" rel="noopener">exhibits.library.indianapolis.iu.edu</a> — Carlisle founded 1879 by Pratt in an abandoned army barracks in Pennsylvania.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">5</span><span class="es-cite-text">HowStuffWorks. "How the Dawes Act Stole 90 Million Acres of Native American Land." <a href="https://history.howstuffworks.com/american-history/dawes-act.htm" target="_blank" rel="noopener">history.howstuffworks.com</a> — Dawes Act resulted in loss of 90 million acres, two-thirds of tribal landholdings, from 1887 to 1934.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">6</span><span class="es-cite-text">Wikipedia. "Dawes Act." <a href="https://en.wikipedia.org/wiki/Dawes_Act" target="_blank" rel="noopener">en.wikipedia.org/wiki/Dawes_Act</a> — Land decreased from 138 million acres (1887) to 48 million acres (1934). Cites: McDonnell; Carlson; Macgregor, Hassrick, and Henry.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">7</span><span class="es-cite-text">Mandelbrot, Benoît B. <em>The Fractal Geometry of Nature.</em> W.H. Freeman and Company, 1982. — Foundational text establishing fractal self-similarity across natural systems at all scales.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">8</span><span class="es-cite-text">Homann, Johann Baptist. <em>Amplissimae Regionis Mississipi seu Provinciae Ludovicianae.</em> Nuremberg, 1720. Primary cartographic source — See Timeline node 1720 and Research Archive.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">9</span><span class="es-cite-text">Speed, John and Lamb, Francis. <em>A Map of Virginia and Maryland.</em> London, 1676. Library of Congress: <a href="https://www.loc.gov/item/2021586054/" target="_blank" rel="noopener">loc.gov/item/2021586054</a> — Primary cartographic source. See Timeline node 1676.</span></div>
+</div>
+`
+}
+
+};
+
+// ═══ ESSAY FUNCTIONS ═══
+function openEssay(key) {
+  var essay = ESSAYS[key];
+  if (!essay) return;
+  document.getElementById('esIndex').style.display = 'none';
+  document.getElementById('esReader').style.display = 'block';
+  document.getElementById('esReaderTitle').textContent = essay.title;
+  document.getElementById('esReaderBody').innerHTML = essay.html;
+  window.scrollTo(0, 0);
+}
+
+function closeEssay() {
+  document.getElementById('esReader').style.display = 'none';
+  document.getElementById('esIndex').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
 buildResearchSidebar();
 </script>
+
+<!-- GLOSSARY BUTTON -->
+<button class="gloss-btn" onclick="toggleGlossary()" id="glossBtn" title="Glossary of Terms">
+  <span class="gloss-btn-icon">&#9783;</span>
+  <span class="gloss-btn-label">Glossary</span>
+</button>
+
+<!-- GLOSSARY OVERLAY -->
+<div class="gloss-overlay" id="glossOverlay" onclick="closeGlossaryOutside(event)">
+  <div class="gloss-drawer" id="glossDrawer">
+    <div class="gloss-header">
+      <div>
+        <p class="gloss-eyebrow">Reference</p>
+        <h2 class="gloss-title">Glossary of Terms</h2>
+        <p class="gloss-sub">Key legal, historical, and analytical terms used throughout this research.</p>
+      </div>
+      <button class="gloss-close" onclick="toggleGlossary()">&#10005;</button>
+    </div>
+    <div class="gloss-search-wrap">
+      <input class="gloss-search" id="glossSearch" type="text" placeholder="Search terms..." oninput="filterGlossary(this.value)">
+    </div>
+    <div class="gloss-body" id="glossBody">
+
+      <div class="gloss-section">
+        <h3 class="gloss-section-title">Legal Doctrine</h3>
+
+        <div class="gloss-entry" data-terms="aboriginal title">
+          <h4 class="gloss-term">Aboriginal Title</h4>
+          <p class="gloss-def">The common law doctrine recognizing that Indigenous peoples hold a pre-existing right to land based on their occupation and use of territory prior to European colonization. Aboriginal title originates from occupation — not from any grant or recognition by a colonizing power. Under U.S. law, aboriginal title persists unless explicitly and lawfully extinguished through treaty or Congressional action.</p>
+          <span class="gloss-ref">See: Johnson v. M'Intosh (1823), McGirt v. Oklahoma (2020)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="partus sequitur ventrem">
+          <h4 class="gloss-term">Partus Sequitur Ventrem</h4>
+          <p class="gloss-def">Latin: "the offspring follows the condition of the mother." A legal doctrine invented by Virginia in 1662 — with no precedent in English common law — that made a child's legal status follow the mother's condition rather than the father's. Designed specifically to compound enslaved status generationally without requiring any individual act of consent from subsequent generations. The mechanism that made reclassification self-replicating.</p>
+          <span class="gloss-ref">See: Virginia Act of 1662</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="void ab initio">
+          <h4 class="gloss-term">Void Ab Initio</h4>
+          <p class="gloss-def">Latin: "void from the beginning." A legal instrument is void ab initio when it was never legally valid — as opposed to voidable, which means it can be undone. Three conditions independently void an instrument: no consent from affected parties, no legitimate jurisdiction over those parties, or imposition under duress or force. The reclassification statutes of 1662, 1682, and 1740 are analyzed as void ab initio on all three grounds.</p>
+          <span class="gloss-ref">See: Virginia Acts of 1662, 1682; SC Slave Code 1740</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="strict scrutiny equal protection">
+          <h4 class="gloss-term">Strict Scrutiny</h4>
+          <p class="gloss-def">The highest standard of judicial review applied to laws that classify people based on race or other suspect classifications. Under strict scrutiny, the government must show that the law serves a compelling interest and is narrowly tailored to achieve that interest. The Supreme Court applied strict scrutiny in Louisiana v. Callais (2026) to strike down majority-minority redistricting districts — using the same standard designed to protect minority rights to eliminate a minority-protective instrument.</p>
+          <span class="gloss-ref">See: Louisiana v. Callais (2026), 14th Amendment (1868)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="retained sovereignty inherent sovereignty">
+          <h4 class="gloss-term">Retained / Inherent Sovereignty</h4>
+          <p class="gloss-def">The doctrine that tribal nations retain sovereign powers they have always held — their sovereignty is not granted by the United States but predates it. Sovereign status is retained unless explicitly extinguished through lawful Congressional action. Assumption of jurisdiction, passage of time, or migration into tribal territory do not constitute extinguishment. Established in the Marshall Trilogy and confirmed in McGirt v. Oklahoma.</p>
+          <span class="gloss-ref">See: Worcester v. Georgia (1832), McGirt v. Oklahoma (2020)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="blood quantum enrollment">
+          <h4 class="gloss-term">Blood Quantum</h4>
+          <p class="gloss-def">A system for determining Indigenous identity based on the fraction of documented Indigenous ancestry a person can prove. Imposed through the Dawes Rolls enrollment process, not derived from Indigenous governance traditions. Blood quantum requirements were a federal administrative technology — they were not how Indigenous nations historically defined membership. Critics document blood quantum as a mechanism for eventual elimination of tribal citizenship as fractions dilute across generations.</p>
+          <span class="gloss-ref">See: Dawes Rolls (1887-1907), Santa Clara Pueblo v. Martinez (1978)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="plenary power congress tribes">
+          <h4 class="gloss-term">Plenary Power Doctrine</h4>
+          <p class="gloss-def">The doctrine that Congress holds nearly unlimited authority over tribal nations and their members. Developed through Supreme Court rulings in the late 19th century, the plenary power doctrine has been used to justify unilateral Congressional termination of tribal status, seizure of tribal land, and removal of treaty rights — without tribal consent and without judicial review. The doctrine has no explicit basis in the Constitution.</p>
+          <span class="gloss-ref">See: Dawes Act (1887), Indian Removal Act (1830)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="section 2 voting rights act vra">
+          <h4 class="gloss-term">Section 2, Voting Rights Act</h4>
+          <p class="gloss-def">The provision of the 1965 Voting Rights Act prohibiting any voting procedure that results in the denial or abridgment of the right to vote based on race or color. Section 2 has been the primary legal tool for challenging racial gerrymandering and vote dilution since the 1982 amendment expanded its scope. Louisiana v. Callais (2026) significantly weakened Section 2 by holding that states can almost never consider race when drawing districts even to comply with its requirements.</p>
+          <span class="gloss-ref">See: Louisiana v. Callais (2026)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="racial gerrymander redistricting">
+          <h4 class="gloss-term">Racial Gerrymander</h4>
+          <p class="gloss-def">The drawing of electoral district boundaries using race as a predominant factor. The Supreme Court has held that racial gerrymandering violates the Equal Protection Clause — but has simultaneously held (in Callais 2026) that drawing districts to protect minority voting power also constitutes racial gerrymandering. The result is a constitutional bind: protecting minority representation through race-conscious mapping is now treated the same as suppressing it.</p>
+          <span class="gloss-ref">See: Shaw v. Reno (1993), Louisiana v. Callais (2026)</span>
+        </div>
+
+      </div>
+
+      <div class="gloss-section">
+        <h3 class="gloss-section-title">Historical Terms</h3>
+
+        <div class="gloss-entry" data-terms="reclassification colonial">
+          <h4 class="gloss-term">Reclassification</h4>
+          <p class="gloss-def">The process by which colonial and later federal administrative instruments reassigned the legal identity of peoples who held prior political status — placing them in new legal categories (Negro, colored, Freedman) without their consent. Reclassification operated through statutes, census categories, enrollment systems, and vital records. Each reclassification suppressed a prior political affiliation and replaced it with an administratively assigned category serving the interests of the classifying power.</p>
+          <span class="gloss-ref">See: Virginia 1682, SC 1740, Dawes Rolls, Racial Integrity Act 1924</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="paper genocide plecker virginia">
+          <h4 class="gloss-term">Paper Genocide</h4>
+          <p class="gloss-def">The National Park Service's documented term for Walter Plecker's systematic campaign under Virginia's Racial Integrity Act of 1924 to retroactively alter historical records — birth certificates, marriage records, death records — changing racial designations from "Indian" to "colored" going back to the 1850s. Paper genocide operates by destroying the evidentiary record that future generations need to assert their original identity and political status. Six of Virginia's eight state-recognized tribes could not gain federal recognition for decades as a direct result.</p>
+          <span class="gloss-ref">See: Racial Integrity Act (1924), Walter Plecker</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="dawes rolls freedmen enrollment">
+          <h4 class="gloss-term">Dawes Rolls</h4>
+          <p class="gloss-def">The enrollment records created by the Dawes Commission (1899-1907) for members of the Five Civilized Tribes. People were enrolled in one of several categories: citizens by blood, citizens by marriage, Delaware Cherokee, or Freedmen. The Freedmen category — indicating "no blood relation to the tribe" — was applied to many people with documented Indigenous ancestry based on their prior reclassification status as freedmen rather than their actual genealogy. The Dawes Rolls remain the primary federal gateway to tribal citizenship today.</p>
+          <span class="gloss-ref">See: Dawes Act (1887), U.S. v. Bruce (2005)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="moriscos moors moorish atlantic">
+          <h4 class="gloss-term">Moriscos</h4>
+          <p class="gloss-def">Iberian Muslims who were forcibly converted to Christianity by the Spanish Inquisition and later expelled from Spain (1609-1614). Many Moriscos had already made their way to colonial America before the expulsion — Drake's 1586 Roanoke expedition brought documented Moorish and Morisco populations to the Virginia/Carolina coast. The Moriscos were the first documented population to experience the exact reclassification pattern that Virginia's colonial legislature would apply in 1682: administrative suppression of Moorish identity through imposed classification.</p>
+          <span class="gloss-ref">See: Roanoke 1586, Virginia 1682, O'Halley Duke Dissertation (2013)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="treaty sovereign equal nation">
+          <h4 class="gloss-term">Treaty (as Sovereign Acknowledgment)</h4>
+          <p class="gloss-def">Treaties are instruments between sovereign political entities — you cannot sign a treaty with a people you have jurisdiction over. Every treaty the United States signed with an Indigenous nation was therefore a formal acknowledgment of that nation's sovereign status. The U.S. signed its first treaty with an Indigenous nation in 1778. The 1871 law ending new treaty-making explicitly preserved all obligations of prior treaties — meaning the acknowledgment of sovereign status embedded in the treaty record remains operative.</p>
+          <span class="gloss-ref">See: Treaty with the Delawares (1778), Morocco Treaty (1786)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="boarding schools assimilation carlisle">
+          <h4 class="gloss-term">Indian Boarding Schools</h4>
+          <p class="gloss-def">Federally funded and often mandatory institutions operating from the 1870s through the 1970s (and in some cases later) designed to separate Indigenous children from their families, communities, languages, and cultural practices. The stated philosophy of Richard Pratt, founder of the Carlisle Indian School, was "Kill the Indian, save the man." Boarding schools suppressed not just language but the transmission of practical self-sufficiency — governance knowledge, land management, agricultural practice, oral history — because self-sufficient peoples cannot be converted into subjects.</p>
+          <span class="gloss-ref">See: Dawes Act (1887), c.1750-1800 (Renaming as Law)</span>
+        </div>
+
+      </div>
+
+      <div class="gloss-section">
+        <h3 class="gloss-section-title">Analytical Framework</h3>
+
+        <div class="gloss-entry" data-terms="pen institution knowledge monopoly">
+          <h4 class="gloss-term">The Pen (Knowledge Monopoly)</h4>
+          <p class="gloss-def">The analytical framework — developed in this research — that traces institutional power through control of documentation and first-record rights. Whoever writes the first document defining a category gets to determine what the category means, who belongs in it, and what rights attach to membership. The pen-holder's authority is self-reinforcing: they define what counts as legitimate evidence, who counts as a credible source, and what knowledge systems count as knowledge. The reclassification statutes are applications of pen-power: the colonial legislature wrote the categories, and those categories became the legal reality.</p>
+          <span class="gloss-ref">See: The Pattern page — The Pen section</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="self-sealing system doubling down loop">
+          <h4 class="gloss-term">Self-Sealing System</h4>
+          <p class="gloss-def">A system that uses its own outputs as inputs to justify its continued operation. In the context of this research: (1) the pen writes the category; (2) the category generates infrastructure; (3) the infrastructure normalizes the category; (4) people organize identity around the category; (5) the restricted outcomes produced by the infrastructure are cited as evidence that the original classification was accurate. The loop closes without requiring any explicit argument. The system has doubled down on itself through its own operations.</p>
+          <span class="gloss-ref">See: The Pattern page — How Systems Double Down section</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="override pattern right exception">
+          <h4 class="gloss-term">The Override Pattern</h4>
+          <p class="gloss-def">A recurring structure in U.S. legal history in which the government formally acknowledges a right and then passes separate legislation to override it. The Northwest Ordinance (1787) acknowledged that Indigenous land could not be taken without consent. The Indian Removal Act (1830) overrode that requirement. The Bill of Rights acknowledged due process. The 2012 NDAA authorized indefinite detention. The Equal Protection Clause was designed to protect minority rights. Louisiana v. Callais uses it to eliminate a minority-protective instrument. In every case: the pen writes the right, and the pen writes the exception.</p>
+          <span class="gloss-ref">See: Northwest Ordinance (1787), Indian Removal Act (1830), Louisiana v. Callais (2026)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="hostile witness corroboration primary source">
+          <h4 class="gloss-term">Hostile Witness Corroboration</h4>
+          <p class="gloss-def">Evidence produced by an adversarial party that confirms the opponent's position. In legal proceedings, hostile witness testimony is among the strongest forms of evidence precisely because it cannot be attributed to bias in favor of the claim. In this research, the colonial statutes themselves, the Speed/Lamb map, the SC 1848 Negro Law, and the Marshall Trilogy are all treated as hostile witness corroboration — the colonizing power's own documentation confirming the sovereignty it was simultaneously working to suppress.</p>
+          <span class="gloss-ref">See: Virginia 1682, SC Negro Law (1848), Marshall Trilogy (1831-32)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="consent participation withdrawal energy">
+          <h4 class="gloss-term">Consent Architecture</h4>
+          <p class="gloss-def">The structural design of systems to manufacture participation and compliance through default settings, normalized routine, and the absence of visible alternatives — rather than through explicit agreement. Terms of service. Loyalty cards. Enrollment systems. Curriculum mandates. Each extracts a form of consent — data, labor, identity, attention — without the consenting party having meaningful knowledge of what they are agreeing to or what alternatives exist. The consent architecture of surveillance capitalism is analyzed as the contemporary form of the Northwest Ordinance checkbox problem.</p>
+          <span class="gloss-ref">See: The Pattern page — Consent card, Withdraw Consent section</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="four factor test bruce indian status enrollment">
+          <h4 class="gloss-term">Bruce Four-Factor Test</h4>
+          <p class="gloss-def">The test established by the 9th Circuit in United States v. Bruce (2005) for determining Indian status without formal tribal enrollment. The four factors are: (1) tribal enrollment; (2) government recognition formally or informally; (3) enjoyment of tribal benefits; (4) social recognition through community participation. No single factor is dispositive. The Bruce test is significant because it removes the Dawes-encoded enrollment system as the sole gateway to Indigenous political status recognition — allowing ancestry and community recognition to qualify independently.</p>
+          <span class="gloss-ref">See: U.S. v. Bruce (2005), Dawes Rolls (1887-1907)</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
