@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Record They Left Behind</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#18160f;font-size:15px;line-height:1.6}
+.hdr{border-bottom:1px solid #e8e3db;padding:52px 48px 44px}
+.hdr-in{max-width:860px;margin:0 auto}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3.5px;color:#2d6a4f;text-transform:uppercase;margin-bottom:18px}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(38px,6vw,66px);font-weight:400;line-height:1.02;letter-spacing:-1px;margin-bottom:34px}
+h1 em{font-style:italic;color:#2d6a4f}
+.tw{display:flex;max-width:800px}
+.tb{width:3px;background:#2d6a4f;flex-shrink:0;border-radius:2px}
+.td{padding:2px 0 2px 24px}
+.tlbl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#9a9288;margin-bottom:8px}
+.ttxt{font-size:14.5px;line-height:1.85;color:#4a4540;font-weight:300}
+.ttxt strong{font-weight:500;color:#18160f}
+.lgd{background:#f8f7f4;border-bottom:1px solid #e8e3db;padding:13px 48px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.ll{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#9a9288}
+.li{display:flex;align-items:center;gap:7px;font-size:11px;color:#4a4540}
+.ld{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.pa{padding:30px 48px;max-width:980px;margin:0 auto;min-height:320px}
+.ph{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:270px;border:1.5px dashed #ccc6bc;border-radius:14px;background:#f8f7f4;color:#9a9288;gap:12px;text-align:center;padding:36px}
+.ph-a{font-size:24px;opacity:.4;animation:bn 2s infinite}
+@keyframes bn{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.ph p{font-size:13px}
+.ph.hidden{display:none}
+.np{display:none;border:1px solid #e8e3db;border-radius:14px;overflow:hidden;animation:su .28s ease;box-shadow:0 4px 22px rgba(0,0,0,.07)}
+.np.act{display:block}
+@keyframes su{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.nh{padding:26px 30px 22px;border-bottom:1px solid #e8e3db;display:flex;justify-content:space-between;align-items:flex-start;gap:18px}
+.nhl{flex:1}
+.nbg{display:inline-block;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;padding:4px 12px;border-radius:100px;margin-bottom:12px;text-transform:uppercase}
+.ntt{font-family:'DM Serif Display',serif;font-size:clamp(18px,2.8vw,25px);font-weight:400;line-height:1.2;color:#18160f}
+.ncl{background:#f8f7f4;border:1px solid #e8e3db;border-radius:8px;color:#9a9288;font-size:12px;padding:6px 16px;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .15s;font-family:'DM Sans',sans-serif}
+.ncl:hover{background:#f0ede8;color:#18160f;border-color:#ccc6bc}
+.nbd{padding:22px 30px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ns{background:#f8f7f4;border-radius:10px;padding:17px 19px}
+.ns.f{grid-column:1/-1}
+.nsl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:#9a9288;margin-bottom:7px}
+.nst{font-size:13.5px;line-height:1.75;color:#4a4540;font-weight:300}
+.nft{padding:14px 30px 22px;display:flex;flex-wrap:wrap;gap:7px}
+.tg{font-family:'DM Mono',monospace;font-size:10px;padding:4px 12px;border-radius:100px;background:#f0ede8;color:#9a9288;border:1px solid #e8e3db}
+.tls{background:#f8f7f4;border-top:1px solid #e8e3db;position:sticky;bottom:0}
+.tlh{text-align:center;padding:11px 20px 0;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:#9a9288;text-transform:uppercase}
+.tlsc{overflow-x:auto;padding:18px 48px 26px;-webkit-overflow-scrolling:touch}
+.tlsc::-webkit-scrollbar{height:3px}
+.tlsc::-webkit-scrollbar-track{background:#e8e3db}
+.tlsc::-webkit-scrollbar-thumb{background:#ccc6bc;border-radius:2px}
+.tli{position:relative;display:flex;align-items:flex-end;min-width:max-content;padding-top:46px}
+.tll{position:absolute;bottom:27px;left:0;right:0;height:1.5px;background:#ccc6bc}
+.tn{position:relative;display:flex;flex-direction:column;align-items:center;cursor:pointer;padding:0 17px;flex-shrink:0;transition:transform .15s;user-select:none}
+.tn:hover{transform:translateY(-3px)}
+.tnl{font-size:10px;color:#9a9288;margin-bottom:8px;white-space:nowrap;max-width:80px;text-align:center;line-height:1.3;transition:color .15s}
+.tnd{width:13px;height:13px;border-radius:50%;border:2px solid;background:#fff;position:relative;z-index:2;margin-bottom:10px;transition:all .15s}
+.tny{font-family:'DM Mono',monospace;font-size:10px;color:#9a9288;white-space:nowrap;transition:color .15s}
+.tn[data-c=h] .tnd{border-color:#2d6a4f}
+.tn[data-c=t] .tnd{border-color:#1d4e89}
+.tn[data-c=s] .tnd{border-color:#b5451b}
+.tn[data-c=l] .tnd{border-color:#5c3d8f}
+.tn:hover .tnd,.tn.act .tnd{transform:scale(1.35)}
+.tn[data-c=h]:hover .tnd,.tn[data-c=h].act .tnd{background:#2d6a4f;box-shadow:0 0 0 4px #eaf4ee}
+.tn[data-c=t]:hover .tnd,.tn[data-c=t].act .tnd{background:#1d4e89;box-shadow:0 0 0 4px #e4eef8}
+.tn[data-c=s]:hover .tnd,.tn[data-c=s].act .tnd{background:#b5451b;box-shadow:0 0 0 4px #fdeee6}
+.tn[data-c=l]:hover .tnd,.tn[data-c=l].act .tnd{background:#5c3d8f;box-shadow:0 0 0 4px #ede8f7}
+.tn:hover .tnl,.tn.act .tnl,.tn:hover .tny,.tn.act .tny{color:#18160f;font-weight:500}
+@media(max-width:768px){
+.hdr{padding:36px 22px 32px}
+.lgd{padding:11px 22px}
+.pa{padding:20px 22px}
+.nbd{grid-template-columns:1fr}
+.ns.f{grid-column:1}
+.nh{padding:20px 20px 16px;flex-direction:column}
+.nbd{padding:16px 20px}
+.nft{padding:10px 20px 18px}
+.tlsc{padding:16px 22px 22px}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <p class="eyebrow">Historical &amp; Legal Research Compilation</p>
+    <h1>The Record<br><em>They Left Behind</em></h1>
+    <div class="tw">
+      <div class="tb"></div>
+      <div class="td">
+        <p class="tlbl">Thesis</p>
+        <p class="ttxt">The United States government&#8217;s own primary sources &#8212; statutes, treaties, cartographic records, and court rulings &#8212; document that <strong>American Indians</strong> (classified under colonial reclassification as <strong>Negroes, Moors, Mullattoes, and Indians</strong>) existed on this land before U.S. formation, were reclassified without consent through instruments void under basic contract law, and retain an original political status that was never lawfully extinguished.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="lgd">
+  <span class="ll">Key</span>
+  <div class="li"><div class="ld" style="background:#2d6a4f"></div>Historical Event</div>
+  <div class="li"><div class="ld" style="background:#1d4e89"></div>Treaty / Proclamation</div>
+  <div class="li"><div class="ld" style="background:#b5451b"></div>Colonial Statute</div>
+  <div class="li"><div class="ld" style="background:#5c3d8f"></div>Case Law</div>
+</div>
+
+<div class="pa">
+  <div class="ph" id="ph">
+    <div class="ph-a">&#8595;</div>
+    <p>Select any point on the timeline to explore the record</p>
+  </div>
+  <div class="np" id="np">
+    <div class="nh">
+      <div class="nhl">
+        <div class="nbg" id="nbg"></div>
+        <h2 class="ntt" id="ntt"></h2>
+      </div>
+      <button class="ncl" onclick="cls()">Close &#10005;</button>
+    </div>
+    <div class="nbd" id="nbd"></div>
+    <div class="nft" id="nft"></div>
+  </div>
+</div>
+
+<div class="tls">
+  <p class="tlh">Scroll timeline &middot; Click any node to explore</p>
+  <div class="tlsc"><div class="tli" id="tli"><div class="tll"></div></div></div>
+</div>
+
+<script>
+var C={h:{bg:"#eaf4ee",col:"#2d6a4f"},t:{bg:"#e4eef8",col:"#1d4e89"},s:{bg:"#fdeee6",col:"#b5451b"},l:{bg:"#ede8f7",col:"#5c3d8f"}};
+var D=[
+{y:"14,000+ BCE",s:"14K BCE",l:"First Peoples",c:"h",t:"Indigenous Peoples Settle the Americas",sc:[{l:"What Occurred",x:"Archaeological record confirms Indigenous peoples established permanent settlements, trade networks, and governance structures across the Americas, predating any colonial or federal authority by thousands of years."},{l:"Primary Support",x:"Seminole Tribal Historic Preservation Office oral and archaeological record; Cahokia and Hopewell mound sites."},{l:"Research Context",x:"The Seminole Tribal Historic Preservation Office documents continuous presence from this period through the present day. Their own record, not filtered through colonial documentation, establishes the oldest evidentiary chain of occupancy on this land.",f:1},{l:"Thesis Impact",x:"Anchors the entire chain. Prior presence is the foundation of every subsequent claim. The people on this land predate the system that later claimed jurisdiction over them by thousands of years.",f:1}],tg:["Pre-Colonial","Archaeological Record","Sovereign Presence","Chain Anchor"]},
+{y:"1492-1600s",s:"1492",l:"First Contact",c:"h",t:"Spanish First Contact Documents Existing Civilizations",sc:[{l:"What Occurred",x:"Spanish colonial records document existing civilizations, trade networks, agricultural systems, and governance structures throughout the Americas upon first contact."},{l:"Primary Support",x:"Spanish colonial records; Seminole contact history as documented by the Seminole Tribal Historic Preservation Office."},{l:"Research Context",x:"Spanish colonial records constitute hostile witness corroboration. The colonizing power's own documentation confirms what Indigenous oral history already established. Independent corroboration from an adversarial source is among the strongest forms of historical evidence.",f:1},{l:"Thesis Impact",x:"European witnesses independently corroborate Indigenous sovereignty. The colonizers themselves documented the sovereign communities they encountered.",f:1}],tg:["Hostile Witness","Spanish Colonial Record","Pre-U.S. Sovereignty"]},
+{y:"1586",s:"1586",l:"Moors at Roanoke",c:"h",t:"Sir Francis Drake Brings Moors and Moriscos to Roanoke",sc:[{l:"What Occurred",x:"Sir Francis Drake brought at least 200 Muslims, documented as Turks, Moors, and likely Moriscos, to the Roanoke colony on the coast of present-day North Carolina. Both Spanish and English colonial records independently confirm this."},{l:"Primary Support",x:"Abd-Allah, Umar Faruq. Turks, Moors and Moriscos in Early America. Nawawi Foundation Series, 2010. Corroborated by Spanish colonial depositions and English Privy Council records."},{l:"Research Context",x:"The Melungeon and Lumbee populations of Appalachia and North Carolina trace roots to this period, documented as a distinct fourth population with Mediterranean genetic markers. The Morocco-England Renaissance Triangle is documented as a formal geopolitical arrangement shaping the founding of British America.",f:1},{l:"Thesis Impact",x:"Establishes Moorish presence in the Virginia/Carolina colonial region 96 years before the 1682 statute. The 1682 law naming Moors is contextualized by documented historical presence, not merely inferred from the statute itself.",f:1}],tg:["Moorish Presence","Roanoke Colony","Pre-1682 Documentation","Melungeon-Lumbee"]},
+{y:"1607-1700",s:"1607",l:"Colonial Contact",c:"h",t:"British Colonies Established Within an Already-Governed Continent",sc:[{l:"What Occurred",x:"British colonial settlements established along the eastern seaboard, entirely coastal, surrounded by functioning Indigenous nations exercising governance, trade, and law."},{l:"Primary Support",x:"Pre-1776 cartographic record; Moretti-Langholtz, Danielle. Chapter 10 in A Study of Virginia Indians and Jamestown: The First Century. Colonial National Historical Park, National Park Service."},{l:"Research Context",x:"The NPS Moretti-Langholtz document provides primary source colonial court records showing Indigenous peoples actively using the colonial legal system, confirming functioning political agency throughout this period.",f:1},{l:"Thesis Impact",x:"Colonies were the newcomers operating within an already populated and governed continent. The assumption of jurisdiction was never legitimate. It was imposed, not established through consent.",f:1}],tg:["Colonial Encounter","NPS Documentation","Indigenous Political Agency"]},
+{y:"1662",s:"1662",l:"Partus Act",c:"s",t:"Virginia: Partus Sequitur Ventrem",sc:[{l:"What Occurred",x:"Virginia passes partus sequitur ventrem, child follows the mother's condition. Status and political classification are transmitted through the mother's line regardless of the father's status or community of origin."},{l:"Primary Support",x:"Virginia Act of 1662 primary source. Morgan, Jennifer L. Partus sequitur ventrem: Law, Race, and Reproduction in Colonial Slavery. Small Axe 55 (March 2018). Columbia Law Abolition 1313."},{l:"Research Context",x:"Morgan's peer reviewed scholarship establishes that the 1662 act was a deliberate legal construction with no natural precedent. It subverted existing European hereditary traditions by switching status transmission from the father's line to the mother's specifically to commodify reproduction.",f:1},{l:"Thesis Impact",x:"The mechanism by which reclassification compounded generationally. Descendants of sovereign peoples were progressively removed from their original political affiliations without any individual act of consent.",f:1}],tg:["Void Instrument","Colonial Statute","Generational Reclassification","Morgan Scholarship"]},
+{y:"1682",s:"1682",l:"Reclassification Act",c:"s",t:"Virginia Names Moors, Indians, Negroes and Mullattoes as Permanent Enslaved Class",sc:[{l:"What Occurred",x:"Virginia explicitly names Moors, Indians, Negroes, and Mullattoes as a permanent enslaved class, repealing prior laws that had created pathways to freedom."},{l:"Primary Support",x:"Virginia Act of 1682 primary source. Historical record independently confirming Virginia passed two acts in 1682 combining Native Americans and Africans into one category."},{l:"Research Context",x:"The 1682 statute is self-proving on the question of presence. You cannot legislate the status of people who are not there. Virginia's colonial legislature had no legitimate jurisdictional authority over citizens of sovereign nations that predated its own existence.",f:1},{l:"Thesis Impact",x:"The single strongest evidentiary piece. A hostile primary source confirming presence, political significance, and deliberate reclassification simultaneously. Under basic contract law, no consent, no legitimate jurisdiction, imposed under duress, this instrument was void from inception.",f:1}],tg:["Primary Source","Void Ab Initio","Moorish Presence Confirmed","No Legitimate Jurisdiction"]},
+{y:"1701",s:"1701",l:"Great Peace",c:"t",t:"Great Peace of Montreal: Haudenosaunee Sovereignty Recognized",sc:[{l:"What Occurred",x:"The French colonial power formally recognizes Haudenosaunee sovereignty through the Great Peace of Montreal. The Haudenosaunee are signatories, recognized as sovereign political entities."},{l:"Primary Support",x:"Great Peace of Montreal (1701) primary source; Albany Congress records (1754)."},{l:"Research Context",x:"Benjamin Franklin documented incorporating Haudenosaunee governance structure into the Albany Plan of Union. The Haudenosaunee continue to issue their own travel documents today.",f:1},{l:"Thesis Impact",x:"Hostile witness corroboration at the diplomatic level. A colonial power's own recognition of Indigenous sovereignty before U.S. formation. Treaty form itself is acknowledgment: you cannot treaty with a people you have jurisdiction over.",f:1}],tg:["Haudenosaunee","Hostile Witness","Diplomatic Recognition","Pre-U.S. Sovereignty"]},
+{y:"1720",s:"1720",l:"Homann Map",c:"h",t:"Homann Map Documents Sovereign Nations Across North America",sc:[{l:"What Occurred",x:"Johann Baptist Homann publishes Amplissimae Regionis Mississipi in Nuremberg, documenting dozens of named sovereign nations across North America, predating U.S. formation by over 50 years."},{l:"Named Nations",x:"Iroquois, Cherokee, Creek/Muscogee, Chickasaw, Choctaw, Osage, Natchez, Caddo, Seminole, Ottawa, Miami, Sioux, Pawnee, Apache, each with documented pre-1776 sovereignty confirmed through colonial treaties, correspondence, or court records.",f:1},{l:"Primary Support",x:"Homann, Johann Baptist. Amplissimae Regionis Mississipi. Nuremberg, 1720. Reference: Vaughan, Alden T., ed. Early American Indian Documents: Treaties and Laws 1607-1789."},{l:"Thesis Impact",x:"A European cartographic primary source making Indigenous sovereignty visually undeniable. Colonies were the exception. Sovereign nations were the rule.",f:1}],tg:["Cartographic Primary Source","Pre-1776 Sovereignty","Homann 1720","Visual Evidence"]},
+{y:"1763",s:"1763",l:"Royal Proclamation",c:"t",t:"Royal Proclamation: Crown Acknowledges Indigenous Territorial Sovereignty",sc:[{l:"What Occurred",x:"The British Crown explicitly acknowledges Indigenous territorial sovereignty, drawing boundary lines and acknowledging that Indigenous peoples hold prior rights to their territories."},{l:"Primary Support",x:"Royal Proclamation of 1763 primary source."},{l:"Research Context",x:"The British Crown, predecessor authority to the United States, acknowledged Indigenous sovereignty before the U.S. existed. The U.S. inherited these obligations when it succeeded the Crown's position in North America.",f:1},{l:"Thesis Impact",x:"The colonial power that became the U.S. government's predecessor acknowledged Indigenous sovereignty as a matter of formal Crown policy. Binding as a matter of inherited obligation.",f:1}],tg:["British Crown","Inherited Obligation","Pre-U.S. Recognition","Territorial Sovereignty"]},
+{y:"1776",s:"1776",l:"U.S. Formation",c:"h",t:"United States Declares Independence on Already-Sovereign Land",sc:[{l:"What Occurred",x:"The United States declares independence on land already occupied and governed by sovereign nations whose political status predated the new republic."},{l:"Primary Support",x:"Declaration of Independence (1776); Articles of Confederation (1777) Article IX, explicitly placing Indian nations outside U.S. jurisdictional framework."},{l:"Research Context",x:"The Articles of Confederation explicitly acknowledged Indigenous nations as separate political entities outside U.S. jurisdiction. The founders themselves drew this boundary.",f:1},{l:"Thesis Impact",x:"The founding documents acknowledged what they were built on top of. They did not claim jurisdiction over Indigenous nations. They acknowledged separate sovereign status.",f:1}],tg:["U.S. Formation","Founding Documents","Acknowledged Sovereignty"]},
+{y:"1778",s:"1778",l:"First U.S. Treaty",c:"t",t:"Treaty of Delaware: First U.S. Treaty with an Indigenous Nation",sc:[{l:"What Occurred",x:"The United States signs its first treaty with an Indigenous nation, the Delaware. The treaty form itself is an acknowledgment of sovereign status."},{l:"Primary Support",x:"Treaty of Delaware (1778) primary source; Library of Congress American Indian Treaties Guide."},{l:"Research Context",x:"You cannot sign a treaty with a people you have jurisdiction over. Treaties are between sovereigns. The 1871 law ending new treaty-making explicitly preserved all prior treaty obligations.",f:1},{l:"Thesis Impact",x:"The U.S. government's own first action acknowledged Indigenous sovereign status. The treaty framework acknowledging prior sovereign status remains operative today.",f:1}],tg:["Treaty Sovereignty","First U.S. Treaty","Operative Framework"]},
+{y:"1786",s:"1786",l:"Morocco Treaty",c:"t",t:"Treaty of Peace and Friendship with Morocco: Oldest Standing U.S. Treaty",sc:[{l:"What Occurred",x:"The United States signs the Treaty of Peace and Friendship with Morocco, a Moorish sovereign state. This is the oldest standing U.S. treaty, still technically in force."},{l:"Primary Support",x:"Treaty of Peace and Friendship (1786) primary source; Abd-Allah Nawawi Foundation document establishing the Renaissance Triangle between England, Morocco, and the Americas."},{l:"Research Context",x:"Morocco was a formal political partner of England in the founding of the Roanoke colony. A 200-year relationship that directly shaped the founding of British America. The U.S. sought recognition from a Moorish sovereign as one of its first diplomatic acts.",f:1},{l:"Thesis Impact",x:"An independent international instrument confirming Moorish political status, separate from and predating the domestic reclassification argument.",f:1}],tg:["Moorish Sovereignty","Oldest U.S. Treaty","International Recognition","Morocco"]},
+{y:"1787",s:"1787",l:"Northwest Ordinance",c:"t",t:"Northwest Ordinance: U.S. Acknowledges No Right to Land Without Consent",sc:[{l:"What Occurred",x:"The Northwest Ordinance explicitly states that Indian land will not be taken without consent."},{l:"Primary Support",x:"Northwest Ordinance (1787) primary source."},{l:"Research Context",x:"The government's own founding law acknowledged the consent requirement. The taking that followed was in direct contradiction to the government's own stated principle.",f:1},{l:"Thesis Impact",x:"The U.S. government's own founding legislation confirms that the taking of Indigenous land without consent was illegitimate under its own rules, not merely by an external standard.",f:1}],tg:["Consent Requirement","Founding Legislation","U.S. Self-Indictment"]},
+{y:"1823",s:"1823",l:"Aboriginal Title",c:"l",t:"Johnson v. M'Intosh: Aboriginal Title Acknowledged",sc:[{l:"What Occurred",x:"The Supreme Court acknowledges aboriginal title as the right of original occupancy predating European arrival."},{l:"Primary Support",x:"Johnson v. M'Intosh, 21 U.S. 543 (1823); Slattery, Brian. The Metamorphosis of Aboriginal Title. Canadian Bar Review 85.2 (2006); Oxford Public International Law aboriginal title entry."},{l:"Research Context",x:"Slattery establishes that aboriginal title could only be ceded under a treaty to which members of the Indigenous group gave their free assent. Pre-colonial rights survived colonization subject only to subsequent lawful extinguishment. Survival is the default.",f:1},{l:"Thesis Impact",x:"Even the ruling that limited Indigenous land rights acknowledged prior sovereign occupancy predating U.S. formation. Aboriginal title persists absent lawful extinguishment through legitimate treaty process with free consent.",f:1}],tg:["Aboriginal Title","Survival Default","Consent Required","Slattery Scholarship"]},
+{y:"1830",s:"1830",l:"Removal Act",c:"s",t:"Indian Removal Act: Force Required Because Right Did Not Exist",sc:[{l:"What Occurred",x:"Congress passes the Indian Removal Act, requiring legislation to forcibly relocate Indigenous peoples east of the Mississippi."},{l:"Primary Support",x:"Indian Removal Act (1830) primary source; Treaty of Dancing Rabbit Creek (1830)."},{l:"Research Context",x:"If U.S. jurisdiction over these peoples already existed legitimately, no act of Congress would have been necessary. The act's existence is evidence of its own illegitimacy.",f:1},{l:"Thesis Impact",x:"The act itself proves the absence of prior legitimate authority. Congress acknowledged through the necessity of the legislation that force, not right, was the mechanism of removal.",f:1}],tg:["Self-Proving Illegitimacy","Force Not Right","Congressional Acknowledgment"]},
+{y:"1831-1832",s:"1831",l:"Marshall Trilogy",c:"l",t:"The Marshall Trilogy: Inherent Tribal Sovereignty Confirmed",sc:[{l:"What Occurred",x:"Chief Justice Marshall establishes that tribal sovereignty is inherent and predates U.S. formation. Worcester v. Georgia: Indian nations had always been considered distinct, independent political communities retaining their original natural rights."},{l:"Primary Support",x:"Cherokee Nation v. Georgia, 30 U.S. 1 (1831); Worcester v. Georgia, 31 U.S. 515 (1832); Cornell International Law Journal Vol. 13 (1980)."},{l:"Research Context",x:"Retained sovereignty is an inference raised by the U.S. government's own use of the treaty power. That status was retained, not granted by the U.S. government.",f:1},{l:"Thesis Impact",x:"The highest court in the U.S. system acknowledged inherent sovereign status predating and independent of U.S. formation. Hostile institutional corroboration at the highest legal level.",f:1}],tg:["Marshall Trilogy","Inherent Sovereignty","Worcester v. Georgia","Supreme Court"]},
+{y:"1835-1858",s:"1835",l:"Seminole Wars",c:"h",t:"Seminole Wars: The Only Nation Never Defeated or Removed",sc:[{l:"What Occurred",x:"The Seminole Nation resists removal through three wars. They are the only Indigenous nation never defeated or removed by the United States."},{l:"Primary Support",x:"Seminole Tribal Historic Preservation Office."},{l:"Research Context",x:"The Seminole maintained sovereign status through strategic withdrawal and refusal. They followed Abiaka into the Everglades and remained. Today they are the Unconquered Seminole Tribe of Florida, over 5,000 citizens, owning Hard Rock Hotel and Casinos internationally.",f:1},{l:"Thesis Impact",x:"Documented proof of concept: sovereign status maintained internally cannot be extinguished by external force alone. Survival through refusal is historically demonstrated.",f:1}],tg:["Unconquered","Seminole Nation","Refusal as Sovereignty","Proof of Concept"]},
+{y:"1868",s:"1868",l:"14th Amendment",c:"s",t:"14th Amendment: Second Reclassification Without Consent",sc:[{l:"What Occurred",x:"The 14th Amendment absorbs descendants of previously reclassified peoples into federal citizenship without restoring their original political affiliations and without their consent."},{l:"Primary Support",x:"14th Amendment (1868); Indian Citizenship Act (1924), required separately, confirming 14th Amendment never automatically applied to Indigenous peoples."},{l:"Research Context",x:"The drafters explicitly debated whether the 14th Amendment applied to tribal Indians and largely concluded it did not. A separate act was required 56 years later.",f:1},{l:"Thesis Impact",x:"A second reclassification compounding the first, imposed without consent and without restoring original status. The pattern established in 1662 and 1682 was repeated.",f:1}],tg:["Second Reclassification","No Consent","14th Amendment","Compounding Pattern"]},
+{y:"1887-1907",s:"1887",l:"Dawes Rolls",c:"s",t:"Dawes Act and Rolls: Reclassification Re-Encoded into Enrollment",sc:[{l:"What Occurred",x:"The Dawes Rolls enrolled people with documented Indigenous ancestry as Freedmen, indicating no blood relation to the tribe, based on prior reclassification status. The 1682 classification was re-applied 220 years later."},{l:"Primary Support",x:"National Archives: Final Rolls of Citizens and Freedmen of the Five Civilized Tribes 1899-1914; Oklahoma Historical Society Dawes Roll database; Emerson, Lyric Helena. The Dawes Rolls and the Price of Belonging. PhilArchive (2024)."},{l:"Research Context",x:"Oklahoma Historical Society confirms: although there was intermarriage between Freedmen and Native Americans, the Dawes Commission typically enrolled people of mixed heritage as Freedmen and indicated no blood relation to the tribe.",f:1},{l:"Thesis Impact",x:"The 1682 reclassification was administratively re-encoded through the very enrollment system U.S. law now uses as the primary gateway to Indigenous political status.",f:1}],tg:["Dawes Rolls","Re-encoded Reclassification","Emerson Scholarship","Administrative Suppression"]},
+{y:"1974",s:"1974",l:"Mancari",c:"l",t:"Morton v. Mancari: Indian Status Is Political, Not Racial",sc:[{l:"What Occurred",x:"The Supreme Court holds that Indian status is a political classification, not a racial one, and that differential treatment based on this political status does not violate equal protection."},{l:"Primary Support",x:"Morton v. Mancari, 417 U.S. 535 (1974)."},{l:"Research Context",x:"Indian status derives from the unique political relationship between tribal nations and the United States, not from race.",f:1},{l:"Thesis Impact",x:"Removes the argument from racial classification entirely. Claims to original political affiliation are jurisdictional and political claims, not racial ones, and cannot be challenged on equal protection grounds.",f:1}],tg:["Political Not Racial","Equal Protection Shield","Mancari","Jurisdictional Claim"]},
+{y:"1978",s:"1978",l:"Santa Clara",c:"l",t:"Santa Clara Pueblo v. Martinez: Tribes Define Their Own Membership",sc:[{l:"What Occurred",x:"The Supreme Court confirms that federally recognized tribes retain inherent sovereign authority to define their own membership."},{l:"Primary Support",x:"Santa Clara Pueblo v. Martinez, 436 U.S. 49 (1978)."},{l:"Research Context",x:"Sovereignty over identity resides with the nation, not the federal government. Tribes using lineal descent without blood quantum minimums are exercising legitimate sovereign authority.",f:1},{l:"Thesis Impact",x:"Original political affiliation is not determined by federal administrative systems. It resides with the nation itself.",f:1}],tg:["Self-Determination","Tribal Membership","Santa Clara","Lineal Descent"]},
+{y:"2005",s:"2005",l:"U.S. v. Bruce",c:"l",t:"United States v. Bruce: Enrollment Not Required for Indian Status",sc:[{l:"What Occurred",x:"The Ninth Circuit establishes a four-factor test for Indian status that does not require formal tribal enrollment: ancestry, government recognition, enjoyment of tribal benefits, and social recognition through community participation."},{l:"Primary Support",x:"United States v. Bruce, 394 F.3d 1215 (9th Cir. 2005); United States v. Keys, 103 F.3d 758 (9th Cir. 1996); United States v. Maggi, 598 F.3d 1073 (9th Cir. 2010)."},{l:"Research Context",x:"Keys confirmed that a minor with Indigenous blood but no enrollment qualified as Indian. Maggi extended this to blood from non-federally-recognized tribes.",f:1},{l:"Thesis Impact",x:"Removes the Dawes-encoded enrollment system as the gatekeeper of Indigenous political identity. People whose ancestors were excluded from the Dawes Rolls may still qualify through the Bruce factors.",f:1}],tg:["Bruce Four-Factor Test","No Enrollment Required","Dawes Exclusion Addressed","9th Circuit"]},
+{y:"2007",s:"2007",l:"UNDRIP",c:"t",t:"UN Declaration on the Rights of Indigenous Peoples",sc:[{l:"What Occurred",x:"The UN General Assembly adopts the Declaration on the Rights of Indigenous Peoples. The United States endorsed it in 2010."},{l:"Primary Support",x:"UNDRIP (2007); U.S. endorsement statement (2010)."},{l:"Research Context",x:"The U.S. government's endorsement acknowledged Indigenous rights exist outside and above domestic administrative classifications.",f:1},{l:"Thesis Impact",x:"Moves the argument beyond domestic jurisdiction. International corroboration that prior sovereign status exists above U.S. administrative classifications.",f:1}],tg:["International Framework","Beyond Domestic Jurisdiction","U.S. Endorsement","UNDRIP"]},
+{y:"2020",s:"2020",l:"McGirt",c:"l",t:"McGirt v. Oklahoma: Participation Does Not Waive Original Political Status",sc:[{l:"What Occurred",x:"The Supreme Court holds that the Muscogee (Creek) Nation reservation was never disestablished despite 111 years of state assumption of jurisdiction. Justice Gorsuch: Because Congress has not said otherwise, we hold the government to its word."},{l:"Primary Support",x:"McGirt v. Oklahoma, 591 U.S. (2020); Warner and Tanana. Harvard Environmental Law Review Vol. 45 (2021); Reese. University of Chicago Law Review Online (2020); Velchik and Zhang. Yale Journal on Regulation Vol. 40 (2023); NARF documentation."},{l:"Research Context",x:"The Yale empirical study found no statistically significant negative economic effect across multiple jurisdictions where tribal sovereignty was restored. Oklahoma courts extended McGirt's rationale to nine additional tribal nations.",f:1},{l:"Thesis Impact",x:"Sovereign status requires explicit Congressional action to extinguish. Silence and assumption are insufficient. A person participating in the U.S. system retains original political status if it was never explicitly and lawfully extinguished.",f:1}],tg:["McGirt","Participation Is Not Waiver","Explicit Extinguishment Required","2020"]},
+{y:"2022",s:"2022",l:"Castro-Huerta",c:"l",t:"Oklahoma v. Castro-Huerta: Post-McGirt Limitation in Criminal Context",sc:[{l:"What Occurred",x:"The Supreme Court allows states concurrent criminal jurisdiction over non-Indians committing crimes against Indians in Indian country, partially limiting McGirt's reach in the criminal context."},{l:"Primary Support",x:"Oklahoma v. Castro-Huerta, 597 U.S. (2022); Leeds, Stacy and Robert Miller et al. Oklahoma v. Castro-Huerta. Journal of Appellate Practice and Process Vol. 23 (2023)."},{l:"Research Context",x:"Castro-Huerta addressed criminal jurisdiction over non-Indians. It did not address civil status questions, political classification, or whether sovereign status was lawfully extinguished.",f:1},{l:"Thesis Impact",x:"An honest limitation on McGirt's reach in the criminal context. Civil status questions and political classification remain largely unaddressed by Castro-Huerta. The McGirt principle of explicit extinguishment required remains operative for status questions.",f:1}],tg:["Castro-Huerta","Post-McGirt Limitation","Criminal Context Only","Civil Status Unaffected"]}
+];
+
+function open_(i){
+  var n=D[i],cl=C[n.c];
+  document.querySelectorAll('.tn').forEach(function(e){e.classList.remove('act')});
+  document.querySelector('.tn[data-i="'+i+'"]').classList.add('act');
+  var bg=document.getElementById('nbg');
+  bg.textContent=n.y;bg.style.background=cl.bg;bg.style.color=cl.col;
+  document.getElementById('ntt').textContent=n.t;
+  document.getElementById('nbd').innerHTML=n.sc.map(function(s){
+    return '<div class="ns'+(s.f?' f':'')+'"><div class="nsl">'+s.l+'</div><div class="nst">'+s.x+'</div></div>';
+  }).join('');
+  document.getElementById('nft').innerHTML=n.tg.map(function(t){return '<span class="tg">'+t+'</span>';}).join('');
+  document.getElementById('ph').classList.add('hidden');
+  var p=document.getElementById('np');
+  p.classList.remove('act');void p.offsetWidth;p.classList.add('act');
+  document.querySelector('.pa').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function cls(){
+  document.getElementById('np').classList.remove('act');
+  document.getElementById('ph').classList.remove('hidden');
+  document.querySelectorAll('.tn').forEach(function(e){e.classList.remove('act')});
+}
+(function(){
+  var t=document.getElementById('tli');
+  D.forEach(function(n,i){
+    var el=document.createElement('div');
+    el.className='tn';el.dataset.c=n.c;el.dataset.i=i;
+    el.onclick=function(){open_(i)};
+    el.innerHTML='<div class="tnl">'+n.l+'</div><div class="tnd"></div><div class="tny">'+n.s+'</div>';
+    t.appendChild(el);
+  });
+})();
+</script>
+</body>
+</html>
