@@ -496,9 +496,17 @@ h1 em{font-style:italic;color:#2d6a4f}
 .vt-btn.vt-active{background:#18160f;color:#fff;border-color:#18160f}
 .vt-btn:hover:not(.vt-active){border-color:#18160f;color:#18160f}
 .vt-icon{font-size:9px}
-.vt-legend{display:flex;gap:16px;flex-wrap:wrap}
-.vt-li{display:flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;color:#9a9288}
-.vt-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.vt-filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.vt-filter{display:flex;align-items:center;gap:7px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:#9a9288;background:#fff;border:1.5px solid #e8e3db;border-radius:100px;padding:6px 13px;cursor:pointer;transition:all .18s;white-space:nowrap}
+.vt-filter:hover{color:#18160f;border-color:#9a9288}
+.vt-filter.active{color:#fff;border-color:transparent}
+.vt-filter[data-type="reclass"].active{background:#e05a3a}
+.vt-filter[data-type="sovereign"].active{background:#2d6a4f}
+.vt-filter[data-type="override"].active{background:#c9a84c;color:#18160f}
+.vt-filter[data-type="cartographic"].active{background:#1d4e89}
+.vt-filter[data-type="echo"].active{background:#5c3d8f}
+.vt-filter-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.vt-filter.active .vt-filter-dot{background:rgba(255,255,255,0.5) !important}
 
 /* ═══ WEB VIEW ═══ */
 .tl-view{width:100%}
@@ -1243,7 +1251,7 @@ h1 em{font-style:italic;color:#2d6a4f}
 <section class="pt-section pt-chain">
   <div class="pt-section-in">
     <p class="pt-section-label">The Unbroken Chain</p>
-    <h2 class="pt-section-h">362 Years.<br><em>One Continuous Line.</em></h2>
+    <h2 class="pt-section-h">364 Years.<br><em>One Continuous Line.</em></h2>
     <p class="pt-section-sub">Every link is a documented instrument. There is no break.</p>
     <div class="pt-chain-list">
       <div class="pt-chain-item">
@@ -1318,7 +1326,15 @@ h1 em{font-style:italic;color:#2d6a4f}
           <p class="pt-chain-text">McGirt v. Oklahoma: 111 years of assumed jurisdiction ruled invalid. The assumption was never lawful. Courts, taxes, property records, criminal prosecutions &mdash; all built on a foundation the Supreme Court confirmed never existed.</p>
         </div>
       </div>
-      <div class="pt-chain-item pt-chain-item--now">
+      <div class="pt-chain-item pt-chain-item--alert">
+        <span class="pt-chain-year">2026</span>
+        <div class="pt-chain-connector"></div>
+        <div class="pt-chain-content">
+          <span class="pt-chain-badge pt-badge-law">Supreme Court</span>
+          <p class="pt-chain-text"><strong>Louisiana v. Callais.</strong> The Supreme Court rules 6&ndash;3 that states can almost never consider race when drawing redistricting maps &mdash; using the Equal Protection Clause designed to protect minority rights to eliminate the primary enforcement mechanism of the Voting Rights Act. Justice Kagan in dissent: &ldquo;Today&rsquo;s decision renders Section 2 all but a dead letter.&rdquo; Tennessee, Florida, and Alabama immediately begin redrawing maps to eliminate majority-minority districts.</p>
+        </div>
+      </div>
+            <div class="pt-chain-item pt-chain-item--now">
         <span class="pt-chain-year">Today</span>
         <div class="pt-chain-connector"></div>
         <div class="pt-chain-content">
@@ -1330,7 +1346,7 @@ h1 em{font-style:italic;color:#2d6a4f}
     <div class="pt-expand-wrap" style="margin-top:32px">
       <button class="pt-expand-btn" onclick="ptToggle(this)"><span class="pt-expand-label">Go Deeper</span><span class="pt-expand-icon">+</span></button>
       <div class="pt-expand-content">
-        <p class="pt-deep-body">The chain is not a metaphor. Each link is a documented instrument. The chain runs 362 years without a single break. There is no point where the original suppression was formally acknowledged, legally corrected, and affected populations restored to their prior status with their full evidentiary record intact. The Civil War ended chattel slavery &mdash; it did not restore original political status. The Civil Rights Act prohibited explicit discrimination &mdash; it did not address 300 years of structural outcomes. The Voting Rights Act protected voting access &mdash; it did not address the Dawes Roll enrollment trap. Each intervention addressed a specific visible mechanism while leaving the underlying architecture intact. The architecture is still producing outcomes.</p>
+        <p class="pt-deep-body">The chain is not a metaphor. Each link is a documented instrument. The chain runs 364 years without a single break. There is no point where the original suppression was formally acknowledged, legally corrected, and affected populations restored to their prior status with their full evidentiary record intact. The Civil War ended chattel slavery &mdash; it did not restore original political status. The Civil Rights Act prohibited explicit discrimination &mdash; it did not address 300 years of structural outcomes. The Voting Rights Act protected voting access &mdash; it did not address the Dawes Roll enrollment trap. Each intervention addressed a specific visible mechanism while leaving the underlying architecture intact. The architecture is still producing outcomes.</p>
       </div>
     </div>
   </div>
@@ -1638,19 +1654,29 @@ h1 em{font-style:italic;color:#2d6a4f}
         <span class="vt-icon">&#9472;</span> Timeline
       </button>
     </div>
-    <div class="vt-legend" id="vt-legend">
-    <div class="vt-li"><div class="vt-dot" style="background:#e05a3a"></div>Reclassification Chain</div>
-    <div class="vt-li"><div class="vt-dot" style="background:#2d6a4f"></div>Sovereignty Acknowledgment</div>
-    <div class="vt-li"><div class="vt-dot" style="background:#c9a84c"></div>Override Pattern</div>
-    <div class="vt-li"><div class="vt-dot" style="background:#1d4e89"></div>Cartographic Record</div>
-    <div class="vt-li"><div class="vt-dot" style="background:#5c3d8f"></div>Echo / Recurrence</div>
-    </div>
+    <div class="vt-filters" id="vt-legend">
+    <button class="vt-filter" data-type="reclass" onclick="toggleFilter('reclass')">
+      <span class="vt-filter-dot" style="background:#e05a3a"></span>They Named Us
+    </button>
+    <button class="vt-filter" data-type="sovereign" onclick="toggleFilter('sovereign')">
+      <span class="vt-filter-dot" style="background:#2d6a4f"></span>They Signed the Treaties
+    </button>
+    <button class="vt-filter" data-type="override" onclick="toggleFilter('override')">
+      <span class="vt-filter-dot" style="background:#c9a84c"></span>Then They Took It Back
+    </button>
+    <button class="vt-filter" data-type="cartographic" onclick="toggleFilter('cartographic')">
+      <span class="vt-filter-dot" style="background:#1d4e89"></span>The Maps Knew
+    </button>
+    <button class="vt-filter" data-type="echo" onclick="toggleFilter('echo')">
+      <span class="vt-filter-dot" style="background:#5c3d8f"></span>The Pattern Repeats
+    </button>
+  </div>
   </div>
   <div class="vt-desc" id="vt-desc-web">
-    <span class="vt-desc-label">Pattern Web</span> — nodes are positioned by their documented connections, not by date. Click any node to see what it links to and why. The lines show recurring mechanisms across centuries: the same reclassification technology, the same override pattern, the same pen writing the rule and the exception.
+    <span class="vt-desc-label">Pattern Web</span> &mdash; nodes are positioned by their documented connections, not by date. Click any node to explore it. Use the filters above to follow a single thread across centuries.
   </div>
   <div class="vt-desc" id="vt-desc-linear" style="display:none">
-    <span class="vt-desc-label">Timeline</span> — the same 32 nodes in chronological order. Use this view to orient yourself by date, then switch to the Pattern Web to see what the dates are actually connected to.
+    <span class="vt-desc-label">Timeline</span> &mdash; the same 33 nodes in chronological order. Use this view to orient yourself by date, then switch to the Pattern Web to see what the dates are actually connected to.
   </div>
 </div>
 
@@ -1761,6 +1787,28 @@ h1 em{font-style:italic;color:#2d6a4f}
 </div>
 
 <script>var RD = {
+"2026": {
+ps: "Louisiana v. Callais, No. 24-109, 608 U.S. ___ (April 29, 2026). Justice Alito majority opinion. Justice Kagan dissent joined by Sotomayor and Jackson. Available: supremecourt.gov/opinions/25pdf/24-109_21o3.pdf. SCOTUSblog case tracking: scotusblog.com/cases/louisiana-v-callais-2/",
+wo: "The Supreme Court ruled 6-3 on April 29, 2026 that Louisiana's congressional map — which had created a second majority-Black district following years of Section 2 Voting Rights Act litigation — was an unconstitutional racial gerrymander. Justice Alito held that VRA Section 2 did not require the state to create the additional majority-minority district and therefore race-conscious redistricting was not justified. The ruling significantly reworked the 40-year-old Thornburg v. Gingles framework for Section 2 claims, raising the evidentiary burden for proving racial discrimination in redistricting and allowing states to use partisan motivation as a near-complete defense against racial discrimination claims.",
+rc: "This ruling is the third major judicial blow to the Voting Rights Act in 13 years. Shelby County v. Holder (2013) disabled Section 5 preclearance by invalidating the coverage formula. Brnovich v. DNC (2021) weakened Section 2 vote dilution claims. Callais functionally eliminates Section 2 as an enforcement mechanism for majority-minority districts by holding that VRA compliance itself is no longer a compelling interest sufficient to justify race-conscious redistricting. Justice Kagan's dissent states: 'Today's decision renders Section 2 all but a dead letter.' Following the decision, Tennessee, Florida, and Alabama immediately initiated redistricting to eliminate majority-minority districts. The NAACP Legal Defense Fund called it 'one of the most consequential setbacks for our multiracial democracy in a generation.'",
+ap: [
+"The ruling uses strict scrutiny — the standard designed to protect minority rights from discrimination — to eliminate a remedy for documented racial discrimination in voting. This is the Equal Protection Clause being used as the instrument of suppression rather than protection.",
+"The decision explicitly places the evidentiary burden on plaintiffs to show 'present-day intentional racial discrimination regarding voting' while discounting historical evidence and ongoing effects of discrimination. This mirrors the logic of Shelby County (2013) which argued that historical discrimination no longer justified Section 5 protections.",
+"Within 48 hours of the decision: Tennessee eliminated its sole majority-minority House district; Florida passed redistricting legislation; Alabama filed emergency motions to reinstate legislature-drawn maps previously struck down under Allen v. Milligan. The decision produced immediate real-world elimination of minority political representation.",
+"Justice Thomas concurred separately to argue that Section 2 does not regulate districting at all — a position that would eliminate VRA redistricting claims entirely. This concurrence signals the direction of further litigation.",
+"The Callais decision is documentably connected to the reclassification chain beginning in 1682. The populations most targeted by the 1682 Virginia statute are the same populations whose voting representation Callais eliminates. The administrative legal architecture used for both is not separate — it is the same pen, still writing."
+],
+tc: "The Override Pattern in present tense. The 15th Amendment (1870) guaranteed voting rights regardless of race. The VRA (1965) was passed because 95 years of documented workarounds had rendered the 15th Amendment insufficient in practice. Callais uses the Equal Protection Clause of the 14th Amendment — the instrument designed to protect minority rights — to eliminate the primary enforcement mechanism of the VRA. Right written (1870). Enforcement mechanism written (1965). Exception eliminating the enforcement mechanism written (2026). 156 years. One continuous chain. Same institution. Same pen.",
+cp: "Final link in the documented reclassification chain as of 2026. The chain runs: Virginia 1662 (partus) → Virginia 1682 (reclassification) → SC 1740 → 14th Amendment 1868 (citizenship without status restoration) → Dawes Rolls 1887-1907 → Racial Integrity Act 1924 → 15th Amendment/VRA 1965 (partial restoration) → Shelby County 2013 → Brnovich 2021 → Callais 2026 (systematic elimination of enforcement). The partial restoration enacted by the VRA has now been systematically dismantled through three judicial decisions over 13 years.",
+cites: [
+"NAACP Legal Defense Fund. Louisiana v. Callais case page. naacpldf.org/case-issue/louisiana-v-callais/ — 'The Supreme Court\'s decision eviscerated Section 2 of the Voting Rights Act, a critical and sacred civil rights protection.'",
+"SCOTUSblog. 'In major Voting Rights Act case, Supreme Court strikes down redistricting map challenged as racially discriminatory.' April 29, 2026. scotusblog.com",
+"Brennan Center for Justice. Louisiana v. Callais. brennancenter.org/our-work/research-reports/louisiana-v-callais — 'The court\'s opinion significantly reworked the 40-year-old establishing in Thornburg v. Gingles.'",
+"Campaign Legal Center. 'The U.S. Supreme Court Has Eviscerated the Voting Rights Act — What\'s Next?' April 29, 2026. campaignlegal.org",
+"Wikipedia. Louisiana v. Callais. en.wikipedia.org/wiki/Louisiana_v._Callais — Documents immediate state redistricting responses in Tennessee, Florida, Alabama.",
+"United States Supreme Court. Louisiana v. Callais, No. 24-109, 608 U.S. ___ (2026). supremecourt.gov/opinions/25pdf/24-109_21o3.pdf"
+]
+},
 "14,000+ BCE": {
 ps: "Seminole Tribal Historic Preservation Office oral and archaeological record; Cahokia Mounds State Historic Site, Illinois; Hopewell Culture National Historical Park, Ohio. National Park Service archaeological documentation.",
 wo: "Archaeological record confirms Indigenous peoples established permanent settlements, complex trade networks spanning thousands of miles, monumental architecture, and sophisticated governance structures across the Americas — predating any colonial or federal authority by thousands of years. The Cahokia site near present-day St. Louis housed an estimated 10,000-20,000 people at its peak around 1100 CE. Hopewell ceremonial centers connected communities from the Gulf of Mexico to the Great Lakes. These were organized political communities with territorial governance — not nomadic populations without cognizable political status.",
@@ -1796,6 +1844,28 @@ ap: ["Colonies were the newcomers operating within an already populated and gove
 tc: "Establishes that colonies were the exception, not the rule. The assumption of jurisdiction over Indigenous peoples was never legitimate from a sovereign standpoint — it was imposed, not established through consent. The legal and political agency Indigenous peoples exercised throughout this period confirms they were recognized as political actors even as their status was being suppressed.",
 cp: "Contextual node — establishes the political environment in which the 1662 and 1682 statutes were enacted.",
 cites: ["Moretti-Langholtz, Danielle. 'Decoding the Documents: Indians in Selected Seventeenth Century Documents.' Chapter 10 in A Study of Virginia Indians and Jamestown: The First Century. Colonial National Historical Park, National Park Service.", "Pre-1776 cartographic record — multiple sources."]
+},
+"1660": {
+ps: "Company of Royal Adventurers Trading into Africa. Royal Charter, December 18, 1660. Revised Charter, 1663. Full text: slaverylawpower.org/chapters/restoration-settlements/1663-royal-adventurers-from-england-into-africa-charter/. Encyclopedia Virginia: encyclopediavirginia.org/12854-c8df6dcad690f94/",
+wo: "On December 18, 1660, King Charles II chartered the Company of Royal Adventurers Trading into Africa, led by his brother James, Duke of York, granting monopoly rights over English trade with West Africa for 1,000 years. The stated purpose was gold. By 1663, when gold mines failed to materialize, Charles II issued a revised charter explicitly adding Negro slaves to the list of commodities — granting exclusive rights to buying and selling 'negro slaves, goods, wares and merchandizes whatsoever.' In January 1663, the Duke of York promised Barbados 3,000 African slaves annually at 17 pounds per head. The company was reorganized as the Royal African Company in 1672 with additional rights to maintain troops and exercise martial law in West Africa. Between 1672 and 1731, the RAC transported 186,748 enslaved people on 652 voyages. Enslaved people were branded with the letters DoY — the Duke of York's initials.",
+rc: "England's involvement in the transatlantic slave trade was modest before 1660. In the 20 years prior to the Restoration, an average of 4.8 voyages left England for Africa annually. During the Company of Royal Adventurers' operation that number increased to 8.9 voyages per year. The RAC is documented by historian William Pettigrew as having shipped more enslaved African men, women, and children to the Americas than any other single institution during the entire period of the transatlantic slave trade. The company's shareholders were fully aware of its activities and intended to profit from them. The 1663 charter language — 'negro slaves, goods, wares and merchandizes whatsoever' — places enslaved people explicitly in the same grammatical and commercial category as tradeable goods.",
+ap: [
+"The sequence from 1660 to 1662 is documented: the Crown creates the slave trade supply infrastructure in December 1660; Virginia passes the hereditary enslaved status law in 1662; the Crown explicitly names Negro slaves as tradeable commodities in the 1663 charter revision. The law followed the commercial architecture by two years.",
+"The direct causal link between the Crown charter and the Virginia 1662 statute is an analytical argument, not a statement in any primary source. No colonial record says the Virginia statute was written specifically to protect the Crown's commercial investment. The inference is structurally supported by the documented timeline but should be held as interpretation.",
+"The same royal family that chartered the slave trade in 1660 and promised 3,000 slaves annually to colonial planters in 1663 also received revenue from Virginia tobacco — the crop the enslaved labor was producing. The colonial law and the Crown commercial infrastructure were structurally interdependent whether or not they were directly coordinated.",
+"Enslaved people transported by the Royal African Company were branded with DoY — the Duke of York's initials. The same Duke of York who led the slave trading company became King James II in 1685 and continued as the company's chief stockholder while serving as monarch. The slave trade was not a peripheral colonial activity — it was a Crown enterprise led by the heir to the throne.",
+"The Navigation Acts of 1660-1696 required colonial goods to be transported on English ships and channeled through English ports — structurally tying colonial economic activity, including the products of enslaved labor, to Crown commercial benefit. The colonial statutes creating and protecting enslaved status operated within a Crown-designed commercial architecture."
+],
+tc: "The Crown wrote the commercial architecture before the colony wrote the legal architecture. This node establishes that the reclassification chain did not begin with a local colonial legislature — it began with a royal charter signed by the King of England. Virginia 1662 is the legal instrument. The 1660 and 1663 charters are the commercial context that makes the legal instrument legible as something other than a local labor solution.",
+cp: "Pre-chain commercial context. Sits before Virginia 1662 (the first statutory link) to establish the Crown-level institutional context in which the colonial statutes were written. The chain is: Crown commercial infrastructure (1660) → Virginia partus sequitur ventrem (1662) → Crown explicit slave commodity charter (1663) → Virginia reclassification statute (1682) → forward.",
+cites: [
+"Company of Royal Adventurers Trading into Africa. Royal Charter, December 18, 1660. Revised Charter, 1663. slaverylawpower.org/chapters/restoration-settlements/1663-royal-adventurers-from-england-into-africa-charter/",
+"Encyclopedia Virginia. 'A Charter granted to the Company of Royall Adventurers of England Trading into Africa.' encyclopediavirginia.org/12854-c8df6dcad690f94/ — 'The charter explicitly stated that the company had exclusive rights to the buying and selling, bartering and exchanging of, for, and with any negro slaves, goods, wares and merchandizes whatsoever.'",
+"Wikipedia. 'Royal African Company.' en.wikipedia.org/wiki/Royal_African_Company — Documents 186,748 enslaved people transported 1672-1731; DoY branding; Pettigrew citation.",
+"Zook, George Frederick. The Company of Royal Adventurers Trading into Africa. Lancaster, PA: New Era Printing Co., 1919. Archive.org full text. — Documents December 18, 1660 charter date and founding members.",
+"Pepys, Samuel. Diary. pepysdiary.com/encyclopedia/7105/ — Contains direct transcription of charter language granting rights to James Duke of York for 1,000 years.",
+"Pettigrew, William. Freedom\'s Debt: The Royal African Company and the Politics of the Atlantic Slave Trade, 1672-1752. University of North Carolina Press, 2013. — Documents RAC as largest single transporter of enslaved Africans in the Atlantic trade."
+]
 },
 "1662": {
 ps: "Virginia Act of 1662 primary source. Morgan, Jennifer L. 'Partus sequitur ventrem: Law, Race, and Reproduction in Colonial Slavery.' Small Axe 55 (March 2018): 1-17. Columbia Law Abolition 1313.",
@@ -2060,6 +2130,13 @@ var D=[
 {y:"1492-1600s",s:"1492",l:"First Contact",c:"h",t:"Spanish First Contact Documents Existing Civilizations",sc:[{l:"What Occurred",x:"Spanish colonial records document existing civilizations, trade networks, agricultural systems, and governance structures throughout the Americas upon first contact."},{l:"Primary Support",x:"Spanish colonial records; Seminole contact history as documented by the Seminole Tribal Historic Preservation Office."},{l:"Research Context",x:"Spanish colonial records constitute hostile witness corroboration. The colonizing power's own documentation confirms what Indigenous oral history already established. Independent corroboration from an adversarial source is among the strongest forms of historical evidence.",f:1},{l:"Thesis Impact",x:"European witnesses independently corroborate Indigenous sovereignty. The colonizers themselves documented the sovereign communities they encountered.",f:1}],tg:["Hostile Witness","Spanish Colonial Record","Pre-U.S. Sovereignty"]},
 {y:"1586",s:"1586",l:"Moors at Roanoke",c:"h",t:"Sir Francis Drake Brings Moors and Moriscos to Roanoke",sc:[{l:"What Occurred",x:"Sir Francis Drake brought at least 200 Muslims, documented as Turks, Moors, and likely Moriscos, to the Roanoke colony on the coast of present-day North Carolina. Both Spanish and English colonial records independently confirm this."},{l:"Primary Support",x:"Abd-Allah, Umar Faruq. Turks, Moors and Moriscos in Early America. Nawawi Foundation Series, 2010. Corroborated by Spanish colonial depositions and English Privy Council records."},{l:"Research Context",x:"The Melungeon and Lumbee populations of Appalachia and North Carolina trace roots to this period, documented as a distinct fourth population with Mediterranean genetic markers. The Morocco-England Renaissance Triangle is documented as a formal geopolitical arrangement shaping the founding of British America.",f:1},{l:"Thesis Impact",x:"Establishes Moorish presence in the Virginia/Carolina colonial region 96 years before the 1682 statute. The 1682 law naming Moors is contextualized by documented historical presence, not merely inferred from the statute itself.",f:1}],tg:["Moorish Presence","Roanoke Colony","Pre-1682 Documentation","Melungeon-Lumbee"]},
 {y:"1607-1700",s:"1607",l:"Colonial Contact",c:"h",t:"British Colonies Established Within an Already-Governed Continent",sc:[{l:"What Occurred",x:"British colonial settlements established along the eastern seaboard, entirely coastal, surrounded by functioning Indigenous nations exercising governance, trade, and law."},{l:"Primary Support",x:"Pre-1776 cartographic record; Moretti-Langholtz, Danielle. Chapter 10 in A Study of Virginia Indians and Jamestown: The First Century. Colonial National Historical Park, National Park Service."},{l:"Research Context",x:"The NPS Moretti-Langholtz document provides primary source colonial court records showing Indigenous peoples actively using the colonial legal system, confirming functioning political agency throughout this period.",f:1},{l:"Thesis Impact",x:"Colonies were the newcomers operating within an already populated and governed continent. The assumption of jurisdiction was never legitimate. It was imposed, not established through consent.",f:1}],tg:["Colonial Encounter","NPS Documentation","Indigenous Political Agency"]},
+{y:"1660",s:"1660",l:"Royal Adventurers Charter",c:"h",t:"Royal Charter: Company of Royal Adventurers Trading into Africa (1660/1663)",sc:[
+{l:"What Occurred",x:"On December 18, 1660, King Charles II granted a royal charter to the Company of Royal Adventurers Trading into Africa. The company was led by the King's brother, James, Duke of York. The charter granted monopoly rights over English trade with the West African coast from Cape Blanco to the Cape of Good Hope for 1,000 years. By 1663, when gold mines failed to materialize, Charles II issued a revised charter explicitly adding 'Negro slaves' to the list of tradeable commodities — granting exclusive rights to 'the buying and selling, bartering and exchanging of, for, and with any negro slaves, goods, wares and merchandizes whatsoever.' In January 1663, the Duke of York promised Barbados an annual delivery of 3,000 African slaves at 17 pounds per head."},
+{l:"Primary Source",x:"Company of Royal Adventurers Trading into Africa. Royal Charter, December 18, 1660. Revised Charter, 1663. Available: Encyclopedia Virginia, encyclopediavirginia.org/12854-c8df6dcad690f94/. Full charter text: slaverylawpower.org/chapters/restoration-settlements/1663-royal-adventurers-from-england-into-africa-charter/. Samuel Pepys diary records the charter language directly."},
+{l:"Research Context",x:"The 1660 charter is the Crown-level commercial decision that preceded Virginia's 1662 partus sequitur ventrem statute by two years. The sequence: Crown creates the slave trade supply infrastructure (1660) → Virginia passes hereditary enslaved status law (1662) → Crown explicitly names 'Negro slaves' as tradeable commodities in revised charter (1663) → Company rechartered as Royal African Company with rights to maintain troops and exercise martial law in West Africa (1672). Between 1672 and 1731, the Royal African Company transported 186,748 enslaved people on 652 voyages to English colonies in the Americas. 16,077 died en route. Enslaved people were branded with the letters DoY — for the Duke of York."},
+{l:"Analytical Note",x:"The direct causal link between this charter and the Virginia 1662 statute is a documented analytical argument, not a statement in any primary source. No colonial record says the statute was written specifically to protect the Crown's investment. What the record shows is the sequence and the structural relationship. The inference — that hereditary enslaved status law protects compounding returns on a Crown-chartered slave trade investment — is supported by the documented timeline but should be held as interpretation, not direct proof."},
+{l:"Thesis Impact",x:"The pen was not in the Virginia House of Burgesses. It was in the Crown's own hand. The same royal family that chartered the slave trade in 1660, that promised 3,000 slaves annually to colonial planters in 1663, that branded enslaved people with the Duke of York's initials — that family's colonial legislature passed the statute making enslaved status permanent and hereditary in 1662. Whether by direct instruction or by structural incentive, the colonial law and the Crown commercial infrastructure were operating as a single system. The reclassification chain did not begin with a local colonial legislature responding to a labor shortage. It began at the highest level of the British government.",f:1}
+],tg:["Royal African Company","Crown Charter","Duke of York","Charles II","Slave Trade","1660","Commercial Architecture"]},
 {y:"1662",s:"1662",l:"Partus Act",c:"s",t:"Virginia: Partus Sequitur Ventrem",sc:[{l:"What Occurred",x:"Virginia passes partus sequitur ventrem, child follows the mother's condition. Status and political classification are transmitted through the mother's line regardless of the father's status or community of origin."},{l:"Primary Support",x:"Virginia Act of 1662 primary source. Morgan, Jennifer L. Partus sequitur ventrem: Law, Race, and Reproduction in Colonial Slavery. Small Axe 55 (March 2018). Columbia Law Abolition 1313."},{l:"Research Context",x:"Morgan's peer reviewed scholarship establishes that the 1662 act was a deliberate legal construction with no natural precedent. It subverted existing European hereditary traditions by switching status transmission from the father's line to the mother's specifically to commodify reproduction.",f:1},{l:"Thesis Impact",x:"The mechanism by which reclassification compounded generationally. Descendants of sovereign peoples were progressively removed from their original political affiliations without any individual act of consent.",f:1}],tg:["Void Instrument","Colonial Statute","Generational Reclassification","Morgan Scholarship"]},
 {y:"1667",s:"1667",l:"Virginia Patents",c:"h",t:"Pre-Federal Virginia Land Patents: Title Chains and Jurisdictional Gaps",sc:[{l:"What Occurred",x:"Colonial land patents in Virginia document pre-federal title chains using perpetual rights language: heirs and assigns forever, free and common socage, and proprietary authority. The 1667 William Dudley patent issued under Governor Berkeley and the 1751 Lawrence Garr grant from Lord Fairfax are primary examples."},{l:"Primary Support",x:"1667 William Dudley patent issued under Governor William Berkeley of Virginia; 1751 Lawrence Garr grant from Lord Fairfax. Virginia Land Office colonial patent records."},{l:"Research Context",x:"These patents establish title chains predating U.S. formation. The mineral reservations, perpetual inheritance clauses, and proprietary authority language were never formally extinguished by the transition to U.S. jurisdiction. The legal gap between original sovereign landholding and later federal jurisdiction remains unresolved in the documentary record.",f:1},{l:"Thesis Impact",x:"Pre-U.S. allodial and proprietary title chains document a layer of legal authority predating federal jurisdiction. Where those chains trace to Indigenous or Moorish original occupancy and were never extinguished through legitimate treaty process, the foundational claim of U.S. jurisdiction over those lands rests on an unresolved legal gap.",f:1}],tg:["Allodial Title","Virginia Land Patents","Pre-Federal Title Chain","Jurisdictional Gap"]},
 {y:"1676",s:"1676",l:"Speed/Lamb Map",c:"h",t:"John Speed / Francis Lamb Map of Virginia and Maryland: Indigenous Sovereignty Documented Inside the Exact Jurisdiction of the 1682 Statute",sc:[
@@ -2107,7 +2184,12 @@ tg:["Racial Integrity Act 1924","Paper Genocide","Plecker","Reclassification Cha
 {y:"2005",s:"2005",l:"U.S. v. Bruce",c:"l",t:"United States v. Bruce: Enrollment Not Required for Indian Status",sc:[{l:"What Occurred",x:"The Ninth Circuit establishes a four-factor test for Indian status that does not require formal tribal enrollment: ancestry, government recognition, enjoyment of tribal benefits, and social recognition through community participation."},{l:"Primary Support",x:"United States v. Bruce, 394 F.3d 1215 (9th Cir. 2005); United States v. Keys, 103 F.3d 758 (9th Cir. 1996); United States v. Maggi, 598 F.3d 1073 (9th Cir. 2010)."},{l:"Research Context",x:"Keys confirmed that a minor with Indigenous blood but no enrollment qualified as Indian. Maggi extended this to blood from non-federally-recognized tribes.",f:1},{l:"Thesis Impact",x:"Removes the Dawes-encoded enrollment system as the gatekeeper of Indigenous political identity. People whose ancestors were excluded from the Dawes Rolls may still qualify through the Bruce factors.",f:1}],tg:["Bruce Four-Factor Test","No Enrollment Required","Dawes Exclusion Addressed","9th Circuit"]},
 {y:"2007",s:"2007",l:"UNDRIP",c:"t",t:"UN Declaration on the Rights of Indigenous Peoples",sc:[{l:"What Occurred",x:"The UN General Assembly adopts the Declaration on the Rights of Indigenous Peoples. The United States endorsed it in 2010."},{l:"Primary Support",x:"UNDRIP (2007); U.S. endorsement statement (2010)."},{l:"Research Context",x:"The U.S. government's endorsement acknowledged Indigenous rights exist outside and above domestic administrative classifications.",f:1},{l:"Thesis Impact",x:"Moves the argument beyond domestic jurisdiction. International corroboration that prior sovereign status exists above U.S. administrative classifications.",f:1}],tg:["International Framework","Beyond Domestic Jurisdiction","U.S. Endorsement","UNDRIP"]},
 {y:"2020",s:"2020",l:"McGirt",c:"l",t:"McGirt v. Oklahoma: Participation Does Not Waive Original Political Status",sc:[{l:"What Occurred",x:"The Supreme Court holds that the Muscogee (Creek) Nation reservation was never disestablished despite 111 years of state assumption of jurisdiction. Justice Gorsuch: Because Congress has not said otherwise, we hold the government to its word."},{l:"Primary Support",x:"McGirt v. Oklahoma, 591 U.S. (2020); Warner and Tanana. Harvard Environmental Law Review Vol. 45 (2021); Reese. University of Chicago Law Review Online (2020); Velchik and Zhang. Yale Journal on Regulation Vol. 40 (2023); NARF documentation."},{l:"Research Context",x:"The Yale empirical study found no statistically significant negative economic effect across multiple jurisdictions where tribal sovereignty was restored. Oklahoma courts extended McGirt's rationale to nine additional tribal nations.",f:1},{l:"Thesis Impact",x:"Sovereign status requires explicit Congressional action to extinguish. Silence and assumption are insufficient. A person participating in the U.S. system retains original political status if it was never explicitly and lawfully extinguished.",f:1}],tg:["McGirt","Participation Is Not Waiver","Explicit Extinguishment Required","2020"]},
-{y:"2022",s:"2022",l:"Castro-Huerta",c:"l",t:"Oklahoma v. Castro-Huerta: Post-McGirt Limitation in Criminal Context",sc:[{l:"What Occurred",x:"The Supreme Court allows states concurrent criminal jurisdiction over non-Indians committing crimes against Indians in Indian country, partially limiting McGirt's reach in the criminal context."},{l:"Primary Support",x:"Oklahoma v. Castro-Huerta, 597 U.S. (2022); Leeds, Stacy and Robert Miller et al. Oklahoma v. Castro-Huerta. Journal of Appellate Practice and Process Vol. 23 (2023)."},{l:"Research Context",x:"Castro-Huerta addressed criminal jurisdiction over non-Indians. It did not address civil status questions, political classification, or whether sovereign status was lawfully extinguished.",f:1},{l:"Thesis Impact",x:"An honest limitation on McGirt's reach in the criminal context. Civil status questions and political classification remain largely unaddressed by Castro-Huerta. The McGirt principle of explicit extinguishment required remains operative for status questions.",f:1}],tg:["Castro-Huerta","Post-McGirt Limitation","Criminal Context Only","Civil Status Unaffected"]}
+{y:"2022",s:"2022",l:"Castro-Huerta",c:"l",t:"Oklahoma v. Castro-Huerta: Post-McGirt Limitation in Criminal Context",sc:[{l:"What Occurred",x:"The Supreme Court allows states concurrent criminal jurisdiction over non-Indians committing crimes against Indians in Indian country, partially limiting McGirt's reach in the criminal context."},{l:"Primary Support",x:"Oklahoma v. Castro-Huerta, 597 U.S. (2022); Leeds, Stacy and Robert Miller et al. Oklahoma v. Castro-Huerta. Journal of Appellate Practice and Process Vol. 23 (2023)."},{l:"Research Context",x:"Castro-Huerta addressed criminal jurisdiction over non-Indians. It did not address civil status questions, political classification, or whether sovereign status was lawfully extinguished.",f:1},{l:"Thesis Impact",x:"An honest limitation on McGirt's reach in the criminal context. Civil status questions and political classification remain largely unaddressed by Castro-Huerta. The McGirt principle of explicit extinguishment required remains operative for status questions.",f:1}],tg:["Castro-Huerta","Post-McGirt Limitation","Criminal Context Only","Civil Status Unaffected"]},
+{y:"2026",s:"2026",l:"Callais",c:"l",t:"Louisiana v. Callais (2026) — Section 2 of the Voting Rights Act Gutted",sc:[
+{l:"What Occurred",x:"On April 29, 2026, the U.S. Supreme Court ruled 6-3 in Louisiana v. Callais that Louisiana's congressional map creating a second majority-Black district was an unconstitutional racial gerrymander. Justice Alito, writing for the majority, held that VRA Section 2 did not require Louisiana to create an additional majority-minority district — and therefore the state could not use VRA compliance to justify race-conscious redistricting. Within days of the decision, Tennessee eliminated its sole majority-minority House district. Florida and Alabama moved to redraw maps under the new standard."},
+{l:"Primary Source",x:"Louisiana v. Callais, No. 24-109, 608 U.S. ___ (Apr. 29, 2026). Justice Alito majority opinion. Justice Kagan dissent. Available: supremecourt.gov/opinions/25pdf/24-109_21o3.pdf"},
+{l:"Thesis Impact",x:"The Override Pattern in real time. The 15th Amendment (1870) guaranteed the right to vote regardless of race. The Voting Rights Act (1965) was passed specifically because the 15th Amendment alone had proven insufficient after 95 years of documented workarounds. Callais uses the 14th Amendment's Equal Protection Clause — the instrument designed to protect minority rights — to eliminate the primary enforcement mechanism of the VRA. The pen wrote the right. The pen wrote the enforcement mechanism. The pen wrote the exception that eliminates the enforcement mechanism. All three strokes by the same institution. 156 years on a single documented chain.",f:1}
+],tg:["Section 2 VRA","Racial Gerrymander","Override Pattern","14th Amendment","Equal Protection","Voting Rights","Alito","Kagan Dissent"]}
 ]
 function open_(i){
   var n=D[i],cl=C[n.c];
@@ -2414,6 +2496,17 @@ var CONNECTIONS = [
   [19,21,'echo'],  // Removal Act → Seminole Wars (removal resisted)
   [1,3,'echo'],    // First Contact → Colonial Contact
   [3,5,'echo'],    // Colonial Contact → Virginia Patents
+  // ROYAL ADVENTURERS CHARTER 1660 — now index 4 (shifted all subsequent)
+  [4,5,'reclass'],    // Crown Charter 1660 → Partus Act 1662 (commercial architecture → legal instrument)
+  [4,8,'reclass'],    // Crown Charter 1660 → Reclassification Act 1682 (same Crown institution)
+  [4,6,'cartographic'], // Crown Charter 1660 → Speed/Lamb Map 1676 (same colonial jurisdiction same decade)
+
+  // CALLAIS 2026 — node index 33 (shifted by 1)
+  [23,32,'override'],   // 14th Amendment → Callais (equal protection used against minority protection)
+  [31,32,'override'],   // Castro-Huerta → Callais (same court, same pattern, consecutive years)
+  [30,32,'override'],   // McGirt → Callais (sovereignty confirmed, representation eliminated)
+  [7,32,'reclass'],     // Virginia 1682 → Callais (same populations, 344 years apart)
+  [24,32,'echo'],       // Dawes Rolls → Callais (administrative elimination of status, same populations)
 ];
 
 
@@ -2838,6 +2931,12 @@ pen: {
 <p>The Virginia 1682 statute is a clean example. The colonial legislature didn't just pass a law. It wrote a category into existence. Moors, Indians, Negroes, Mullattoes — suddenly a legal class with a fixed set of rules that the people placed inside it had no say in writing. Before the document, these were people with prior histories, prior political affiliations, prior claims. After the document, they were a category.</p>
 <p>The pen created a reality and then governed it.</p>
 
+    <p>The Senegambia region is one of the clearest documented examples of what that mechanism actually erases. Before any English ship arrived looking for gold mines in the Gambia River, the region had been a functioning trade civilization for centuries. Arab traders documented commercial networks there in the 9th and 10th centuries. The Mali Empire expanded into the Gambia River valley in the 13th century, establishing governance structures and trade routes connecting the Atlantic coast to the Niger River. The name the Portuguese recorded when they arrived in the 1400s &mdash; Gambia &mdash; was a phonetic approximation of Kambra or Kambaa, the Mandinka name for the river. Oral tradition records a wealthy indigenous trader named Kambi whose commercial authority was so recognized that traders told the Portuguese they traveled to Kambi-yaa &mdash; Kambi&rsquo;s place &mdash; to do business. The Portuguese named the region after him.<sup class="hm-cite">8</sup></p>
+
+    <p>When the English Crown chartered the Company of Royal Adventurers Trading into Africa in 1660 and sent Captain Holmes to declare the entire West African coastline English territory, he was not arriving to empty land. He was arriving to sovereign kingdoms &mdash; Niumi, Niani, Kantora, Kiang, Badibu &mdash; with documented governance, established law, and centuries of accumulated trade knowledge. The charter describes the region as available for monopoly trade. The kingdoms already governing it are not mentioned. What cannot be named in the document cannot make a legal claim against the document.<sup class="hm-cite">9</sup></p>
+
+    <p class="es-p-slow">That is not unique to Senegambia. It is the template. The colonial pen did not arrive to terra nullius &mdash; empty land. It arrived to different political architectures and declared them inadmissible.</p>
+
 <hr>
 
 <p>The algorithm is the contemporary version of this. And I think most people still don't see it that way.</p>
@@ -2864,8 +2963,10 @@ pen: {
 <div class="es-cite-item"><span class="es-cite-num">5</span><span class="es-cite-text">Von Simpson, Otto. <em>The Gothic Cathedral: Origins of Gothic Architecture and the Medieval Concept of Order.</em> Princeton University Press, 1956. Referenced in Sacred Art of Geometry / chartres.geometrycode.com.</span></div>
 <div class="es-cite-item"><span class="es-cite-num">6</span><span class="es-cite-text">Sacred Art of Geometry. "Chartres, Story and Sacred Geometry." <a href="https://www.sacredartofgeometry.com/chartres-course" target="_blank" rel="noopener">sacredartofgeometry.com</a> — The wisdom school of Chartres made a conscious effort at reconciling the ancient Pythagorean/Platonic stream with Christian mystery teachings.</span></div>
 <div class="es-cite-item"><span class="es-cite-num">7</span><span class="es-cite-text">Duby, Georges. <em>The Age of the Cathedrals: Art and Society, 980&ndash;1420.</em> University of Chicago Press, 1981. Referenced in chartres.geometrycode.com — Duby traces Gothic origins to monks striving to "grasp the concealed order of the universe."</span></div>
-<div class="es-cite-item"><span class="es-cite-num">8</span><span class="es-cite-text">Virginia General Assembly. Act of 1682. Library of Virginia. Primary source — documented throughout this research. See: Timeline node 1682.</span></div>
-<div class="es-cite-item"><span class="es-cite-num">9</span><span class="es-cite-text">Haugen, Frances. Facebook internal research disclosures. October 2021. Congressional testimony record. Reported by AP, Wall Street Journal, and The Guardian.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">8</span><span class="es-cite-text">Oxford Research Encyclopedia of African History. &ldquo;The Gambia.&rdquo; oxfordre.com/africanhistory &mdash; Oral tradition of Kambi and Kambi-yaa. Wikipedia. &ldquo;History of the Gambia&rdquo; &mdash; Mandinka kingdoms established in the Gambia River valley following Mali Empire expansion in the 13th century.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">9</span><span class="es-cite-text">Wikipedia. &ldquo;Royal African Company&rdquo; &mdash; Documents Captain Holmes declaring the West African coastline English territory, 1660. Wikipedia. &ldquo;Gambia River&rdquo; &mdash; Documents kingdoms of Niumi, Niani, Kantora, Kiang, Badibu along the river at time of European contact.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">10</span><span class="es-cite-text">Virginia General Assembly. Act of 1682. Library of Virginia. Primary source &mdash; documented throughout this research. See: Timeline node 1682.</span></div>
+<div class="es-cite-item"><span class="es-cite-num">11</span><span class="es-cite-text">Haugen, Frances. Facebook internal research disclosures. October 2021. Congressional testimony record. Reported by AP, Wall Street Journal, and The Guardian.</span></div>
 </div>
 `
 },
@@ -3078,6 +3179,98 @@ function closeEssay() {
   document.getElementById('esIndex').style.display = 'block';
   window.scrollTo(0, 0);
 }
+
+// ═══ CONNECTION FILTER SYSTEM ═══
+var activeFilters = new Set();
+
+function toggleFilter(type) {
+  var btn = document.querySelector('.vt-filter[data-type="' + type + '"]');
+  if (!btn) return;
+
+  if (activeFilters.has(type)) {
+    activeFilters.delete(type);
+    btn.classList.remove('active');
+  } else {
+    activeFilters.add(type);
+    btn.classList.add('active');
+  }
+
+  applyFilters();
+}
+
+function applyFilters() {
+  // If no filters active — clear everything back to default
+  if (activeFilters.size === 0) {
+    webNodes.forEach(function(nd) {
+      if (!nd.el) return;
+      nd.el.classList.remove('dimmed','connected','active');
+    });
+    if (webActive !== null) {
+      drawCanvas(webActive);
+    } else {
+      drawCanvas();
+    }
+    return;
+  }
+
+  // Find all nodes touched by active filter types
+  var highlighted = new Set();
+  CONNECTIONS.forEach(function(c) {
+    if (activeFilters.has(c[2])) {
+      highlighted.add(c[0]);
+      highlighted.add(c[1]);
+    }
+  });
+
+  // Update node classes
+  webNodes.forEach(function(nd) {
+    if (!nd.el) return;
+    nd.el.classList.remove('dimmed','connected','active');
+    if (highlighted.has(nd.i)) {
+      nd.el.classList.add('connected');
+    } else {
+      nd.el.classList.add('dimmed');
+    }
+  });
+
+  drawCanvasFiltered();
+}
+
+function drawCanvasFiltered() {
+  if (!webCtx || !webW) return;
+  webCtx.clearRect(0, 0, webW, webH);
+
+  CONNECTIONS.forEach(function(conn) {
+    var a = webNodes[conn[0]], b = webNodes[conn[1]];
+    if (!a || !b) return;
+    var isActive = activeFilters.has(conn[2]);
+    var color = connColors[conn[2]] || '#ccc';
+    var offset = ((conn[0] * 7 + conn[1] * 13) % 20) - 10;
+    var mx = (a.x + b.x) / 2 * webW + offset;
+    var my = (a.y + b.y) / 2 * webH + offset * 0.5;
+
+    webCtx.beginPath();
+    webCtx.moveTo(a.x * webW, a.y * webH);
+    webCtx.quadraticCurveTo(mx, my, b.x * webW, b.y * webH);
+    webCtx.strokeStyle = isActive ? hexToRgba(color, 0.8) : 'rgba(210,205,198,0.07)';
+    webCtx.lineWidth = isActive ? 2.5 : 0.5;
+    webCtx.stroke();
+
+    if (isActive) {
+      drawArrow(webCtx, a.x * webW, a.y * webH, b.x * webW, b.y * webH, color);
+    }
+  });
+}
+
+// Wrap drawCanvas to respect active filters on redraw
+var _baseDrawCanvas = drawCanvas;
+drawCanvas = function(activeIdx) {
+  if (activeFilters.size > 0 && activeIdx === undefined) {
+    drawCanvasFiltered();
+    return;
+  }
+  _baseDrawCanvas(activeIdx);
+};
 
 buildResearchSidebar();
 </script>
