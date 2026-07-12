@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pattern — Maxwell Edridge</title>
+<meta name="description" content="A public education research project documenting the systematic reclassification of Indigenous and reclassified populations in America through the U.S. government's own primary sources. 37 documented historical moments across 364 years.">
+<meta property="og:title" content="The Pattern — Maxwell Edridge">
+<meta property="og:description" content="364 years. One continuous line. The record, in the government's own documents.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Josefin+Sans:wght@300;400;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/web/hero-1600w.jpg" fetchpriority="high">
+<style>
+/*@CSS@*/
+</style>
+</head>
+<body>
+
+<div class="progress-rail" id="progressRail"></div>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nv" aria-label="Primary">
+  <button class="nv-brand" onclick="go('home')">The Pattern</button>
+  <div class="nv-tabs">
+    <button class="nv-tab" id="tab-home" onclick="go('home')">Home</button>
+    <button class="nv-tab" id="tab-pattern" onclick="go('pattern')">The Pattern</button>
+    <button class="nv-tab" id="tab-essays" onclick="go('essays')">Essays</button>
+    <button class="nv-tab" id="tab-timeline" onclick="go('timeline')">Timeline</button>
+    <button class="nv-tab" id="tab-research" onclick="go('research')">Research</button>
+  </div>
+</nav>
+
+<!-- ═══ PAGE: HOME ═══ -->
+<div class="page" id="page-home">
+
+  <!-- Cover -->
+  <section class="cv" id="cover">
+    <div class="cv-img" role="img" aria-label="The main reading room of a great research library, empty of people, lit from the dome"></div>
+    <div class="cv-scrim"></div>
+    <div class="cv-in">
+      <p class="cv-eyebrow">Maxwell Edridge &mdash; An Independent Research Project</p>
+      <h1 class="cv-line" id="cvLine" aria-label="Something has always felt off."></h1>
+      <div class="cv-pulse-wrap">
+        <div class="cv-pulse" id="cvPulse"></div>
+        <p class="cv-resolve" id="cvResolve">364 Years. <em>One Continuous Line.</em></p>
+      </div>
+      <button class="cv-cta" id="cvCta" onclick="go('pattern')">Enter the Record &#8594;</button>
+    </div>
+    <p class="cv-scroll-hint" id="cvHint">&#8595; The founding essay</p>
+  </section>
+
+  <!--@HOME_ESSAY@-->
+
+</div><!-- end page-home -->
+
+<!-- ═══ PAGE: THE PATTERN ═══ -->
+<div class="page" id="page-pattern">
+<!--@PATTERN_SECTIONS@-->
+<footer class="pt-footer">
+  <p class="pt-footer-copy">&copy; 2025 Maxwell Edridge. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
+  <p class="pt-footer-license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>. You may share this research with attribution to Maxwell Edridge. Commercial use and derivative works are prohibited without written permission.</p>
+</footer>
+</div><!-- end page-pattern -->
+
+<!-- ═══ PAGE: ESSAYS ═══ -->
+<div class="page" id="page-essays">
+
+  <div id="esIndexView">
+    <header class="es-header">
+      <div class="es-header-in">
+        <p class="es-eyebrow rv">Maxwell Edridge &mdash; Extended Essays</p>
+        <h1 class="es-title rv">The Deeper Frame</h1>
+        <p class="es-subtitle rv">Two frameworks that explain not just what happened &mdash; but why it keeps happening, and what it means at a scale larger than any single statute.</p>
+      </div>
+    </header>
+    <div class="orn orn-1" aria-hidden="true"></div>
+    <div class="es-index-in" id="esIndex">
+
+      <div class="es-card rv" onclick="openEssay('pen')">
+        <div class="es-card-art" style="background-image:url('assets/web/essay-01-800w.jpg')">
+          <span class="es-card-num">01</span>
+        </div>
+        <div class="es-card-body">
+          <p class="es-card-label">The Pen and the Institution</p>
+          <h2 class="es-card-title">How the first act of writing became the first act of control &mdash; and why it never stopped</h2>
+          <p class="es-card-desc">From the grain inventories of Uruk to the search algorithm, whoever holds the pen decides what exists. This essay traces the knowledge monopoly from its oldest documented form through the colonial pen that rendered Indigenous sovereignty legally invisible &mdash; and into the architecture of the present.</p>
+          <div class="es-card-meta">
+            <span class="es-card-tag">Knowledge &amp; Power</span>
+            <span class="es-card-tag">Colonial History</span>
+            <span class="es-card-tag">Information Systems</span>
+          </div>
+          <span class="es-card-cta">Read Essay &#8594;</span>
+        </div>
+      </div>
+
+      <div class="es-card rv" onclick="openEssay('scale')">
+        <div class="es-card-art" style="background-image:url('assets/web/essay-02-800w.jpg')">
+          <span class="es-card-num">02</span>
+        </div>
+        <div class="es-card-body">
+          <p class="es-card-label">The Way of Scale</p>
+          <h2 class="es-card-title">What was lost and why it matters</h2>
+          <p class="es-card-desc">The suppression of sovereign peoples was not just political. It was a disruption of something operating at a scale larger than colonial administration understood. This essay argues that the Dawes Act, the boarding schools, and the algorithm are all expressions of the same compression &mdash; the imposition of a shorter time horizon onto peoples who built knowledge systems for centuries.</p>
+          <div class="es-card-meta">
+            <span class="es-card-tag">Fractal Time</span>
+            <span class="es-card-tag">Indigenous Knowledge</span>
+            <span class="es-card-tag">Systems Thinking</span>
+          </div>
+          <span class="es-card-cta">Read Essay &#8594;</span>
+        </div>
+      </div>
+
+      <div class="es-card rv" onclick="openEssay('binary')">
+        <div class="es-card-art" style="background-image:url('assets/web/essay-03-800w.jpg')">
+          <span class="es-card-num">03</span>
+        </div>
+        <div class="es-card-body">
+          <p class="es-card-label">The Binary Was Not the Beginning</p>
+          <h2 class="es-card-title">How the dualist model was imposed as universal &mdash; and what the record actually shows about what came before it</h2>
+          <p class="es-card-desc">American Indians came from a unifying model of political status. The Western model is dualist. That model has been forced onto humanity and reinforces itself by saying this is how it has always been. This essay follows the physics of why that claim cannot be true &mdash; and why the body already knows it.</p>
+          <div class="es-card-meta">
+            <span class="es-card-tag">Political Philosophy</span>
+            <span class="es-card-tag">Physics &amp; Biology</span>
+            <span class="es-card-tag">Relational Sovereignty</span>
+          </div>
+          <span class="es-card-cta">Read Essay &#8594;</span>
+        </div>
+      </div>
+
+      <div class="es-card rv" onclick="openEssay('nextsteps')">
+        <div class="es-card-art" style="background-image:url('assets/web/essay-04-800w.jpg')">
+          <span class="es-card-num">04</span>
+        </div>
+        <div class="es-card-body">
+          <p class="es-card-label">Next Steps</p>
+          <h2 class="es-card-title">What the primary record establishes &mdash; and where the argument goes from here</h2>
+          <p class="es-card-desc">374 ratified treaties. The supreme law of the land. The United States broke every obligation they established. The record of the obligations and the record of the breaches are in the same archive. This essay documents both &mdash; and names where the argument goes next.</p>
+          <div class="es-card-meta">
+            <span class="es-card-tag">Treaty Record</span>
+            <span class="es-card-tag">Breach Documentation</span>
+            <span class="es-card-tag">Developing Argument</span>
+          </div>
+          <span class="es-card-cta">Read Essay &#8594;</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="esReaderView" style="display:none">
+    <div class="es-reader-nav">
+      <button class="es-back-btn" onclick="closeEssay()">&#8592; Back to Essays</button>
+      <span class="es-reader-title" id="esReaderTitle"></span>
+    </div>
+    <div class="es-chapter-art" id="esChapterArt"></div>
+    <div class="es-reader-body" id="esReaderBody"></div>
+    <div class="es-reader-footer">
+      <button class="es-back-btn-bottom" onclick="closeEssay()">&#8592; Back to Essays</button>
+      <p class="es-reader-copy">&copy; 2025 Maxwell Edridge &mdash; CC BY-NC-ND 4.0</p>
+    </div>
+  </div>
+
+  <footer class="pt-footer">
+    <p class="pt-footer-copy">&copy; 2025 Maxwell Edridge. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
+    <p class="pt-footer-license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>. You may share this research with attribution to Maxwell Edridge. Commercial use and derivative works are prohibited without written permission.</p>
+  </footer>
+</div><!-- end page-essays -->
+
+<!-- ═══ PAGE: TIMELINE ═══ -->
+<div class="page" id="page-timeline">
+
+  <div class="tl-thesis">
+    <div class="tl-thesis-in">
+      <span class="tl-thesis-label">Thesis</span>
+      <p class="tl-thesis-text"><!--@THESIS@--></p>
+    </div>
+  </div>
+
+  <div class="vt-bar">
+    <div class="vt-bar-top">
+      <div class="vt-group" role="tablist" aria-label="Timeline view">
+        <button class="vt-btn vt-active" id="vt-web" onclick="switchView('web')"><span aria-hidden="true">&#9632;</span> Pattern Web</button>
+        <button class="vt-btn" id="vt-linear" onclick="switchView('linear')"><span aria-hidden="true">&#9472;</span> Timeline</button>
+      </div>
+      <div class="vt-filters" id="vtFilters">
+        <button class="vt-filter" data-type="reclass" onclick="toggleFilter('reclass')"><span class="vt-filter-dot" style="background:#e05a3a"></span>They Named Us</button>
+        <button class="vt-filter" data-type="sovereign" onclick="toggleFilter('sovereign')"><span class="vt-filter-dot" style="background:#3d8b68"></span>They Signed the Treaties</button>
+        <button class="vt-filter" data-type="override" onclick="toggleFilter('override')"><span class="vt-filter-dot" style="background:#c9a84c"></span>Then They Took It Back</button>
+        <button class="vt-filter" data-type="cartographic" onclick="toggleFilter('cartographic')"><span class="vt-filter-dot" style="background:#4f83c4"></span>The Maps Knew</button>
+        <button class="vt-filter" data-type="echo" onclick="toggleFilter('echo')"><span class="vt-filter-dot" style="background:#9a76d4"></span>The Pattern Repeats</button>
+      </div>
+    </div>
+    <div class="vt-desc" id="vt-desc-web">
+      <span class="vt-desc-label">Pattern Web</span> &mdash; nodes are positioned by their documented connections, not by date. Click any node to explore it. Use the filters above to follow a single thread across centuries.
+    </div>
+    <div class="vt-desc" id="vt-desc-linear" style="display:none">
+      <span class="vt-desc-label">Timeline</span> &mdash; the same 37 nodes in chronological order. Use this view to orient yourself by date, then switch to the Pattern Web to see what the dates are actually connected to.
+    </div>
+  </div>
+
+  <div class="tl-view" id="view-web">
+    <div class="web-outer">
+      <div class="web-stage" id="webStage">
+        <div class="web-backdrop" aria-hidden="true"></div>
+        <div class="web-vignette" aria-hidden="true"></div>
+        <canvas id="webCanvas" aria-label="Interactive pattern web of 37 documented historical moments"></canvas>
+        <div id="webLabels" aria-hidden="true"></div>
+        <p class="web-hint">Drag to orbit &middot; Scroll to zoom &middot; Click a node to open the record</p>
+        <div class="web-panel" id="webPanel" role="dialog" aria-label="Node detail">
+          <div class="web-panel-frame" aria-hidden="true"><b></b></div>
+          <button class="web-panel-close" onclick="closeWebPanel()" aria-label="Close detail panel">&#10005;</button>
+          <div class="web-panel-scroll" id="webPanelContent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tl-view" id="view-linear" style="display:none">
+    <div class="ln-wrap">
+      <div class="ln-key">
+        <span class="ln-key-label">Key</span>
+        <div class="ln-key-item"><span class="ln-key-dot" style="background:#3d8b68"></span>Historical Event</div>
+        <div class="ln-key-item"><span class="ln-key-dot" style="background:#4f83c4"></span>Treaty / Proclamation</div>
+        <div class="ln-key-item"><span class="ln-key-dot" style="background:#e06a3a"></span>Colonial / Federal Statute</div>
+        <div class="ln-key-item"><span class="ln-key-dot" style="background:#9a76d4"></span>Case Law</div>
+      </div>
+      <div id="lnList"></div>
+    </div>
+  </div>
+
+  <footer class="pt-footer">
+    <p class="pt-footer-copy">&copy; 2025 Maxwell Edridge. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
+    <p class="pt-footer-license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>. You may share this research with attribution to Maxwell Edridge. Commercial use and derivative works are prohibited without written permission.</p>
+  </footer>
+</div><!-- end page-timeline -->
+
+<!-- ═══ PAGE: RESEARCH ═══ -->
+<div class="page" id="page-research">
+
+  <div class="tl-thesis">
+    <div class="tl-thesis-in">
+      <span class="tl-thesis-label">Thesis</span>
+      <p class="tl-thesis-text"><!--@THESIS@--></p>
+    </div>
+  </div>
+
+  <div class="rp">
+    <div class="rp-side">
+      <div class="rp-side-head">
+        <p class="rp-count" id="rpCount">37 Timeline Points</p>
+        <input class="rp-search" id="rpSearch" type="search" placeholder="Search the record&hellip;" aria-label="Search research archive">
+      </div>
+      <div class="rp-filters" id="rpCatFilters">
+        <button class="rp-f" data-c="h" onclick="rpToggleCat('h')">Historical</button>
+        <button class="rp-f" data-c="t" onclick="rpToggleCat('t')">Treaty</button>
+        <button class="rp-f" data-c="s" onclick="rpToggleCat('s')">Statute</button>
+        <button class="rp-f" data-c="l" onclick="rpToggleCat('l')">Case Law</button>
+      </div>
+      <div class="rp-filters" id="rpConnFilters">
+        <button class="rp-f" data-t="reclass" onclick="rpToggleConn('reclass')">They Named Us</button>
+        <button class="rp-f" data-t="sovereign" onclick="rpToggleConn('sovereign')">They Signed the Treaties</button>
+        <button class="rp-f" data-t="override" onclick="rpToggleConn('override')">Then They Took It Back</button>
+        <button class="rp-f" data-t="cartographic" onclick="rpToggleConn('cartographic')">The Maps Knew</button>
+        <button class="rp-f" data-t="echo" onclick="rpToggleConn('echo')">The Pattern Repeats</button>
+      </div>
+      <div class="rp-list" id="rpList"></div>
+    </div>
+    <div class="rp-content">
+      <div class="rp-empty" id="rpEmpty">
+        <span class="rp-empty-arrow">&#8592;</span>
+        <p>Select a timeline point to explore the research</p>
+      </div>
+      <div class="rp-detail" id="rpDetail" style="display:none"></div>
+    </div>
+  </div>
+
+  <footer class="pt-footer">
+    <p class="pt-footer-copy">&copy; 2025 Maxwell Edridge. All rights reserved. Research compilation &mdash; historical and legal information only. Not legal advice.</p>
+    <p class="pt-footer-license">This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">CC BY-NC-ND 4.0</a>. You may share this research with attribution to Maxwell Edridge. Commercial use and derivative works are prohibited without written permission.</p>
+  </footer>
+</div><!-- end page-research -->
+
+<!--@GLOSSARY@-->
+
+<!-- ═══ MAP MODAL ═══ -->
+<div class="map-modal" id="mapModal" onclick="closeMap(event)">
+  <div class="map-modal-inner" onclick="event.stopPropagation()">
+    <button class="map-modal-close" onclick="closeMap()">Close &#10005;</button>
+    <img class="map-modal-img" id="mapModalImg" src="" alt="">
+    <div class="map-modal-caption" id="mapModalCaption"></div>
+    <a class="map-modal-link" id="mapModalLink" href="" target="_blank" rel="noopener"></a>
+  </div>
+</div>
+
+<div class="cite-tip" id="citeTip"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script>
+/*@DATA_CORE@*/
+/*@DATA_MAPS@*/
+</script>
+<script>
+/*@APP_JS@*/
+</script>
+<script>
+/*@WEB_JS@*/
+</script>
+</body>
+</html>

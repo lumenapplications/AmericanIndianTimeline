@@ -1,0 +1,166 @@
+<!-- GLOSSARY BUTTON -->
+<button class="gloss-btn" onclick="toggleGlossary()" id="glossBtn" title="Glossary of Terms">
+  <span class="gloss-btn-icon">&#9783;</span>
+  <span class="gloss-btn-label">Glossary</span>
+</button>
+
+<!-- GLOSSARY OVERLAY -->
+<div class="gloss-overlay" id="glossOverlay" onclick="closeGlossaryOutside(event)">
+  <div class="gloss-drawer" id="glossDrawer">
+    <div class="gloss-header">
+      <div>
+        <p class="gloss-eyebrow">Reference</p>
+        <h2 class="gloss-title">Glossary of Terms</h2>
+        <p class="gloss-sub">Key legal, historical, and analytical terms used throughout this research.</p>
+      </div>
+      <button class="gloss-close" onclick="toggleGlossary()">&#10005;</button>
+    </div>
+    <div class="gloss-search-wrap">
+      <input class="gloss-search" id="glossSearch" type="text" placeholder="Search terms..." oninput="filterGlossary(this.value)">
+    </div>
+    <div class="gloss-body" id="glossBody">
+
+      <div class="gloss-section">
+        <h3 class="gloss-section-title">Legal Doctrine</h3>
+
+        <div class="gloss-entry" data-terms="aboriginal title">
+          <h4 class="gloss-term">Aboriginal Title</h4>
+          <p class="gloss-def">The common law doctrine recognizing that Indigenous peoples hold a pre-existing right to land based on their occupation and use of territory prior to European colonization. Aboriginal title originates from occupation — not from any grant or recognition by a colonizing power. Under U.S. law, aboriginal title persists unless explicitly and lawfully extinguished through treaty or Congressional action.</p>
+          <span class="gloss-ref">See: Johnson v. M'Intosh (1823), McGirt v. Oklahoma (2020)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="partus sequitur ventrem">
+          <h4 class="gloss-term">Partus Sequitur Ventrem</h4>
+          <p class="gloss-def">Latin: "the offspring follows the condition of the mother." A legal doctrine invented by Virginia in 1662 — with no precedent in English common law — that made a child's legal status follow the mother's condition rather than the father's. Designed specifically to compound enslaved status generationally without requiring any individual act of consent from subsequent generations. The mechanism that made reclassification self-replicating.</p>
+          <span class="gloss-ref">See: Virginia Act of 1662</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="void ab initio">
+          <h4 class="gloss-term">Void Ab Initio</h4>
+          <p class="gloss-def">Latin: "void from the beginning." A legal instrument is void ab initio when it was never legally valid — as opposed to voidable, which means it can be undone. Three conditions independently void an instrument: no consent from affected parties, no legitimate jurisdiction over those parties, or imposition under duress or force. The reclassification statutes of 1662, 1682, and 1740 are analyzed as void ab initio on all three grounds.</p>
+          <span class="gloss-ref">See: Virginia Acts of 1662, 1682; SC Slave Code 1740</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="strict scrutiny equal protection">
+          <h4 class="gloss-term">Strict Scrutiny</h4>
+          <p class="gloss-def">The highest standard of judicial review applied to laws that classify people based on race or other suspect classifications. Under strict scrutiny, the government must show that the law serves a compelling interest and is narrowly tailored to achieve that interest. The Supreme Court applied strict scrutiny in Louisiana v. Callais (2026) to strike down majority-minority redistricting districts — using the same standard designed to protect minority rights to eliminate a minority-protective instrument.</p>
+          <span class="gloss-ref">See: Louisiana v. Callais (2026), 14th Amendment (1868)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="retained sovereignty inherent sovereignty">
+          <h4 class="gloss-term">Retained / Inherent Sovereignty</h4>
+          <p class="gloss-def">The doctrine that tribal nations retain sovereign powers they have always held — their sovereignty is not granted by the United States but predates it. Sovereign status is retained unless explicitly extinguished through lawful Congressional action. Assumption of jurisdiction, passage of time, or migration into tribal territory do not constitute extinguishment. Established in the Marshall Trilogy and confirmed in McGirt v. Oklahoma.</p>
+          <span class="gloss-ref">See: Worcester v. Georgia (1832), McGirt v. Oklahoma (2020)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="blood quantum enrollment">
+          <h4 class="gloss-term">Blood Quantum</h4>
+          <p class="gloss-def">A system for determining Indigenous identity based on the fraction of documented Indigenous ancestry a person can prove. Imposed through the Dawes Rolls enrollment process, not derived from Indigenous governance traditions. Blood quantum requirements were a federal administrative technology — they were not how Indigenous nations historically defined membership. Critics document blood quantum as a mechanism for eventual elimination of tribal citizenship as fractions dilute across generations.</p>
+          <span class="gloss-ref">See: Dawes Rolls (1887-1907), Santa Clara Pueblo v. Martinez (1978)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="plenary power congress tribes">
+          <h4 class="gloss-term">Plenary Power Doctrine</h4>
+          <p class="gloss-def">The doctrine that Congress holds nearly unlimited authority over tribal nations and their members. Developed through Supreme Court rulings in the late 19th century, the plenary power doctrine has been used to justify unilateral Congressional termination of tribal status, seizure of tribal land, and removal of treaty rights — without tribal consent and without judicial review. The doctrine has no explicit basis in the Constitution.</p>
+          <span class="gloss-ref">See: Dawes Act (1887), Indian Removal Act (1830)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="section 2 voting rights act vra">
+          <h4 class="gloss-term">Section 2, Voting Rights Act</h4>
+          <p class="gloss-def">The provision of the 1965 Voting Rights Act prohibiting any voting procedure that results in the denial or abridgment of the right to vote based on race or color. Section 2 has been the primary legal tool for challenging racial gerrymandering and vote dilution since the 1982 amendment expanded its scope. Louisiana v. Callais (2026) significantly weakened Section 2 by holding that states can almost never consider race when drawing districts even to comply with its requirements.</p>
+          <span class="gloss-ref">See: Louisiana v. Callais (2026)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="racial gerrymander redistricting">
+          <h4 class="gloss-term">Racial Gerrymander</h4>
+          <p class="gloss-def">The drawing of electoral district boundaries using race as a predominant factor. The Supreme Court has held that racial gerrymandering violates the Equal Protection Clause — but has simultaneously held (in Callais 2026) that drawing districts to protect minority voting power also constitutes racial gerrymandering. The result is a constitutional bind: protecting minority representation through race-conscious mapping is now treated the same as suppressing it.</p>
+          <span class="gloss-ref">See: Shaw v. Reno (1993), Louisiana v. Callais (2026)</span>
+        </div>
+
+      </div>
+
+      <div class="gloss-section">
+        <h3 class="gloss-section-title">Historical Terms</h3>
+
+        <div class="gloss-entry" data-terms="reclassification colonial">
+          <h4 class="gloss-term">Reclassification</h4>
+          <p class="gloss-def">The process by which colonial and later federal administrative instruments reassigned the legal identity of peoples who held prior political status — placing them in new legal categories (Negro, colored, Freedman) without their consent. Reclassification operated through statutes, census categories, enrollment systems, and vital records. Each reclassification suppressed a prior political affiliation and replaced it with an administratively assigned category serving the interests of the classifying power.</p>
+          <span class="gloss-ref">See: Virginia 1682, SC 1740, Dawes Rolls, Racial Integrity Act 1924</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="paper genocide plecker virginia">
+          <h4 class="gloss-term">Paper Genocide</h4>
+          <p class="gloss-def">The National Park Service's documented term for Walter Plecker's systematic campaign under Virginia's Racial Integrity Act of 1924 to retroactively alter historical records — birth certificates, marriage records, death records — changing racial designations from "Indian" to "colored" going back to the 1850s. Paper genocide operates by destroying the evidentiary record that future generations need to assert their original identity and political status. Six of Virginia's eight state-recognized tribes could not gain federal recognition for decades as a direct result.</p>
+          <span class="gloss-ref">See: Racial Integrity Act (1924), Walter Plecker</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="dawes rolls freedmen enrollment">
+          <h4 class="gloss-term">Dawes Rolls</h4>
+          <p class="gloss-def">The enrollment records created by the Dawes Commission (1899-1907) for members of the Five Civilized Tribes. People were enrolled in one of several categories: citizens by blood, citizens by marriage, Delaware Cherokee, or Freedmen. The Freedmen category — indicating "no blood relation to the tribe" — was applied to many people with documented Indigenous ancestry based on their prior reclassification status as freedmen rather than their actual genealogy. The Dawes Rolls remain the primary federal gateway to tribal citizenship today.</p>
+          <span class="gloss-ref">See: Dawes Act (1887), U.S. v. Bruce (2005)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="moriscos moors moorish atlantic">
+          <h4 class="gloss-term">Moriscos</h4>
+          <p class="gloss-def">Iberian Muslims who were forcibly converted to Christianity by the Spanish Inquisition and later expelled from Spain (1609-1614). Many Moriscos had already made their way to colonial America before the expulsion — Drake's 1586 Roanoke expedition brought documented Moorish and Morisco populations to the Virginia/Carolina coast. The Moriscos were the first documented population to experience the exact reclassification pattern that Virginia's colonial legislature would apply in 1682: administrative suppression of Moorish identity through imposed classification.</p>
+          <span class="gloss-ref">See: Roanoke 1586, Virginia 1682, O'Halley Duke Dissertation (2013)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="treaty sovereign equal nation">
+          <h4 class="gloss-term">Treaty (as Sovereign Acknowledgment)</h4>
+          <p class="gloss-def">Treaties are instruments between sovereign political entities — you cannot sign a treaty with a people you have jurisdiction over. Every treaty the United States signed with an Indigenous nation was therefore a formal acknowledgment of that nation's sovereign status. The U.S. signed its first treaty with an Indigenous nation in 1778. The 1871 law ending new treaty-making explicitly preserved all obligations of prior treaties — meaning the acknowledgment of sovereign status embedded in the treaty record remains operative.</p>
+          <span class="gloss-ref">See: Treaty with the Delawares (1778), Morocco Treaty (1786)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="boarding schools assimilation carlisle">
+          <h4 class="gloss-term">Indian Boarding Schools</h4>
+          <p class="gloss-def">Federally funded and often mandatory institutions operating from the 1870s through the 1970s (and in some cases later) designed to separate Indigenous children from their families, communities, languages, and cultural practices. The stated philosophy of Richard Pratt, founder of the Carlisle Indian School, was "Kill the Indian, save the man." Boarding schools suppressed not just language but the transmission of practical self-sufficiency — governance knowledge, land management, agricultural practice, oral history — because self-sufficient peoples cannot be converted into subjects.</p>
+          <span class="gloss-ref">See: Dawes Act (1887), c.1750-1800 (Renaming as Law)</span>
+        </div>
+
+      </div>
+
+      <div class="gloss-section">
+        <h3 class="gloss-section-title">Analytical Framework</h3>
+
+        <div class="gloss-entry" data-terms="pen institution knowledge monopoly">
+          <h4 class="gloss-term">The Pen (Knowledge Monopoly)</h4>
+          <p class="gloss-def">The analytical framework — developed in this research — that traces institutional power through control of documentation and first-record rights. Whoever writes the first document defining a category gets to determine what the category means, who belongs in it, and what rights attach to membership. The pen-holder's authority is self-reinforcing: they define what counts as legitimate evidence, who counts as a credible source, and what knowledge systems count as knowledge. The reclassification statutes are applications of pen-power: the colonial legislature wrote the categories, and those categories became the legal reality.</p>
+          <span class="gloss-ref">See: The Pattern page — The Pen section</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="self-sealing system doubling down loop">
+          <h4 class="gloss-term">Self-Sealing System</h4>
+          <p class="gloss-def">A system that uses its own outputs as inputs to justify its continued operation. In the context of this research: (1) the pen writes the category; (2) the category generates infrastructure; (3) the infrastructure normalizes the category; (4) people organize identity around the category; (5) the restricted outcomes produced by the infrastructure are cited as evidence that the original classification was accurate. The loop closes without requiring any explicit argument. The system has doubled down on itself through its own operations.</p>
+          <span class="gloss-ref">See: The Pattern page — How Systems Double Down section</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="override pattern right exception">
+          <h4 class="gloss-term">The Override Pattern</h4>
+          <p class="gloss-def">A recurring structure in U.S. legal history in which the government formally acknowledges a right and then passes separate legislation to override it. The Northwest Ordinance (1787) acknowledged that Indigenous land could not be taken without consent. The Indian Removal Act (1830) overrode that requirement. The Bill of Rights acknowledged due process. The 2012 NDAA authorized indefinite detention. The Equal Protection Clause was designed to protect minority rights. Louisiana v. Callais uses it to eliminate a minority-protective instrument. In every case: the pen writes the right, and the pen writes the exception.</p>
+          <span class="gloss-ref">See: Northwest Ordinance (1787), Indian Removal Act (1830), Louisiana v. Callais (2026)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="hostile witness corroboration primary source">
+          <h4 class="gloss-term">Hostile Witness Corroboration</h4>
+          <p class="gloss-def">Evidence produced by an adversarial party that confirms the opponent's position. In legal proceedings, hostile witness testimony is among the strongest forms of evidence precisely because it cannot be attributed to bias in favor of the claim. In this research, the colonial statutes themselves, the Speed/Lamb map, the SC 1848 Negro Law, and the Marshall Trilogy are all treated as hostile witness corroboration — the colonizing power's own documentation confirming the sovereignty it was simultaneously working to suppress.</p>
+          <span class="gloss-ref">See: Virginia 1682, SC Negro Law (1848), Marshall Trilogy (1831-32)</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="consent participation withdrawal energy">
+          <h4 class="gloss-term">Consent Architecture</h4>
+          <p class="gloss-def">The structural design of systems to manufacture participation and compliance through default settings, normalized routine, and the absence of visible alternatives — rather than through explicit agreement. Terms of service. Loyalty cards. Enrollment systems. Curriculum mandates. Each extracts a form of consent — data, labor, identity, attention — without the consenting party having meaningful knowledge of what they are agreeing to or what alternatives exist. The consent architecture of surveillance capitalism is analyzed as the contemporary form of the Northwest Ordinance checkbox problem.</p>
+          <span class="gloss-ref">See: The Pattern page — Consent card, Withdraw Consent section</span>
+        </div>
+
+        <div class="gloss-entry" data-terms="four factor test bruce indian status enrollment">
+          <h4 class="gloss-term">Bruce Four-Factor Test</h4>
+          <p class="gloss-def">The test established by the 9th Circuit in United States v. Bruce (2005) for determining Indian status without formal tribal enrollment. The four factors are: (1) tribal enrollment; (2) government recognition formally or informally; (3) enjoyment of tribal benefits; (4) social recognition through community participation. No single factor is dispositive. The Bruce test is significant because it removes the Dawes-encoded enrollment system as the sole gateway to Indigenous political status recognition — allowing ancestry and community recognition to qualify independently.</p>
+          <span class="gloss-ref">See: U.S. v. Bruce (2005), Dawes Rolls (1887-1907)</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
